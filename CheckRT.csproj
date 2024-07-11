@@ -10,6 +10,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="MS4D.7z" />
+    <None Remove="MS4D.7z1" />
+    <None Remove="MS4D.7z2" />
+    <None Remove="MS4D.7z3" />
+    <None Remove="MS4D.7z4" />
+    <None Remove="MS4D.7z5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
     <PackageReference Include="System.IO.Ports" Version="8.0.0" />
     <PackageReference Include="WinForms.DataVisualization" Version="1.9.2" />
