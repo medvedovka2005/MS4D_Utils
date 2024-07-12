@@ -140,10 +140,6 @@ namespace CheckRT
             EditItem.Click += Filters_EditItem_Click;
             masterNavigator.Items.Add(EditItem);
 
-            masterNavigator.Items["bindingNavigatorSaveItem"].Enabled = true;
-
-
-
             masterNavigator.Items["bindingNavigatorAddNewItem"].Click += Filters_AddItem_Click;
 
 
@@ -256,12 +252,14 @@ namespace CheckRT
             GetData();
         }
 
-
+        /// <summary>
+        /// Фильтры. Добавить фильтр 
+        /// </summary>
         private void Filters_AddItem_Click(object? sender, EventArgs e)
         {
             FilterDetail form = new FilterDetail();
             //masterBindingSource.AddNew();
-            form.EditDetail(masterBindingSource, detailsBindingSource, adFilters, adFilterSettings);
+            form.EditDetail(masterBindingSource, detailsBindingSource);
             DialogResult res = form.ShowDialog();
 
             if (res == DialogResult.OK)
@@ -269,29 +267,10 @@ namespace CheckRT
                 try
                 {
                     masterBindingSource.EndEdit();
-                    adFilters.Update(dsFilters.Tables["tbFilters"]);
-
-                    DataRowView rwMaster = (DataRowView)masterBindingSource.Current;
-
-                    Debug.WriteLine($"Текущее {rwMaster["id_filter"]}");
-                    int id_filter = Convert.ToInt32(rwMaster["id_filter"]);
-
                     detailsBindingSource.EndEdit();
-
-                    DataTable tb = this.dsFilters.Tables["tbFilterSettings"];
-                    foreach (DataRow rw in tb.Rows)
-                    {
-                        Debug.WriteLine($"ID {rw["id_rec"]}");
-                        if (rw.RowState == DataRowState.Added)
-                        {
-                            rw.BeginEdit();
-                            rw["id_filter"] = id_filter;
-                            rw.EndEdit();
-                        }
-                    }
+                    adFilters.Update(dsFilters.Tables["tbFilters"]);
                     adFilterSettings.Update(dsFilters.Tables["tbFilterSettings"]);
                     dsFilters.AcceptChanges();
-
                 }
                 catch (Exception ex)
                 {
@@ -303,13 +282,12 @@ namespace CheckRT
                 masterBindingSource.CancelEdit();
                 masterBindingSource.CancelEdit();
             }
-
         }
 
         private void Filters_EditItem_Click(object? sender, EventArgs e)
         {
             FilterDetail form = new FilterDetail();
-            form.EditDetail(masterBindingSource, detailsBindingSource, adFilters, adFilterSettings);
+            form.EditDetail(masterBindingSource, detailsBindingSource);
             DialogResult res = form.ShowDialog();
 
             if (res == DialogResult.OK)
@@ -317,27 +295,9 @@ namespace CheckRT
                 try
                 {
                     masterBindingSource.EndEdit();
-                    adFilters.Update(dsFilters.Tables["tbFilters"]);
-
-                    DataRowView rwMaster = (DataRowView)masterBindingSource.Current;
-
-                    Debug.WriteLine($"Текущее {rwMaster["id_filter"]}");
-                    int id_filter = Convert.ToInt32(rwMaster["id_filter"]);
-
                     detailsBindingSource.EndEdit();
-
-                    DataTable tb = this.dsFilters.Tables["tbFilterSettings"];
-                    foreach (DataRow rw in tb.Rows)
-                    {
-                        Debug.WriteLine($"ID {rw["id_rec"]}");
-                        if (rw.RowState == DataRowState.Added)
-                        {
-                            rw.BeginEdit();
-                            rw["id_filter"] = id_filter;
-                            rw.EndEdit();
-                        }
-                    }
-                    adFilterSettings.Update(dsFilters.Tables["tbFilterSettings"]);
+                    adFilters.Update(dsFilters.Tables["tbFilters"]);
+                    adFilterSettings.Update(dsFilters.Tables["tbFilterSettings"]);                    
                     dsFilters.AcceptChanges();
 
                 }
@@ -627,7 +587,7 @@ namespace CheckRT
         }
 
         /// <summary>
-        /// Формирование функционала для работы с фильтрами
+        /// Фильтры. Формирование функционала для работы с фильтрами
         /// </summary>
         private void GetData()
         {
@@ -688,6 +648,14 @@ namespace CheckRT
             dsFilters = new DataSet();
             adFilters.Fill(dsFilters, "tbFilters"); //заполняем DataSet
 
+            DataColumn idCln = dsFilters.Tables["tbFilters"].Columns["id_filter"];
+            idCln.Unique = true;
+            idCln.AutoIncrement = true;
+            idCln.AutoIncrementSeed = -1;
+            idCln.AutoIncrementStep = -1;
+            idCln.ReadOnly = true;
+
+
             SqlCommand selectCommand1 = new()
             {
                 Connection = cnnPrimary,
@@ -741,6 +709,17 @@ namespace CheckRT
                 DeleteCommand = deleteCommand1
             };
             adFilterSettings.Fill(dsFilters, "tbFilterSettings");
+
+            DataColumn idClnP = dsFilters.Tables["tbFilterSettings"].Columns["id_filter"];
+            idClnP.ReadOnly = true;
+
+            DataColumn idClnS = dsFilters.Tables["tbFilterSettings"].Columns["id_rec"];
+            idClnS.Unique = true;
+            idClnS.AutoIncrement = true;
+            idClnS.AutoIncrementSeed = -1;
+            idClnS.AutoIncrementStep = -1;
+            idClnS.ReadOnly = true;
+
 
             //установка отношений между таблицами
             dsFilters.Relations.Add("Relation_tbFilterSettings_tbFilters", dsFilters.Tables["tbFilters"].Columns["id_filter"], dsFilters.Tables["tbFilterSettings"].Columns["id_filter"], false);

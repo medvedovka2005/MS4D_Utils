@@ -16,32 +16,24 @@ namespace CheckRT
 {
     public partial class FilterDetail : Form
     {
-        public FilterDetail()
-        {
-            InitializeComponent();
-
-        }
 
         BindingSource m_masterBindingSource;
         BindingSource m_detailsBindingSource;
-        SqlDataAdapter m_masterDataAdapter;
-        SqlDataAdapter m_detailsDataAdapter;
+        BindingNavigator detailsNavigator = new();
 
-        BindingNavigator masterNavigator;
-        BindingNavigator detailsNavigator;
+        public FilterDetail()
+        {
+            InitializeComponent();
+        }
 
-        public void EditDetail(BindingSource masterBindingSource, BindingSource detailsBindingSource, SqlDataAdapter masterDataAdapter, SqlDataAdapter detailsDataAdapter)
+
+        public void EditDetail(BindingSource masterBindingSource, BindingSource detailsBindingSource)
         {
             m_masterBindingSource = masterBindingSource;
             m_detailsBindingSource = detailsBindingSource;
-            m_masterDataAdapter = masterDataAdapter;
-            m_detailsDataAdapter = detailsDataAdapter;
-
-            //masterNavigator = new BindingNavigator(masterBindingSource);
+            
             detailsNavigator = new BindingNavigator(detailsBindingSource);
             
-            //masterNavigator.Dock = DockStyle.Bottom;
-            //tableLayoutPanel2.Controls.Add(masterNavigator);
             
             textBox_id_filter.DataBindings.Add(new Binding("Text", this.m_masterBindingSource, "id_filter", true));
             textBox_FilterName.DataBindings.Add(new Binding("Text", this.m_masterBindingSource, "FilterName", true));
@@ -70,22 +62,86 @@ namespace CheckRT
 
             ToolStripItem SaveItem = new ToolStripButton();
             SaveItem.ToolTipText = "Сохранить";
+            SaveItem.Name = "bindingNavigatorSaveItem";
             SaveItem.Image = imageList1.Images[0];
             detailsNavigator.Items.Add(SaveItem);
 
+            ToolStripItem RefreshItem = new ToolStripButton();
+            RefreshItem.ToolTipText = "Обновить";
+            RefreshItem.Name = "bindingNavigatorRefreshItem";
+            RefreshItem.Image = imageList1.Images[2];
+            RefreshItem.Click += bindingNavigatorRefreshItem_Click;
+            detailsNavigator.Items.Add(RefreshItem);
+
+            ToolStripItem EditItem = new ToolStripButton();
+            EditItem.ToolTipText = "Изменить";
+            EditItem.Name = "bindingNavigatorEditItem";
+            EditItem.Image = imageList1.Images[1];
+            EditItem.Click += bindingNavigatorEditItem_Click;
+            detailsNavigator.Items.Add(EditItem);
 
 
-            foreach (ToolStripItem b in detailsNavigator.Items)
-            {
-                Debug.WriteLine($"Наименование кнопки {b.Name}");
-            }
             detailsNavigator.Items["bindingNavigatorAddNewItem"].Click += bindingNavigatorAddNewItem_Click;
+            detailsNavigator.Items["bindingNavigatorSaveItem"].Click += bindingNavigatorSaveItem_Click;
         }
 
+        /// <summary>
+        /// кнопка добавить
+        /// </summary>
         private void bindingNavigatorAddNewItem_Click(object? sender, EventArgs e)
         {
-            MessageBox.Show("Нажали добавить");
+
+            FilterSettingDetail form = new FilterSettingDetail();
+            form.EditDetail(m_detailsBindingSource);
+            DialogResult res = form.ShowDialog();
+
+            if (res == DialogResult.OK)
+            {
+
+                m_detailsBindingSource.EndEdit();
+            }
+            else
+            {
+                m_detailsBindingSource.CancelEdit();
+            }
+
         }
+        
+        /// <summary>
+        /// кнопка сохранить
+        /// </summary>
+        private void bindingNavigatorSaveItem_Click(object? sender, EventArgs e)
+        {
+            m_detailsBindingSource.EndEdit();
+        }
+
+        /// <summary>
+        /// кнопка обновить
+        /// </summary>
+        private void bindingNavigatorRefreshItem_Click(object? sender, EventArgs e)
+        {
+            m_detailsBindingSource.ResetBindings(true);
+        }
+        /// <summary>
+        /// кнопка редактировать
+        /// </summary>
+        private void bindingNavigatorEditItem_Click(object? sender, EventArgs e)
+        {
+            FilterSettingDetail form = new FilterSettingDetail();
+            form.EditDetail(m_detailsBindingSource);
+            DialogResult res = form.ShowDialog();
+
+            if (res == DialogResult.OK)
+            {
+
+                m_detailsBindingSource.EndEdit();
+            }
+            else
+            {
+                m_detailsBindingSource.CancelEdit();
+            }
+        }
+
 
         private void button_FileDialogOpen_Click(object sender, EventArgs e)
         {
@@ -99,36 +155,12 @@ namespace CheckRT
 
         private void button_Ok_Click(object sender, EventArgs e)
         {
-            var obj = m_detailsBindingSource.Current;
         }
 
         private void dataGridViewFilterSettings_Enter(object sender, EventArgs e)
         {
-            /*
-            masterBindingSource = new BindingSource
-            {
-                DataSource = dsFilters,
-                DataMember = "tbFilters"
-            };
-             */
-
-            m_masterBindingSource.EndEdit();
-
-            DataRowView rw = (DataRowView) m_masterBindingSource.Current;
-
-            if (rw.Row.RowState  != DataRowState.Unchanged)
-            {                
-
-                DataSet ds = (DataSet)m_masterBindingSource.DataSource;
-                ds.AcceptChanges();
-
-                m_masterDataAdapter.Update(ds.Tables["tbFilters"]);
-
-                MessageBox.Show("Сохранение изменений");
-            }
-
-            //adFilters.Update(dsFilters.Tables["tbFilters"]);
-
+            //ApplayChenges();
         }
+
     }
 }

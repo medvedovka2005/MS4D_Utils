@@ -65,6 +65,7 @@
             // 
             // textBox_id_filter
             // 
+            this.textBox_id_filter.Enabled = false;
             this.textBox_id_filter.Location = new System.Drawing.Point(158, 12);
             this.textBox_id_filter.Name = "textBox_id_filter";
             this.textBox_id_filter.Size = new System.Drawing.Size(79, 23);
@@ -243,6 +244,8 @@
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "ProgressSkip.ico");
+            this.imageList1.Images.SetKeyName(1, "pencil_106685.png");
+            this.imageList1.Images.SetKeyName(2, "sync.ico");
             // 
             // FilterDetail
             // 
