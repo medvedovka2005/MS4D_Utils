@@ -48,6 +48,10 @@
             this.button_Ok = new System.Windows.Forms.Button();
             this.button_Cancel = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.id_rec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_filter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FilterString = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Active = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFilterSettings)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -175,6 +179,11 @@
             // dataGridViewFilterSettings
             // 
             this.dataGridViewFilterSettings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewFilterSettings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_rec,
+            this.id_filter,
+            this.FilterString,
+            this.Active});
             this.dataGridViewFilterSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewFilterSettings.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewFilterSettings.Name = "dataGridViewFilterSettings";
@@ -182,6 +191,7 @@
             this.dataGridViewFilterSettings.Size = new System.Drawing.Size(945, 233);
             this.dataGridViewFilterSettings.TabIndex = 1000;
             this.dataGridViewFilterSettings.TabStop = false;
+            this.dataGridViewFilterSettings.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewFilterSettings_DataError);
             this.dataGridViewFilterSettings.Enter += new System.EventHandler(this.dataGridViewFilterSettings_Enter);
             // 
             // tableLayoutPanel2
@@ -247,6 +257,30 @@
             this.imageList1.Images.SetKeyName(1, "pencil_106685.png");
             this.imageList1.Images.SetKeyName(2, "sync.ico");
             // 
+            // id_rec
+            // 
+            this.id_rec.DataPropertyName = "id_rec";
+            this.id_rec.HeaderText = "id_rec";
+            this.id_rec.Name = "id_rec";
+            // 
+            // id_filter
+            // 
+            this.id_filter.DataPropertyName = "id_filter";
+            this.id_filter.HeaderText = "id_filter";
+            this.id_filter.Name = "id_filter";
+            // 
+            // FilterString
+            // 
+            this.FilterString.DataPropertyName = "FilterString";
+            this.FilterString.HeaderText = "FilterString";
+            this.FilterString.Name = "FilterString";
+            // 
+            // Active
+            // 
+            this.Active.DataPropertyName = "Active";
+            this.Active.HeaderText = "Active";
+            this.Active.Name = "Active";
+            // 
             // FilterDetail
             // 
             this.AcceptButton = this.button_Ok;
@@ -293,5 +327,9 @@
         private ToolStripButton toolStripButton1;
         private ToolStripButton toolStripButton2;
         private ImageList imageList1;
+        private DataGridViewTextBoxColumn id_rec;
+        private DataGridViewTextBoxColumn id_filter;
+        private DataGridViewTextBoxColumn FilterString;
+        private DataGridViewCheckBoxColumn Active;
     }
 }

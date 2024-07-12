@@ -660,18 +660,18 @@ namespace CheckRT
             {
                 Connection = cnnPrimary,
                 CommandType = System.Data.CommandType.Text,
-                CommandText = "select * from [dbo].[tbFilterSettings]"
+                CommandText = "select id_rec, id_filter, FilterString, Active, UsingFreeText from [dbo].[tbFilterSettings]"
             };
             SqlCommand insertCommand1 = new()
             {
                 Connection = cnnPrimary,
                 CommandType = System.Data.CommandType.Text,
-                CommandText = "insert into [dbo].[tbFilterSettings] (id_filter, FilterString, Active, UsingFreeText) select @id_filter, @FilterString, @Active, @UsingFreeText; select @id_rec = SCOPE_IDENTITY()",
+                CommandText = "insert into [dbo].[tbFilterSettings] (id_filter, FilterString, Active, UsingFreeText) select @id_filter, @FilterString, @Active, isnull(@UsingFreeText,0); select @id_rec = SCOPE_IDENTITY()",
             };
             insertCommand1.Parameters.Add(new SqlParameter("@id_filter", SqlDbType.Int, 4, "id_filter"));
             insertCommand1.Parameters.Add(new SqlParameter("@FilterString", SqlDbType.VarChar, 2000, "FilterString"));
             insertCommand1.Parameters.Add(new SqlParameter("@Active", SqlDbType.Bit, 1, "Active"));
-            insertCommand1.Parameters.Add(new SqlParameter("@UsingFreeText", SqlDbType.Bit, 1, "UsingFreeText"));
+            insertCommand1.Parameters.Add(new SqlParameter("@UsingFreeText", SqlDbType.TinyInt, 1, "UsingFreeText"));
             
             SqlParameter id_recParameter = new();
             id_recParameter.Direction = ParameterDirection.Output;
@@ -690,7 +690,7 @@ namespace CheckRT
             updateCommand1.Parameters.Add(new SqlParameter("@id_filter", SqlDbType.Int, 4, "id_filter"));
             updateCommand1.Parameters.Add(new SqlParameter("@FilterString", SqlDbType.VarChar, 2000, "FilterString"));
             updateCommand1.Parameters.Add(new SqlParameter("@Active", SqlDbType.Bit, 1, "Active"));
-            updateCommand1.Parameters.Add(new SqlParameter("@UsingFreeText", SqlDbType.Bit, 1, "UsingFreeText"));
+            updateCommand1.Parameters.Add(new SqlParameter("@UsingFreeText", SqlDbType.TinyInt, 1, "UsingFreeText"));
             updateCommand1.Parameters.Add(new SqlParameter("@id_rec", SqlDbType.Int, 4, "id_rec"));
 
             SqlCommand deleteCommand1 = new()

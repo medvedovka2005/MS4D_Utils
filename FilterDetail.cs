@@ -27,6 +27,37 @@ namespace CheckRT
         }
 
 
+        private void SetElementsSource()
+        {
+
+            DataTable tb = new DataTable("FilterTypes");
+            DataColumn clm1 = new("UsingType", typeof(int));
+            tb.Columns.Add(clm1);
+            DataColumn clm2 = new("TypeName", typeof(string));
+            tb.Columns.Add(clm2);
+
+            DataRow rw1 = tb.NewRow();
+            rw1[0] = 0;
+            rw1[1] = "CONTAIN";
+            tb.Rows.Add(rw1);
+
+            DataRow rw2 = tb.NewRow();
+            rw2[0] = 1;
+            rw2[1] = "FREETEXT";
+            tb.Rows.Add(rw2);
+
+            DataRow rw3 = tb.NewRow();
+            rw3[0] = 2;
+            rw3[1] = "LIKE";
+            tb.Rows.Add(rw3);
+
+            DataGridViewComboBoxColumn comboBox_UsingFreeText = (DataGridViewComboBoxColumn)dataGridViewFilterSettings.Columns["UsingFreeText"];
+            comboBox_UsingFreeText.DataSource = tb;
+            comboBox_UsingFreeText.ValueMember = "UsingType";
+            comboBox_UsingFreeText.DisplayMember = "TypeName";
+        }
+
+
         public void EditDetail(BindingSource masterBindingSource, BindingSource detailsBindingSource)
         {
             m_masterBindingSource = masterBindingSource;
@@ -41,21 +72,50 @@ namespace CheckRT
             checkBox_Active.DataBindings.Add(new Binding("Checked", this.m_masterBindingSource, "Active", true));
             textBox_FilterAssembly.DataBindings.Add(new Binding("Text", this.m_masterBindingSource, "FilterAssembly", true));
 
-            dataGridViewFilterSettings.DataSource = m_detailsBindingSource;
-            
+            DataTable tb = new DataTable("FilterTypes");
+            DataColumn clm1 = new("UsingType", typeof(byte));
+            tb.Columns.Add(clm1);
+            DataColumn clm2 = new("TypeName", typeof(string));
+            tb.Columns.Add(clm2);
+
+            DataRow rw1 = tb.NewRow();
+            rw1[0] = 0;
+            rw1[1] = "CONTAIN";
+            tb.Rows.Add(rw1);
+
+            DataRow rw2 = tb.NewRow();
+            rw2[0] = 1;
+            rw2[1] = "FREETEXT";
+            tb.Rows.Add(rw2);
+
+            DataRow rw3 = tb.NewRow();
+            rw3[0] = 2;
+            rw3[1] = "LIKE";
+            tb.Rows.Add(rw3);
+
+            DataGridViewComboBoxColumn comboBox_UsingFreeText = new();
+            comboBox_UsingFreeText.DataSource = tb;
+            comboBox_UsingFreeText.ValueMember = "UsingType";
+            comboBox_UsingFreeText.DisplayMember = "TypeName";
+            comboBox_UsingFreeText.DataPropertyName = "UsingFreeText";
+            dataGridViewFilterSettings.Columns.Add(comboBox_UsingFreeText);
+
+
             dataGridViewFilterSettings.Columns[0].Width = 50;
             dataGridViewFilterSettings.Columns[1].Width = 75;
             dataGridViewFilterSettings.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewFilterSettings.Columns[3].Width = 75;
-            dataGridViewFilterSettings.Columns[4].Width = 75;
-
+            dataGridViewFilterSettings.Columns[4].Width = 250;
+            
             //Заголовки
             dataGridViewFilterSettings.Columns[0].HeaderText = "Id записи";
             dataGridViewFilterSettings.Columns[1].HeaderText = "Id фильтра";
             dataGridViewFilterSettings.Columns[2].HeaderText = "Настройка фильтра";
             dataGridViewFilterSettings.Columns[3].HeaderText = "Активность";
-            dataGridViewFilterSettings.Columns[4].HeaderText = "FREETEXT";
+            dataGridViewFilterSettings.Columns[4].HeaderText = "Тип фильтра";
 
+            dataGridViewFilterSettings.AutoGenerateColumns = false;
+            dataGridViewFilterSettings.DataSource = m_detailsBindingSource;
 
             tableLayoutPanel1.Controls.Add(detailsNavigator);
 
@@ -162,5 +222,9 @@ namespace CheckRT
             //ApplayChenges();
         }
 
+        private void dataGridViewFilterSettings_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
+        }
     }
 }
