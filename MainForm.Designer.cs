@@ -28,543 +28,521 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Подключение к RT");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Журнал логирования");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Результат применения фильтров");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Статистика задач");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Статистика архивирования");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Настройки задач", new System.Windows.Forms.TreeNode[] {
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5});
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            TreeNode treeNode1 = new TreeNode("Подключение к RT");
+            TreeNode treeNode2 = new TreeNode("Журнал логирования");
+            TreeNode treeNode3 = new TreeNode("Результат применения фильтров");
+            TreeNode treeNode4 = new TreeNode("Статистика задач");
+            TreeNode treeNode5 = new TreeNode("Статистика архивирования");
+            TreeNode treeNode6 = new TreeNode("Настройки задач", new TreeNode[] { treeNode2, treeNode3, treeNode4, treeNode5 });
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle25 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.textBox_IPAdr = new System.Windows.Forms.TextBox();
-            this.tbStatus = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox_Command = new System.Windows.Forms.TextBox();
-            this.btnConnectThread = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.numericUpDown_Port = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnSendCoomandToThread = new System.Windows.Forms.Button();
-            this.btnStopThread = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.splitContainerSettings = new System.Windows.Forms.SplitContainer();
-            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.label23 = new System.Windows.Forms.Label();
-            this.textBoxSqlServerError = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBoxSqlServerConnectionString = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.buttonRefreshConnection = new System.Windows.Forms.Button();
-            this.imageListSqlServerConnection = new System.Windows.Forms.ImageList(this.components);
-            this.treeViewSettings = new System.Windows.Forms.TreeView();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridViewFilters = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.button_FilterLogRecords = new System.Windows.Forms.Button();
-            this.textBoxFilterForLogRecords = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.numericUpDown_LogRecReturnRecCount = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown_LogRecInterval = new System.Windows.Forms.NumericUpDown();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.checkBox_AutoRefreshLog = new System.Windows.Forms.CheckBox();
-            this.dataGridViewLogRecords = new System.Windows.Forms.DataGridView();
-            this.button_RefreshLogRecords = new System.Windows.Forms.Button();
-            this.button_FilterFiltredRecs = new System.Windows.Forms.Button();
-            this.textBoxFilterForFiltredRecords = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.numericUpDown_FiltredRecReturnRecCount = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown_FiltredRecInterval = new System.Windows.Forms.NumericUpDown();
-            this.label17 = new System.Windows.Forms.Label();
-            this.dataGridViewFiltredRecords = new System.Windows.Forms.DataGridView();
-            this.label_FiltredRecInterval = new System.Windows.Forms.Label();
-            this.btnRefreshFiltredRecords = new System.Windows.Forms.Button();
-            this.checkBox_AutoRefreshFilter = new System.Windows.Forms.CheckBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.numericUpDown_TaskStatReturnRecCount = new System.Windows.Forms.NumericUpDown();
-            this.label21 = new System.Windows.Forms.Label();
-            this.numericUpDown_IntervalTaskStat = new System.Windows.Forms.NumericUpDown();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dataGridViewTaskStatDetailU = new System.Windows.Forms.DataGridView();
-            this.id_rec = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TaskIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CicleCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ErrCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AvgCicle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MinCicle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaxCicle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AvgCicleReal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MinCicleReal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaxCicleReal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeRead = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeWork = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeWrite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.dataGridViewTaskPrimary = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TaskCicle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.N = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.N2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ModbusRTUSlave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.A = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.O = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.R = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MemoryUsing = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label13 = new System.Windows.Forms.Label();
-            this.numericUpDown_ArchStatReturnRecCount = new System.Windows.Forms.NumericUpDown();
-            this.label22 = new System.Windows.Forms.Label();
-            this.numericUpDown_IntervalArchStat = new System.Windows.Forms.NumericUpDown();
-            this.label16 = new System.Windows.Forms.Label();
-            this.dataGridViewArchStatDetail = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label15 = new System.Windows.Forms.Label();
-            this.checkBox_AutoRefreshArchStat = new System.Windows.Forms.CheckBox();
-            this.btnRefreshArchStat = new System.Windows.Forms.Button();
-            this.dataGridViewArchStat = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.checkBox_AutoRefreshTaskStat = new System.Windows.Forms.CheckBox();
-            this.btnRefreshTaskStat = new System.Windows.Forms.Button();
-            this.dataGridViewTaskStat = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RegDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LogString = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button_ImportLogFile = new System.Windows.Forms.Button();
-            this.checkBox_Pause = new System.Windows.Forms.CheckBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.label10 = new System.Windows.Forms.Label();
-            this.timer4 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.timer5 = new System.Windows.Forms.Timer(this.components);
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Port)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
-            this.splitContainer4.Panel1.SuspendLayout();
-            this.splitContainer4.Panel2.SuspendLayout();
-            this.splitContainer4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerSettings)).BeginInit();
-            this.splitContainerSettings.Panel1.SuspendLayout();
-            this.splitContainerSettings.Panel2.SuspendLayout();
-            this.splitContainerSettings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
-            this.splitContainer5.Panel1.SuspendLayout();
-            this.splitContainer5.Panel2.SuspendLayout();
-            this.splitContainer5.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFilters)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LogRecReturnRecCount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LogRecInterval)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLogRecords)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FiltredRecReturnRecCount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FiltredRecInterval)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFiltredRecords)).BeginInit();
-            this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_TaskStatReturnRecCount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_IntervalTaskStat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTaskStatDetailU)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTaskPrimary)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ArchStatReturnRecCount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_IntervalArchStat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArchStatDetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArchStat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTaskStat)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle26 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle27 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle28 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle29 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle30 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle31 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle32 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle33 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle34 = new DataGridViewCellStyle();
+            textBox_IPAdr = new TextBox();
+            tbStatus = new TextBox();
+            label4 = new Label();
+            textBox_Command = new TextBox();
+            btnConnectThread = new Button();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            numericUpDown_Port = new NumericUpDown();
+            label9 = new Label();
+            label8 = new Label();
+            btnSendCoomandToThread = new Button();
+            btnStopThread = new Button();
+            tabPage2 = new TabPage();
+            splitContainer4 = new SplitContainer();
+            splitContainerSettings = new SplitContainer();
+            splitContainer5 = new SplitContainer();
+            label23 = new Label();
+            textBoxSqlServerError = new TextBox();
+            label1 = new Label();
+            label20 = new Label();
+            textBoxSqlServerConnectionString = new TextBox();
+            label19 = new Label();
+            buttonRefreshConnection = new Button();
+            imageListSqlServerConnection = new ImageList(components);
+            treeViewSettings = new TreeView();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            dataGridViewFilters = new DataGridView();
+            label3 = new Label();
+            propertyGrid1 = new PropertyGrid();
+            tabPage3 = new TabPage();
+            splitContainer1 = new SplitContainer();
+            button_FilterLogRecords = new Button();
+            textBoxFilterForLogRecords = new TextBox();
+            label25 = new Label();
+            numericUpDown_LogRecReturnRecCount = new NumericUpDown();
+            label2 = new Label();
+            numericUpDown_LogRecInterval = new NumericUpDown();
+            label18 = new Label();
+            label6 = new Label();
+            checkBox_AutoRefreshLog = new CheckBox();
+            dataGridViewLogRecords = new DataGridView();
+            button_RefreshLogRecords = new Button();
+            button_FilterFiltredRecs = new Button();
+            textBoxFilterForFiltredRecords = new TextBox();
+            label24 = new Label();
+            numericUpDown_FiltredRecReturnRecCount = new NumericUpDown();
+            label5 = new Label();
+            numericUpDown_FiltredRecInterval = new NumericUpDown();
+            label17 = new Label();
+            dataGridViewFiltredRecords = new DataGridView();
+            label_FiltredRecInterval = new Label();
+            btnRefreshFiltredRecords = new Button();
+            checkBox_AutoRefreshFilter = new CheckBox();
+            tabPage4 = new TabPage();
+            numericUpDown_TaskStatReturnRecCount = new NumericUpDown();
+            label21 = new Label();
+            numericUpDown_IntervalTaskStat = new NumericUpDown();
+            splitContainer3 = new SplitContainer();
+            label11 = new Label();
+            dataGridViewTaskStatDetailU = new DataGridView();
+            id_rec = new DataGridViewTextBoxColumn();
+            TaskIndex = new DataGridViewTextBoxColumn();
+            CicleCount = new DataGridViewTextBoxColumn();
+            ErrCount = new DataGridViewTextBoxColumn();
+            AvgCicle = new DataGridViewTextBoxColumn();
+            MinCicle = new DataGridViewTextBoxColumn();
+            MaxCicle = new DataGridViewTextBoxColumn();
+            AvgCicleReal = new DataGridViewTextBoxColumn();
+            MinCicleReal = new DataGridViewTextBoxColumn();
+            MaxCicleReal = new DataGridViewTextBoxColumn();
+            TimeRead = new DataGridViewTextBoxColumn();
+            TimeWork = new DataGridViewTextBoxColumn();
+            TimeWrite = new DataGridViewTextBoxColumn();
+            Mem = new DataGridViewTextBoxColumn();
+            chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            splitContainer2 = new SplitContainer();
+            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            dataGridViewTaskPrimary = new DataGridView();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            TaskCicle = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
+            Time = new DataGridViewTextBoxColumn();
+            N = new DataGridViewTextBoxColumn();
+            N2 = new DataGridViewTextBoxColumn();
+            ModbusRTUSlave = new DataGridViewTextBoxColumn();
+            A = new DataGridViewTextBoxColumn();
+            O = new DataGridViewTextBoxColumn();
+            HR = new DataGridViewTextBoxColumn();
+            R = new DataGridViewTextBoxColumn();
+            MemoryUsing = new DataGridViewTextBoxColumn();
+            label13 = new Label();
+            numericUpDown_ArchStatReturnRecCount = new NumericUpDown();
+            label22 = new Label();
+            numericUpDown_IntervalArchStat = new NumericUpDown();
+            label16 = new Label();
+            dataGridViewArchStatDetail = new DataGridView();
+            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            label15 = new Label();
+            checkBox_AutoRefreshArchStat = new CheckBox();
+            btnRefreshArchStat = new Button();
+            dataGridViewArchStat = new DataGridView();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            label14 = new Label();
+            label7 = new Label();
+            checkBox_AutoRefreshTaskStat = new CheckBox();
+            btnRefreshTaskStat = new Button();
+            dataGridViewTaskStat = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            RegDT = new DataGridViewTextBoxColumn();
+            LogString = new DataGridViewTextBoxColumn();
+            button_ImportLogFile = new Button();
+            checkBox_Pause = new CheckBox();
+            timer1 = new System.Windows.Forms.Timer(components);
+            timer2 = new System.Windows.Forms.Timer(components);
+            toolTip1 = new ToolTip(components);
+            timer3 = new System.Windows.Forms.Timer(components);
+            label10 = new Label();
+            timer4 = new System.Windows.Forms.Timer(components);
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            timer5 = new System.Windows.Forms.Timer(components);
+            imageList1 = new ImageList(components);
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_Port).BeginInit();
+            tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer4).BeginInit();
+            splitContainer4.Panel1.SuspendLayout();
+            splitContainer4.Panel2.SuspendLayout();
+            splitContainer4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainerSettings).BeginInit();
+            splitContainerSettings.Panel1.SuspendLayout();
+            splitContainerSettings.Panel2.SuspendLayout();
+            splitContainerSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer5).BeginInit();
+            splitContainer5.Panel1.SuspendLayout();
+            splitContainer5.Panel2.SuspendLayout();
+            splitContainer5.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewFilters).BeginInit();
+            tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_LogRecReturnRecCount).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_LogRecInterval).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewLogRecords).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_FiltredRecReturnRecCount).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_FiltredRecInterval).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewFiltredRecords).BeginInit();
+            tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_TaskStatReturnRecCount).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_IntervalTaskStat).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)splitContainer3).BeginInit();
+            splitContainer3.Panel1.SuspendLayout();
+            splitContainer3.Panel2.SuspendLayout();
+            splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTaskStatDetailU).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chart2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
+            splitContainer2.Panel1.SuspendLayout();
+            splitContainer2.Panel2.SuspendLayout();
+            splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTaskPrimary).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_ArchStatReturnRecCount).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_IntervalArchStat).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewArchStatDetail).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewArchStat).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTaskStat).BeginInit();
+            SuspendLayout();
             // 
             // textBox_IPAdr
             // 
-            this.textBox_IPAdr.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox_IPAdr.Location = new System.Drawing.Point(63, 34);
-            this.textBox_IPAdr.Name = "textBox_IPAdr";
-            this.textBox_IPAdr.Size = new System.Drawing.Size(169, 32);
-            this.textBox_IPAdr.TabIndex = 8;
-            this.textBox_IPAdr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_IPAdr.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox_IPAdr.Location = new Point(63, 34);
+            textBox_IPAdr.Name = "textBox_IPAdr";
+            textBox_IPAdr.Size = new Size(169, 32);
+            textBox_IPAdr.TabIndex = 8;
+            textBox_IPAdr.TextAlign = HorizontalAlignment.Center;
             // 
             // tbStatus
             // 
-            this.tbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbStatus.BackColor = System.Drawing.SystemColors.WindowText;
-            this.tbStatus.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbStatus.ForeColor = System.Drawing.Color.LimeGreen;
-            this.tbStatus.Location = new System.Drawing.Point(6, 74);
-            this.tbStatus.Multiline = true;
-            this.tbStatus.Name = "tbStatus";
-            this.tbStatus.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbStatus.Size = new System.Drawing.Size(1407, 654);
-            this.tbStatus.TabIndex = 11;
+            tbStatus.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbStatus.BackColor = SystemColors.WindowText;
+            tbStatus.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            tbStatus.ForeColor = Color.LimeGreen;
+            tbStatus.Location = new Point(6, 74);
+            tbStatus.Multiline = true;
+            tbStatus.Name = "tbStatus";
+            tbStatus.ScrollBars = ScrollBars.Vertical;
+            tbStatus.Size = new Size(1407, 654);
+            tbStatus.TabIndex = 11;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(611, 45);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 15);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Команда";
+            label4.AutoSize = true;
+            label4.Location = new Point(611, 45);
+            label4.Name = "label4";
+            label4.Size = new Size(55, 15);
+            label4.TabIndex = 15;
+            label4.Text = "Команда";
             // 
             // textBox_Command
             // 
-            this.textBox_Command.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox_Command.Location = new System.Drawing.Point(672, 34);
-            this.textBox_Command.Name = "textBox_Command";
-            this.textBox_Command.Size = new System.Drawing.Size(79, 32);
-            this.textBox_Command.TabIndex = 14;
-            this.textBox_Command.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox_Command.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox_Command.Location = new Point(672, 34);
+            textBox_Command.Name = "textBox_Command";
+            textBox_Command.Size = new Size(79, 32);
+            textBox_Command.TabIndex = 14;
+            textBox_Command.TextAlign = HorizontalAlignment.Center;
             // 
             // btnConnectThread
             // 
-            this.btnConnectThread.Location = new System.Drawing.Point(395, 40);
-            this.btnConnectThread.Name = "btnConnectThread";
-            this.btnConnectThread.Size = new System.Drawing.Size(95, 25);
-            this.btnConnectThread.TabIndex = 34;
-            this.btnConnectThread.Text = "Подключить";
-            this.btnConnectThread.UseVisualStyleBackColor = true;
-            this.btnConnectThread.Click += new System.EventHandler(this.btnConnectThread_Click);
+            btnConnectThread.Location = new Point(395, 40);
+            btnConnectThread.Name = "btnConnectThread";
+            btnConnectThread.Size = new Size(95, 25);
+            btnConnectThread.TabIndex = 34;
+            btnConnectThread.Text = "Подключить";
+            btnConnectThread.UseVisualStyleBackColor = true;
+            btnConnectThread.Click += btnConnectThread_Click;
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(5, 57);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1429, 763);
-            this.tabControl1.TabIndex = 35;
+            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(tabPage4);
+            tabControl1.Location = new Point(5, 57);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(1429, 763);
+            tabControl1.TabIndex = 35;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.numericUpDown_Port);
-            this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.btnSendCoomandToThread);
-            this.tabPage1.Controls.Add(this.btnStopThread);
-            this.tabPage1.Controls.Add(this.tbStatus);
-            this.tabPage1.Controls.Add(this.textBox_IPAdr);
-            this.tabPage1.Controls.Add(this.btnConnectThread);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.textBox_Command);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1421, 735);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Монитор";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.Controls.Add(numericUpDown_Port);
+            tabPage1.Controls.Add(label9);
+            tabPage1.Controls.Add(label8);
+            tabPage1.Controls.Add(btnSendCoomandToThread);
+            tabPage1.Controls.Add(btnStopThread);
+            tabPage1.Controls.Add(tbStatus);
+            tabPage1.Controls.Add(textBox_IPAdr);
+            tabPage1.Controls.Add(btnConnectThread);
+            tabPage1.Controls.Add(label4);
+            tabPage1.Controls.Add(textBox_Command);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(1421, 735);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Монитор";
+            tabPage1.UseVisualStyleBackColor = true;
             // 
             // numericUpDown_Port
             // 
-            this.numericUpDown_Port.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericUpDown_Port.Location = new System.Drawing.Point(269, 35);
-            this.numericUpDown_Port.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.numericUpDown_Port.Name = "numericUpDown_Port";
-            this.numericUpDown_Port.Size = new System.Drawing.Size(120, 32);
-            this.numericUpDown_Port.TabIndex = 43;
-            this.numericUpDown_Port.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            numericUpDown_Port.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDown_Port.Location = new Point(269, 35);
+            numericUpDown_Port.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
+            numericUpDown_Port.Name = "numericUpDown_Port";
+            numericUpDown_Port.Size = new Size(120, 32);
+            numericUpDown_Port.TabIndex = 43;
+            numericUpDown_Port.TextAlign = HorizontalAlignment.Center;
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(238, 45);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(33, 15);
-            this.label9.TabIndex = 42;
-            this.label9.Text = "порт";
+            label9.AutoSize = true;
+            label9.Location = new Point(238, 45);
+            label9.Name = "label9";
+            label9.Size = new Size(33, 15);
+            label9.TabIndex = 42;
+            label9.Text = "порт";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 45);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 15);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "IP адрес";
+            label8.AutoSize = true;
+            label8.Location = new Point(6, 45);
+            label8.Name = "label8";
+            label8.Size = new Size(51, 15);
+            label8.TabIndex = 41;
+            label8.Text = "IP адрес";
             // 
             // btnSendCoomandToThread
             // 
-            this.btnSendCoomandToThread.Location = new System.Drawing.Point(757, 40);
-            this.btnSendCoomandToThread.Name = "btnSendCoomandToThread";
-            this.btnSendCoomandToThread.Size = new System.Drawing.Size(95, 24);
-            this.btnSendCoomandToThread.TabIndex = 37;
-            this.btnSendCoomandToThread.Text = "Отправить";
-            this.btnSendCoomandToThread.UseVisualStyleBackColor = true;
-            this.btnSendCoomandToThread.Click += new System.EventHandler(this.btnSendCoomandToThread_Click);
+            btnSendCoomandToThread.Location = new Point(757, 40);
+            btnSendCoomandToThread.Name = "btnSendCoomandToThread";
+            btnSendCoomandToThread.Size = new Size(95, 24);
+            btnSendCoomandToThread.TabIndex = 37;
+            btnSendCoomandToThread.Text = "Отправить";
+            btnSendCoomandToThread.UseVisualStyleBackColor = true;
+            btnSendCoomandToThread.Click += btnSendCoomandToThread_Click;
             // 
             // btnStopThread
             // 
-            this.btnStopThread.Location = new System.Drawing.Point(496, 40);
-            this.btnStopThread.Name = "btnStopThread";
-            this.btnStopThread.Size = new System.Drawing.Size(95, 25);
-            this.btnStopThread.TabIndex = 36;
-            this.btnStopThread.Text = "Отключить";
-            this.btnStopThread.UseVisualStyleBackColor = true;
-            this.btnStopThread.Click += new System.EventHandler(this.btnStopThread_Click);
+            btnStopThread.Location = new Point(496, 40);
+            btnStopThread.Name = "btnStopThread";
+            btnStopThread.Size = new Size(95, 25);
+            btnStopThread.TabIndex = 36;
+            btnStopThread.Text = "Отключить";
+            btnStopThread.UseVisualStyleBackColor = true;
+            btnStopThread.Click += btnStopThread_Click;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.splitContainer4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1421, 735);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Настройки";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            tabPage2.Controls.Add(splitContainer4);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(1421, 735);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Настройки";
+            tabPage2.UseVisualStyleBackColor = true;
             // 
             // splitContainer4
             // 
-            this.splitContainer4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer4.Location = new System.Drawing.Point(6, 3);
-            this.splitContainer4.Name = "splitContainer4";
+            splitContainer4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            splitContainer4.BorderStyle = BorderStyle.Fixed3D;
+            splitContainer4.Location = new Point(6, 3);
+            splitContainer4.Name = "splitContainer4";
             // 
             // splitContainer4.Panel1
             // 
-            this.splitContainer4.Panel1.Controls.Add(this.splitContainerSettings);
+            splitContainer4.Panel1.Controls.Add(splitContainerSettings);
             // 
             // splitContainer4.Panel2
             // 
-            this.splitContainer4.Panel2.Controls.Add(this.propertyGrid1);
-            this.splitContainer4.Size = new System.Drawing.Size(1410, 727);
-            this.splitContainer4.SplitterDistance = 1089;
-            this.splitContainer4.TabIndex = 18;
+            splitContainer4.Panel2.Controls.Add(propertyGrid1);
+            splitContainer4.Size = new Size(1410, 727);
+            splitContainer4.SplitterDistance = 1089;
+            splitContainer4.TabIndex = 18;
             // 
             // splitContainerSettings
             // 
-            this.splitContainerSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainerSettings.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainerSettings.Location = new System.Drawing.Point(3, 3);
-            this.splitContainerSettings.Name = "splitContainerSettings";
-            this.splitContainerSettings.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            splitContainerSettings.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            splitContainerSettings.BorderStyle = BorderStyle.Fixed3D;
+            splitContainerSettings.Location = new Point(3, 3);
+            splitContainerSettings.Name = "splitContainerSettings";
+            splitContainerSettings.Orientation = Orientation.Horizontal;
             // 
             // splitContainerSettings.Panel1
             // 
-            this.splitContainerSettings.Panel1.Controls.Add(this.splitContainer5);
+            splitContainerSettings.Panel1.Controls.Add(splitContainer5);
             // 
             // splitContainerSettings.Panel2
             // 
-            this.splitContainerSettings.Panel2.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainerSettings.Panel2.Controls.Add(this.label3);
-            this.splitContainerSettings.Size = new System.Drawing.Size(1079, 717);
-            this.splitContainerSettings.SplitterDistance = 223;
-            this.splitContainerSettings.TabIndex = 35;
+            splitContainerSettings.Panel2.Controls.Add(tableLayoutPanel1);
+            splitContainerSettings.Panel2.Controls.Add(label3);
+            splitContainerSettings.Size = new Size(1079, 717);
+            splitContainerSettings.SplitterDistance = 223;
+            splitContainerSettings.TabIndex = 35;
             // 
             // splitContainer5
             // 
-            this.splitContainer5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer5.Location = new System.Drawing.Point(5, 3);
-            this.splitContainer5.Name = "splitContainer5";
+            splitContainer5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            splitContainer5.BorderStyle = BorderStyle.Fixed3D;
+            splitContainer5.Location = new Point(5, 3);
+            splitContainer5.Name = "splitContainer5";
             // 
             // splitContainer5.Panel1
             // 
-            this.splitContainer5.Panel1.Controls.Add(this.label23);
-            this.splitContainer5.Panel1.Controls.Add(this.textBoxSqlServerError);
-            this.splitContainer5.Panel1.Controls.Add(this.label1);
-            this.splitContainer5.Panel1.Controls.Add(this.label20);
-            this.splitContainer5.Panel1.Controls.Add(this.textBoxSqlServerConnectionString);
-            this.splitContainer5.Panel1.Controls.Add(this.label19);
-            this.splitContainer5.Panel1.Controls.Add(this.buttonRefreshConnection);
+            splitContainer5.Panel1.Controls.Add(label23);
+            splitContainer5.Panel1.Controls.Add(textBoxSqlServerError);
+            splitContainer5.Panel1.Controls.Add(label1);
+            splitContainer5.Panel1.Controls.Add(label20);
+            splitContainer5.Panel1.Controls.Add(textBoxSqlServerConnectionString);
+            splitContainer5.Panel1.Controls.Add(label19);
+            splitContainer5.Panel1.Controls.Add(buttonRefreshConnection);
             // 
             // splitContainer5.Panel2
             // 
-            this.splitContainer5.Panel2.Controls.Add(this.treeViewSettings);
-            this.splitContainer5.Size = new System.Drawing.Size(1072, 213);
-            this.splitContainer5.SplitterDistance = 652;
-            this.splitContainer5.TabIndex = 41;
+            splitContainer5.Panel2.Controls.Add(treeViewSettings);
+            splitContainer5.Size = new Size(1072, 213);
+            splitContainer5.SplitterDistance = 652;
+            splitContainer5.TabIndex = 41;
             // 
             // label23
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(14, 141);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(96, 15);
-            this.label23.TabIndex = 43;
-            this.label23.Text = "Список ошибок";
+            label23.AutoSize = true;
+            label23.Location = new Point(14, 141);
+            label23.Name = "label23";
+            label23.Size = new Size(96, 15);
+            label23.TabIndex = 43;
+            label23.Text = "Список ошибок";
             // 
             // textBoxSqlServerError
             // 
-            this.textBoxSqlServerError.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSqlServerError.Location = new System.Drawing.Point(14, 159);
-            this.textBoxSqlServerError.Multiline = true;
-            this.textBoxSqlServerError.Name = "textBoxSqlServerError";
-            this.textBoxSqlServerError.Size = new System.Drawing.Size(625, 47);
-            this.textBoxSqlServerError.TabIndex = 42;
-            this.textBoxSqlServerError.TabStop = false;
+            textBoxSqlServerError.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxSqlServerError.Location = new Point(14, 159);
+            textBoxSqlServerError.Multiline = true;
+            textBoxSqlServerError.Name = "textBoxSqlServerError";
+            textBoxSqlServerError.Size = new Size(625, 47);
+            textBoxSqlServerError.TabIndex = 42;
+            textBoxSqlServerError.TabStop = false;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(14, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(390, 19);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Настройки подключения к БД на Microsoft SQL Server";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(14, 14);
+            label1.Name = "label1";
+            label1.Size = new Size(390, 19);
+            label1.TabIndex = 41;
+            label1.Text = "Настройки подключения к БД на Microsoft SQL Server";
             // 
             // label20
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(14, 50);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(125, 15);
-            this.label20.TabIndex = 40;
-            this.label20.Text = "Строка подключения";
+            label20.AutoSize = true;
+            label20.Location = new Point(14, 50);
+            label20.Name = "label20";
+            label20.Size = new Size(125, 15);
+            label20.TabIndex = 40;
+            label20.Text = "Строка подключения";
             // 
             // textBoxSqlServerConnectionString
             // 
-            this.textBoxSqlServerConnectionString.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSqlServerConnectionString.Location = new System.Drawing.Point(14, 68);
-            this.textBoxSqlServerConnectionString.Multiline = true;
-            this.textBoxSqlServerConnectionString.Name = "textBoxSqlServerConnectionString";
-            this.textBoxSqlServerConnectionString.Size = new System.Drawing.Size(625, 46);
-            this.textBoxSqlServerConnectionString.TabIndex = 30;
-            this.textBoxSqlServerConnectionString.TabStop = false;
-            this.textBoxSqlServerConnectionString.Text = "Пример: Data Source=DT-MS-51321\\SQLEXPRESS;Initial Catalog=mps_p1;Integrated Secu" +
-    "rity=True;Trust Server Certificate=True;Application Name=CheckRT";
-            this.textBoxSqlServerConnectionString.Enter += new System.EventHandler(this.textBoxSqlServerConnectionString_Enter);
+            textBoxSqlServerConnectionString.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxSqlServerConnectionString.Location = new Point(14, 68);
+            textBoxSqlServerConnectionString.Multiline = true;
+            textBoxSqlServerConnectionString.Name = "textBoxSqlServerConnectionString";
+            textBoxSqlServerConnectionString.Size = new Size(625, 46);
+            textBoxSqlServerConnectionString.TabIndex = 30;
+            textBoxSqlServerConnectionString.TabStop = false;
+            textBoxSqlServerConnectionString.Text = "Пример: Data Source=DT-MS-51321\\SQLEXPRESS;Initial Catalog=mps_p1;Integrated Security=True;Trust Server Certificate=True;Application Name=CheckRT";
+            textBoxSqlServerConnectionString.Enter += textBoxSqlServerConnectionString_Enter;
             // 
             // label19
             // 
-            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(463, 128);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(145, 15);
-            this.label19.TabIndex = 29;
-            this.label19.Text = "Состояние подключения";
+            label19.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label19.AutoSize = true;
+            label19.Location = new Point(463, 128);
+            label19.Name = "label19";
+            label19.Size = new Size(145, 15);
+            label19.TabIndex = 29;
+            label19.Text = "Состояние подключения";
             // 
             // buttonRefreshConnection
             // 
-            this.buttonRefreshConnection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonRefreshConnection.ImageList = this.imageListSqlServerConnection;
-            this.buttonRefreshConnection.Location = new System.Drawing.Point(614, 122);
-            this.buttonRefreshConnection.Name = "buttonRefreshConnection";
-            this.buttonRefreshConnection.Size = new System.Drawing.Size(26, 26);
-            this.buttonRefreshConnection.TabIndex = 39;
-            this.toolTip1.SetToolTip(this.buttonRefreshConnection, "Обновить подключение");
-            this.buttonRefreshConnection.UseVisualStyleBackColor = true;
-            this.buttonRefreshConnection.Click += new System.EventHandler(this.buttonRefreshConnection_Click);
+            buttonRefreshConnection.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonRefreshConnection.ImageList = imageListSqlServerConnection;
+            buttonRefreshConnection.Location = new Point(614, 122);
+            buttonRefreshConnection.Name = "buttonRefreshConnection";
+            buttonRefreshConnection.Size = new Size(26, 26);
+            buttonRefreshConnection.TabIndex = 39;
+            toolTip1.SetToolTip(buttonRefreshConnection, "Обновить подключение");
+            buttonRefreshConnection.UseVisualStyleBackColor = true;
+            buttonRefreshConnection.Click += buttonRefreshConnection_Click;
             // 
             // imageListSqlServerConnection
             // 
-            this.imageListSqlServerConnection.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageListSqlServerConnection.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListSqlServerConnection.ImageStream")));
-            this.imageListSqlServerConnection.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListSqlServerConnection.Images.SetKeyName(0, "ProgressWarn.ico");
-            this.imageListSqlServerConnection.Images.SetKeyName(1, "ProgressSkip.ico");
-            this.imageListSqlServerConnection.Images.SetKeyName(2, "ProgressError.ico");
+            imageListSqlServerConnection.ColorDepth = ColorDepth.Depth8Bit;
+            imageListSqlServerConnection.ImageStream = (ImageListStreamer)resources.GetObject("imageListSqlServerConnection.ImageStream");
+            imageListSqlServerConnection.TransparentColor = Color.Transparent;
+            imageListSqlServerConnection.Images.SetKeyName(0, "ProgressWarn.ico");
+            imageListSqlServerConnection.Images.SetKeyName(1, "ProgressSkip.ico");
+            imageListSqlServerConnection.Images.SetKeyName(2, "ProgressError.ico");
             // 
             // treeViewSettings
             // 
-            this.treeViewSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeViewSettings.Location = new System.Drawing.Point(0, 0);
-            this.treeViewSettings.Name = "treeViewSettings";
+            treeViewSettings.Dock = DockStyle.Fill;
+            treeViewSettings.Location = new Point(0, 0);
+            treeViewSettings.Name = "treeViewSettings";
             treeNode1.Name = "Socket0";
             treeNode1.Tag = "SocketConnectionProperty";
             treeNode1.Text = "Подключение к RT";
@@ -587,794 +565,718 @@
             treeNode5.ToolTipText = "Настройки отображения информации по статистике архивирования";
             treeNode6.Name = "NodeTask";
             treeNode6.Text = "Настройки задач";
-            this.treeViewSettings.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode6});
-            this.treeViewSettings.Size = new System.Drawing.Size(412, 209);
-            this.treeViewSettings.TabIndex = 41;
-            this.treeViewSettings.TabStop = false;
-            this.treeViewSettings.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewSettings_AfterSelect);
+            treeViewSettings.Nodes.AddRange(new TreeNode[] { treeNode1, treeNode6 });
+            treeViewSettings.Size = new Size(412, 209);
+            treeViewSettings.TabIndex = 41;
+            treeViewSettings.TabStop = false;
+            treeViewSettings.AfterSelect += treeViewSettings_AfterSelect;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.dataGridViewFilters, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 34);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1067, 449);
-            this.tableLayoutPanel1.TabIndex = 42;
+            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(dataGridViewFilters, 0, 0);
+            tableLayoutPanel1.Location = new Point(5, 34);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel1.Size = new Size(1067, 449);
+            tableLayoutPanel1.TabIndex = 42;
             // 
             // dataGridViewFilters
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewFilters.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewFilters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewFilters.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewFilters.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewFilters.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewFilters.Name = "dataGridViewFilters";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewFilters.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewFilters.RowTemplate.Height = 25;
-            this.dataGridViewFilters.Size = new System.Drawing.Size(1061, 408);
-            this.dataGridViewFilters.TabIndex = 35;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewFilters.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewFilters.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridViewFilters.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewFilters.Dock = DockStyle.Fill;
+            dataGridViewFilters.Location = new Point(3, 3);
+            dataGridViewFilters.Name = "dataGridViewFilters";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridViewFilters.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewFilters.RowTemplate.Height = 25;
+            dataGridViewFilters.Size = new Size(1061, 408);
+            dataGridViewFilters.TabIndex = 35;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(3, 9);
-            this.label3.Name = "label3";
-            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(72, 19);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "Фильтры";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(3, 9);
+            label3.Name = "label3";
+            label3.RightToLeft = RightToLeft.Yes;
+            label3.Size = new Size(72, 19);
+            label3.TabIndex = 36;
+            label3.Text = "Фильтры";
             // 
             // propertyGrid1
             // 
-            this.propertyGrid1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.propertyGrid1.Location = new System.Drawing.Point(3, 44);
-            this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(311, 676);
-            this.propertyGrid1.TabIndex = 14;
-            this.propertyGrid1.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.propertyGrid1_PropertyValueChanged);
+            propertyGrid1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            propertyGrid1.Location = new Point(3, 44);
+            propertyGrid1.Name = "propertyGrid1";
+            propertyGrid1.Size = new Size(311, 676);
+            propertyGrid1.TabIndex = 14;
+            propertyGrid1.PropertyValueChanged += propertyGrid1_PropertyValueChanged;
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.splitContainer1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1421, 735);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Журнал";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            tabPage3.Controls.Add(splitContainer1);
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(1421, 735);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Журнал";
+            tabPage3.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
-            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            splitContainer1.BorderStyle = BorderStyle.Fixed3D;
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(3, 3);
+            splitContainer1.Name = "splitContainer1";
+            splitContainer1.Orientation = Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button_FilterLogRecords);
-            this.splitContainer1.Panel1.Controls.Add(this.textBoxFilterForLogRecords);
-            this.splitContainer1.Panel1.Controls.Add(this.label25);
-            this.splitContainer1.Panel1.Controls.Add(this.numericUpDown_LogRecReturnRecCount);
-            this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.numericUpDown_LogRecInterval);
-            this.splitContainer1.Panel1.Controls.Add(this.label18);
-            this.splitContainer1.Panel1.Controls.Add(this.label6);
-            this.splitContainer1.Panel1.Controls.Add(this.checkBox_AutoRefreshLog);
-            this.splitContainer1.Panel1.Controls.Add(this.dataGridViewLogRecords);
-            this.splitContainer1.Panel1.Controls.Add(this.button_RefreshLogRecords);
+            splitContainer1.Panel1.Controls.Add(button_FilterLogRecords);
+            splitContainer1.Panel1.Controls.Add(textBoxFilterForLogRecords);
+            splitContainer1.Panel1.Controls.Add(label25);
+            splitContainer1.Panel1.Controls.Add(numericUpDown_LogRecReturnRecCount);
+            splitContainer1.Panel1.Controls.Add(label2);
+            splitContainer1.Panel1.Controls.Add(numericUpDown_LogRecInterval);
+            splitContainer1.Panel1.Controls.Add(label18);
+            splitContainer1.Panel1.Controls.Add(label6);
+            splitContainer1.Panel1.Controls.Add(checkBox_AutoRefreshLog);
+            splitContainer1.Panel1.Controls.Add(dataGridViewLogRecords);
+            splitContainer1.Panel1.Controls.Add(button_RefreshLogRecords);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.button_FilterFiltredRecs);
-            this.splitContainer1.Panel2.Controls.Add(this.textBoxFilterForFiltredRecords);
-            this.splitContainer1.Panel2.Controls.Add(this.label24);
-            this.splitContainer1.Panel2.Controls.Add(this.numericUpDown_FiltredRecReturnRecCount);
-            this.splitContainer1.Panel2.Controls.Add(this.label5);
-            this.splitContainer1.Panel2.Controls.Add(this.numericUpDown_FiltredRecInterval);
-            this.splitContainer1.Panel2.Controls.Add(this.label17);
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridViewFiltredRecords);
-            this.splitContainer1.Panel2.Controls.Add(this.label_FiltredRecInterval);
-            this.splitContainer1.Panel2.Controls.Add(this.btnRefreshFiltredRecords);
-            this.splitContainer1.Panel2.Controls.Add(this.checkBox_AutoRefreshFilter);
-            this.splitContainer1.Size = new System.Drawing.Size(1415, 729);
-            this.splitContainer1.SplitterDistance = 357;
-            this.splitContainer1.TabIndex = 4;
+            splitContainer1.Panel2.Controls.Add(button_FilterFiltredRecs);
+            splitContainer1.Panel2.Controls.Add(textBoxFilterForFiltredRecords);
+            splitContainer1.Panel2.Controls.Add(label24);
+            splitContainer1.Panel2.Controls.Add(numericUpDown_FiltredRecReturnRecCount);
+            splitContainer1.Panel2.Controls.Add(label5);
+            splitContainer1.Panel2.Controls.Add(numericUpDown_FiltredRecInterval);
+            splitContainer1.Panel2.Controls.Add(label17);
+            splitContainer1.Panel2.Controls.Add(dataGridViewFiltredRecords);
+            splitContainer1.Panel2.Controls.Add(label_FiltredRecInterval);
+            splitContainer1.Panel2.Controls.Add(btnRefreshFiltredRecords);
+            splitContainer1.Panel2.Controls.Add(checkBox_AutoRefreshFilter);
+            splitContainer1.Size = new Size(1415, 729);
+            splitContainer1.SplitterDistance = 357;
+            splitContainer1.TabIndex = 4;
             // 
             // button_FilterLogRecords
             // 
-            this.button_FilterLogRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_FilterLogRecords.Location = new System.Drawing.Point(1324, 22);
-            this.button_FilterLogRecords.Name = "button_FilterLogRecords";
-            this.button_FilterLogRecords.Size = new System.Drawing.Size(84, 23);
-            this.button_FilterLogRecords.TabIndex = 20;
-            this.button_FilterLogRecords.Text = "Применить";
-            this.button_FilterLogRecords.UseVisualStyleBackColor = true;
-            this.button_FilterLogRecords.Click += new System.EventHandler(this.button_FilterLogRecords_Click);
+            button_FilterLogRecords.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button_FilterLogRecords.Location = new Point(1324, 22);
+            button_FilterLogRecords.Name = "button_FilterLogRecords";
+            button_FilterLogRecords.Size = new Size(84, 23);
+            button_FilterLogRecords.TabIndex = 20;
+            button_FilterLogRecords.Text = "Применить";
+            button_FilterLogRecords.UseVisualStyleBackColor = true;
+            button_FilterLogRecords.Click += button_FilterLogRecords_Click;
             // 
             // textBoxFilterForLogRecords
             // 
-            this.textBoxFilterForLogRecords.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxFilterForLogRecords.Location = new System.Drawing.Point(686, 23);
-            this.textBoxFilterForLogRecords.Name = "textBoxFilterForLogRecords";
-            this.textBoxFilterForLogRecords.Size = new System.Drawing.Size(632, 23);
-            this.textBoxFilterForLogRecords.TabIndex = 19;
+            textBoxFilterForLogRecords.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxFilterForLogRecords.Location = new Point(686, 23);
+            textBoxFilterForLogRecords.Name = "textBoxFilterForLogRecords";
+            textBoxFilterForLogRecords.Size = new Size(632, 23);
+            textBoxFilterForLogRecords.TabIndex = 19;
             // 
             // label25
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(598, 25);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(82, 15);
-            this.label25.TabIndex = 18;
-            this.label25.Text = "Фильтр строк";
+            label25.AutoSize = true;
+            label25.Location = new Point(598, 25);
+            label25.Name = "label25";
+            label25.Size = new Size(82, 15);
+            label25.TabIndex = 18;
+            label25.Text = "Фильтр строк";
             // 
             // numericUpDown_LogRecReturnRecCount
             // 
-            this.numericUpDown_LogRecReturnRecCount.Location = new System.Drawing.Point(499, 23);
-            this.numericUpDown_LogRecReturnRecCount.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.numericUpDown_LogRecReturnRecCount.Name = "numericUpDown_LogRecReturnRecCount";
-            this.numericUpDown_LogRecReturnRecCount.Size = new System.Drawing.Size(82, 23);
-            this.numericUpDown_LogRecReturnRecCount.TabIndex = 12;
-            this.numericUpDown_LogRecReturnRecCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            numericUpDown_LogRecReturnRecCount.Location = new Point(499, 23);
+            numericUpDown_LogRecReturnRecCount.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
+            numericUpDown_LogRecReturnRecCount.Name = "numericUpDown_LogRecReturnRecCount";
+            numericUpDown_LogRecReturnRecCount.Size = new Size(82, 23);
+            numericUpDown_LogRecReturnRecCount.TabIndex = 12;
+            numericUpDown_LogRecReturnRecCount.TextAlign = HorizontalAlignment.Center;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(453, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 15);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Строк";
+            label2.AutoSize = true;
+            label2.Location = new Point(453, 26);
+            label2.Name = "label2";
+            label2.Size = new Size(40, 15);
+            label2.TabIndex = 11;
+            label2.Text = "Строк";
             // 
             // numericUpDown_LogRecInterval
             // 
-            this.numericUpDown_LogRecInterval.Location = new System.Drawing.Point(354, 23);
-            this.numericUpDown_LogRecInterval.Maximum = new decimal(new int[] {
-            600000,
-            0,
-            0,
-            0});
-            this.numericUpDown_LogRecInterval.Name = "numericUpDown_LogRecInterval";
-            this.numericUpDown_LogRecInterval.Size = new System.Drawing.Size(82, 23);
-            this.numericUpDown_LogRecInterval.TabIndex = 10;
-            this.numericUpDown_LogRecInterval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDown_LogRecInterval.Value = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
+            numericUpDown_LogRecInterval.Location = new Point(354, 23);
+            numericUpDown_LogRecInterval.Maximum = new decimal(new int[] { 600000, 0, 0, 0 });
+            numericUpDown_LogRecInterval.Name = "numericUpDown_LogRecInterval";
+            numericUpDown_LogRecInterval.Size = new Size(82, 23);
+            numericUpDown_LogRecInterval.TabIndex = 10;
+            numericUpDown_LogRecInterval.TextAlign = HorizontalAlignment.Center;
+            numericUpDown_LogRecInterval.Value = new decimal(new int[] { 10000, 0, 0, 0 });
             // 
             // label18
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(-2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(277, 15);
-            this.label18.TabIndex = 9;
-            this.label18.Text = "Записи логирования, зарегистрированные в БД  ";
+            label18.AutoSize = true;
+            label18.Location = new Point(-2, 0);
+            label18.Name = "label18";
+            label18.Size = new Size(277, 15);
+            label18.TabIndex = 9;
+            label18.Text = "Записи логирования, зарегистрированные в БД  ";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(262, 27);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 15);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Интервал (мс)";
+            label6.AutoSize = true;
+            label6.Location = new Point(262, 27);
+            label6.Name = "label6";
+            label6.Size = new Size(86, 15);
+            label6.TabIndex = 8;
+            label6.Text = "Интервал (мс)";
             // 
             // checkBox_AutoRefreshLog
             // 
-            this.checkBox_AutoRefreshLog.AutoSize = true;
-            this.checkBox_AutoRefreshLog.Location = new System.Drawing.Point(122, 25);
-            this.checkBox_AutoRefreshLog.Name = "checkBox_AutoRefreshLog";
-            this.checkBox_AutoRefreshLog.Size = new System.Drawing.Size(119, 19);
-            this.checkBox_AutoRefreshLog.TabIndex = 5;
-            this.checkBox_AutoRefreshLog.Text = "Автообновление";
-            this.checkBox_AutoRefreshLog.UseVisualStyleBackColor = true;
+            checkBox_AutoRefreshLog.AutoSize = true;
+            checkBox_AutoRefreshLog.Location = new Point(122, 25);
+            checkBox_AutoRefreshLog.Name = "checkBox_AutoRefreshLog";
+            checkBox_AutoRefreshLog.Size = new Size(119, 19);
+            checkBox_AutoRefreshLog.TabIndex = 5;
+            checkBox_AutoRefreshLog.Text = "Автообновление";
+            checkBox_AutoRefreshLog.UseVisualStyleBackColor = true;
             // 
             // dataGridViewLogRecords
             // 
-            this.dataGridViewLogRecords.AllowUserToOrderColumns = true;
-            this.dataGridViewLogRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewLogRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewLogRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewLogRecords.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewLogRecords.Location = new System.Drawing.Point(6, 50);
-            this.dataGridViewLogRecords.Name = "dataGridViewLogRecords";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewLogRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.LimeGreen;
-            this.dataGridViewLogRecords.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewLogRecords.RowTemplate.Height = 25;
-            this.dataGridViewLogRecords.Size = new System.Drawing.Size(1405, 300);
-            this.dataGridViewLogRecords.TabIndex = 0;
+            dataGridViewLogRecords.AllowUserToOrderColumns = true;
+            dataGridViewLogRecords.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridViewLogRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewLogRecords.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dataGridViewLogRecords.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewLogRecords.Location = new Point(6, 50);
+            dataGridViewLogRecords.Name = "dataGridViewLogRecords";
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dataGridViewLogRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.BackColor = Color.Black;
+            dataGridViewCellStyle7.ForeColor = Color.LimeGreen;
+            dataGridViewLogRecords.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewLogRecords.RowTemplate.Height = 25;
+            dataGridViewLogRecords.Size = new Size(1405, 300);
+            dataGridViewLogRecords.TabIndex = 0;
             // 
             // button_RefreshLogRecords
             // 
-            this.button_RefreshLogRecords.Location = new System.Drawing.Point(9, 21);
-            this.button_RefreshLogRecords.Name = "button_RefreshLogRecords";
-            this.button_RefreshLogRecords.Size = new System.Drawing.Size(69, 23);
-            this.button_RefreshLogRecords.TabIndex = 1;
-            this.button_RefreshLogRecords.Text = "Обновить";
-            this.button_RefreshLogRecords.UseVisualStyleBackColor = true;
-            this.button_RefreshLogRecords.Click += new System.EventHandler(this.button_RefreshLogRecords_Click);
+            button_RefreshLogRecords.Location = new Point(9, 21);
+            button_RefreshLogRecords.Name = "button_RefreshLogRecords";
+            button_RefreshLogRecords.Size = new Size(69, 23);
+            button_RefreshLogRecords.TabIndex = 1;
+            button_RefreshLogRecords.Text = "Обновить";
+            button_RefreshLogRecords.UseVisualStyleBackColor = true;
+            button_RefreshLogRecords.Click += button_RefreshLogRecords_Click;
             // 
             // button_FilterFiltredRecs
             // 
-            this.button_FilterFiltredRecs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_FilterFiltredRecs.Location = new System.Drawing.Point(1324, 33);
-            this.button_FilterFiltredRecs.Name = "button_FilterFiltredRecs";
-            this.button_FilterFiltredRecs.Size = new System.Drawing.Size(84, 23);
-            this.button_FilterFiltredRecs.TabIndex = 21;
-            this.button_FilterFiltredRecs.Text = "Применить";
-            this.button_FilterFiltredRecs.UseVisualStyleBackColor = true;
-            this.button_FilterFiltredRecs.Click += new System.EventHandler(this.button_FilterFiltredRecs_Click);
+            button_FilterFiltredRecs.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button_FilterFiltredRecs.Location = new Point(1324, 33);
+            button_FilterFiltredRecs.Name = "button_FilterFiltredRecs";
+            button_FilterFiltredRecs.Size = new Size(84, 23);
+            button_FilterFiltredRecs.TabIndex = 21;
+            button_FilterFiltredRecs.Text = "Применить";
+            button_FilterFiltredRecs.UseVisualStyleBackColor = true;
+            button_FilterFiltredRecs.Click += button_FilterFiltredRecs_Click;
             // 
             // textBoxFilterForFiltredRecords
             // 
-            this.textBoxFilterForFiltredRecords.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxFilterForFiltredRecords.Location = new System.Drawing.Point(686, 34);
-            this.textBoxFilterForFiltredRecords.Name = "textBoxFilterForFiltredRecords";
-            this.textBoxFilterForFiltredRecords.Size = new System.Drawing.Size(632, 23);
-            this.textBoxFilterForFiltredRecords.TabIndex = 17;
+            textBoxFilterForFiltredRecords.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxFilterForFiltredRecords.Location = new Point(686, 34);
+            textBoxFilterForFiltredRecords.Name = "textBoxFilterForFiltredRecords";
+            textBoxFilterForFiltredRecords.Size = new Size(632, 23);
+            textBoxFilterForFiltredRecords.TabIndex = 17;
             // 
             // label24
             // 
-            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(598, 36);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(82, 15);
-            this.label24.TabIndex = 16;
-            this.label24.Text = "Фильтр строк";
+            label24.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label24.AutoSize = true;
+            label24.Location = new Point(598, 36);
+            label24.Name = "label24";
+            label24.Size = new Size(82, 15);
+            label24.TabIndex = 16;
+            label24.Text = "Фильтр строк";
             // 
             // numericUpDown_FiltredRecReturnRecCount
             // 
-            this.numericUpDown_FiltredRecReturnRecCount.Location = new System.Drawing.Point(499, 35);
-            this.numericUpDown_FiltredRecReturnRecCount.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.numericUpDown_FiltredRecReturnRecCount.Name = "numericUpDown_FiltredRecReturnRecCount";
-            this.numericUpDown_FiltredRecReturnRecCount.Size = new System.Drawing.Size(82, 23);
-            this.numericUpDown_FiltredRecReturnRecCount.TabIndex = 15;
-            this.numericUpDown_FiltredRecReturnRecCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            numericUpDown_FiltredRecReturnRecCount.Location = new Point(499, 35);
+            numericUpDown_FiltredRecReturnRecCount.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
+            numericUpDown_FiltredRecReturnRecCount.Name = "numericUpDown_FiltredRecReturnRecCount";
+            numericUpDown_FiltredRecReturnRecCount.Size = new Size(82, 23);
+            numericUpDown_FiltredRecReturnRecCount.TabIndex = 15;
+            numericUpDown_FiltredRecReturnRecCount.TextAlign = HorizontalAlignment.Center;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(453, 37);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 15);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Строк";
+            label5.AutoSize = true;
+            label5.Location = new Point(453, 37);
+            label5.Name = "label5";
+            label5.Size = new Size(40, 15);
+            label5.TabIndex = 14;
+            label5.Text = "Строк";
             // 
             // numericUpDown_FiltredRecInterval
             // 
-            this.numericUpDown_FiltredRecInterval.Location = new System.Drawing.Point(354, 35);
-            this.numericUpDown_FiltredRecInterval.Maximum = new decimal(new int[] {
-            600000,
-            0,
-            0,
-            0});
-            this.numericUpDown_FiltredRecInterval.Name = "numericUpDown_FiltredRecInterval";
-            this.numericUpDown_FiltredRecInterval.Size = new System.Drawing.Size(82, 23);
-            this.numericUpDown_FiltredRecInterval.TabIndex = 13;
-            this.numericUpDown_FiltredRecInterval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDown_FiltredRecInterval.Value = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
+            numericUpDown_FiltredRecInterval.Location = new Point(354, 35);
+            numericUpDown_FiltredRecInterval.Maximum = new decimal(new int[] { 600000, 0, 0, 0 });
+            numericUpDown_FiltredRecInterval.Name = "numericUpDown_FiltredRecInterval";
+            numericUpDown_FiltredRecInterval.Size = new Size(82, 23);
+            numericUpDown_FiltredRecInterval.TabIndex = 13;
+            numericUpDown_FiltredRecInterval.TextAlign = HorizontalAlignment.Center;
+            numericUpDown_FiltredRecInterval.Value = new decimal(new int[] { 100000, 0, 0, 0 });
             // 
             // label17
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(154, 15);
-            this.label17.TabIndex = 7;
-            this.label17.Text = "Отфильтрованные данные";
+            label17.AutoSize = true;
+            label17.Location = new Point(6, 0);
+            label17.Name = "label17";
+            label17.Size = new Size(154, 15);
+            label17.TabIndex = 7;
+            label17.Text = "Отфильтрованные данные";
             // 
             // dataGridViewFiltredRecords
             // 
-            this.dataGridViewFiltredRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewFiltredRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewFiltredRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewFiltredRecords.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridViewFiltredRecords.Location = new System.Drawing.Point(6, 63);
-            this.dataGridViewFiltredRecords.Name = "dataGridViewFiltredRecords";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewFiltredRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.LimeGreen;
-            this.dataGridViewFiltredRecords.RowsDefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridViewFiltredRecords.RowTemplate.Height = 25;
-            this.dataGridViewFiltredRecords.Size = new System.Drawing.Size(1402, 298);
-            this.dataGridViewFiltredRecords.TabIndex = 2;
-            this.dataGridViewFiltredRecords.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewFiltredRecords_CellDoubleClick);
+            dataGridViewFiltredRecords.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Control;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dataGridViewFiltredRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewFiltredRecords.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = SystemColors.Window;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
+            dataGridViewFiltredRecords.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewFiltredRecords.Location = new Point(6, 63);
+            dataGridViewFiltredRecords.Name = "dataGridViewFiltredRecords";
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = SystemColors.Control;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            dataGridViewFiltredRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.BackColor = Color.Black;
+            dataGridViewCellStyle11.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = Color.LimeGreen;
+            dataGridViewFiltredRecords.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewFiltredRecords.RowTemplate.Height = 25;
+            dataGridViewFiltredRecords.Size = new Size(1402, 298);
+            dataGridViewFiltredRecords.TabIndex = 2;
+            dataGridViewFiltredRecords.CellDoubleClick += dataGridViewFiltredRecords_CellDoubleClick;
             // 
             // label_FiltredRecInterval
             // 
-            this.label_FiltredRecInterval.AutoSize = true;
-            this.label_FiltredRecInterval.Location = new System.Drawing.Point(262, 36);
-            this.label_FiltredRecInterval.Name = "label_FiltredRecInterval";
-            this.label_FiltredRecInterval.Size = new System.Drawing.Size(86, 15);
-            this.label_FiltredRecInterval.TabIndex = 6;
-            this.label_FiltredRecInterval.Text = "Интервал (мс)";
+            label_FiltredRecInterval.AutoSize = true;
+            label_FiltredRecInterval.Location = new Point(262, 36);
+            label_FiltredRecInterval.Name = "label_FiltredRecInterval";
+            label_FiltredRecInterval.Size = new Size(86, 15);
+            label_FiltredRecInterval.TabIndex = 6;
+            label_FiltredRecInterval.Text = "Интервал (мс)";
             // 
             // btnRefreshFiltredRecords
             // 
-            this.btnRefreshFiltredRecords.Location = new System.Drawing.Point(9, 33);
-            this.btnRefreshFiltredRecords.Name = "btnRefreshFiltredRecords";
-            this.btnRefreshFiltredRecords.Size = new System.Drawing.Size(75, 23);
-            this.btnRefreshFiltredRecords.TabIndex = 3;
-            this.btnRefreshFiltredRecords.Text = "Обновить";
-            this.btnRefreshFiltredRecords.UseVisualStyleBackColor = true;
-            this.btnRefreshFiltredRecords.Click += new System.EventHandler(this.btnRefreshFiltredRecords_Click);
+            btnRefreshFiltredRecords.Location = new Point(9, 33);
+            btnRefreshFiltredRecords.Name = "btnRefreshFiltredRecords";
+            btnRefreshFiltredRecords.Size = new Size(75, 23);
+            btnRefreshFiltredRecords.TabIndex = 3;
+            btnRefreshFiltredRecords.Text = "Обновить";
+            btnRefreshFiltredRecords.UseVisualStyleBackColor = true;
+            btnRefreshFiltredRecords.Click += btnRefreshFiltredRecords_Click;
             // 
             // checkBox_AutoRefreshFilter
             // 
-            this.checkBox_AutoRefreshFilter.AutoSize = true;
-            this.checkBox_AutoRefreshFilter.Location = new System.Drawing.Point(122, 35);
-            this.checkBox_AutoRefreshFilter.Name = "checkBox_AutoRefreshFilter";
-            this.checkBox_AutoRefreshFilter.Size = new System.Drawing.Size(119, 19);
-            this.checkBox_AutoRefreshFilter.TabIndex = 4;
-            this.checkBox_AutoRefreshFilter.Text = "Автообновление";
-            this.checkBox_AutoRefreshFilter.UseVisualStyleBackColor = true;
+            checkBox_AutoRefreshFilter.AutoSize = true;
+            checkBox_AutoRefreshFilter.Location = new Point(122, 35);
+            checkBox_AutoRefreshFilter.Name = "checkBox_AutoRefreshFilter";
+            checkBox_AutoRefreshFilter.Size = new Size(119, 19);
+            checkBox_AutoRefreshFilter.TabIndex = 4;
+            checkBox_AutoRefreshFilter.Text = "Автообновление";
+            checkBox_AutoRefreshFilter.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.numericUpDown_TaskStatReturnRecCount);
-            this.tabPage4.Controls.Add(this.label21);
-            this.tabPage4.Controls.Add(this.numericUpDown_IntervalTaskStat);
-            this.tabPage4.Controls.Add(this.splitContainer3);
-            this.tabPage4.Controls.Add(this.splitContainer2);
-            this.tabPage4.Controls.Add(this.label7);
-            this.tabPage4.Controls.Add(this.checkBox_AutoRefreshTaskStat);
-            this.tabPage4.Controls.Add(this.btnRefreshTaskStat);
-            this.tabPage4.Controls.Add(this.dataGridViewTaskStat);
-            this.tabPage4.Location = new System.Drawing.Point(4, 24);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1421, 735);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Статистика";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            tabPage4.Controls.Add(numericUpDown_TaskStatReturnRecCount);
+            tabPage4.Controls.Add(label21);
+            tabPage4.Controls.Add(numericUpDown_IntervalTaskStat);
+            tabPage4.Controls.Add(splitContainer3);
+            tabPage4.Controls.Add(splitContainer2);
+            tabPage4.Controls.Add(label7);
+            tabPage4.Controls.Add(checkBox_AutoRefreshTaskStat);
+            tabPage4.Controls.Add(btnRefreshTaskStat);
+            tabPage4.Controls.Add(dataGridViewTaskStat);
+            tabPage4.Location = new Point(4, 24);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Padding = new Padding(3);
+            tabPage4.Size = new Size(1421, 735);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "Статистика";
+            tabPage4.UseVisualStyleBackColor = true;
             // 
             // numericUpDown_TaskStatReturnRecCount
             // 
-            this.numericUpDown_TaskStatReturnRecCount.Location = new System.Drawing.Point(479, 7);
-            this.numericUpDown_TaskStatReturnRecCount.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numericUpDown_TaskStatReturnRecCount.Name = "numericUpDown_TaskStatReturnRecCount";
-            this.numericUpDown_TaskStatReturnRecCount.Size = new System.Drawing.Size(82, 23);
-            this.numericUpDown_TaskStatReturnRecCount.TabIndex = 22;
-            this.numericUpDown_TaskStatReturnRecCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            numericUpDown_TaskStatReturnRecCount.Location = new Point(479, 7);
+            numericUpDown_TaskStatReturnRecCount.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            numericUpDown_TaskStatReturnRecCount.Name = "numericUpDown_TaskStatReturnRecCount";
+            numericUpDown_TaskStatReturnRecCount.Size = new Size(82, 23);
+            numericUpDown_TaskStatReturnRecCount.TabIndex = 22;
+            numericUpDown_TaskStatReturnRecCount.TextAlign = HorizontalAlignment.Center;
             // 
             // label21
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(433, 9);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(40, 15);
-            this.label21.TabIndex = 21;
-            this.label21.Text = "Строк";
+            label21.AutoSize = true;
+            label21.Location = new Point(433, 9);
+            label21.Name = "label21";
+            label21.Size = new Size(40, 15);
+            label21.TabIndex = 21;
+            label21.Text = "Строк";
             // 
             // numericUpDown_IntervalTaskStat
             // 
-            this.numericUpDown_IntervalTaskStat.Location = new System.Drawing.Point(334, 7);
-            this.numericUpDown_IntervalTaskStat.Maximum = new decimal(new int[] {
-            600000,
-            0,
-            0,
-            0});
-            this.numericUpDown_IntervalTaskStat.Minimum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numericUpDown_IntervalTaskStat.Name = "numericUpDown_IntervalTaskStat";
-            this.numericUpDown_IntervalTaskStat.Size = new System.Drawing.Size(82, 23);
-            this.numericUpDown_IntervalTaskStat.TabIndex = 20;
-            this.numericUpDown_IntervalTaskStat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDown_IntervalTaskStat.Value = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
+            numericUpDown_IntervalTaskStat.Location = new Point(334, 7);
+            numericUpDown_IntervalTaskStat.Maximum = new decimal(new int[] { 600000, 0, 0, 0 });
+            numericUpDown_IntervalTaskStat.Minimum = new decimal(new int[] { 10000, 0, 0, 0 });
+            numericUpDown_IntervalTaskStat.Name = "numericUpDown_IntervalTaskStat";
+            numericUpDown_IntervalTaskStat.Size = new Size(82, 23);
+            numericUpDown_IntervalTaskStat.TabIndex = 20;
+            numericUpDown_IntervalTaskStat.TextAlign = HorizontalAlignment.Center;
+            numericUpDown_IntervalTaskStat.Value = new decimal(new int[] { 10000, 0, 0, 0 });
             // 
             // splitContainer3
             // 
-            this.splitContainer3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer3.Location = new System.Drawing.Point(6, 533);
-            this.splitContainer3.Name = "splitContainer3";
+            splitContainer3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            splitContainer3.BorderStyle = BorderStyle.Fixed3D;
+            splitContainer3.Location = new Point(6, 533);
+            splitContainer3.Name = "splitContainer3";
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.label11);
-            this.splitContainer3.Panel1.Controls.Add(this.dataGridViewTaskStatDetailU);
+            splitContainer3.Panel1.Controls.Add(label11);
+            splitContainer3.Panel1.Controls.Add(dataGridViewTaskStatDetailU);
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.chart2);
-            this.splitContainer3.Size = new System.Drawing.Size(1407, 196);
-            this.splitContainer3.SplitterDistance = 630;
-            this.splitContainer3.TabIndex = 19;
+            splitContainer3.Panel2.Controls.Add(chart2);
+            splitContainer3.Size = new Size(1407, 196);
+            splitContainer3.SplitterDistance = 630;
+            splitContainer3.TabIndex = 19;
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(303, 15);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Статистика задач объектов (U) и задач протоколов (S)";
+            label11.AutoSize = true;
+            label11.Location = new Point(3, 0);
+            label11.Name = "label11";
+            label11.Size = new Size(303, 15);
+            label11.TabIndex = 13;
+            label11.Text = "Статистика задач объектов (U) и задач протоколов (S)";
             // 
             // dataGridViewTaskStatDetailU
             // 
-            this.dataGridViewTaskStatDetailU.AllowUserToAddRows = false;
-            this.dataGridViewTaskStatDetailU.AllowUserToDeleteRows = false;
-            this.dataGridViewTaskStatDetailU.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTaskStatDetailU.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridViewTaskStatDetailU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTaskStatDetailU.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_rec,
-            this.TaskIndex,
-            this.CicleCount,
-            this.ErrCount,
-            this.AvgCicle,
-            this.MinCicle,
-            this.MaxCicle,
-            this.AvgCicleReal,
-            this.MinCicleReal,
-            this.MaxCicleReal,
-            this.TimeRead,
-            this.TimeWork,
-            this.TimeWrite,
-            this.Mem});
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTaskStatDetailU.DefaultCellStyle = dataGridViewCellStyle24;
-            this.dataGridViewTaskStatDetailU.Location = new System.Drawing.Point(3, 18);
-            this.dataGridViewTaskStatDetailU.Name = "dataGridViewTaskStatDetailU";
-            this.dataGridViewTaskStatDetailU.ReadOnly = true;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTaskStatDetailU.RowHeadersDefaultCellStyle = dataGridViewCellStyle25;
-            this.dataGridViewTaskStatDetailU.RowTemplate.Height = 25;
-            this.dataGridViewTaskStatDetailU.Size = new System.Drawing.Size(620, 171);
-            this.dataGridViewTaskStatDetailU.TabIndex = 11;
-            this.dataGridViewTaskStatDetailU.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewTaskStatDetailU_DataError);
+            dataGridViewTaskStatDetailU.AllowUserToAddRows = false;
+            dataGridViewTaskStatDetailU.AllowUserToDeleteRows = false;
+            dataGridViewTaskStatDetailU.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = SystemColors.Control;
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
+            dataGridViewTaskStatDetailU.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewTaskStatDetailU.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewTaskStatDetailU.Columns.AddRange(new DataGridViewColumn[] { id_rec, TaskIndex, CicleCount, ErrCount, AvgCicle, MinCicle, MaxCicle, AvgCicleReal, MinCicleReal, MaxCicleReal, TimeRead, TimeWork, TimeWrite, Mem });
+            dataGridViewCellStyle24.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = SystemColors.Window;
+            dataGridViewCellStyle24.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle24.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle24.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = DataGridViewTriState.False;
+            dataGridViewTaskStatDetailU.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewTaskStatDetailU.Location = new Point(3, 18);
+            dataGridViewTaskStatDetailU.Name = "dataGridViewTaskStatDetailU";
+            dataGridViewTaskStatDetailU.ReadOnly = true;
+            dataGridViewCellStyle25.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = SystemColors.Control;
+            dataGridViewCellStyle25.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle25.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = DataGridViewTriState.True;
+            dataGridViewTaskStatDetailU.RowHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewTaskStatDetailU.RowTemplate.Height = 25;
+            dataGridViewTaskStatDetailU.Size = new Size(620, 171);
+            dataGridViewTaskStatDetailU.TabIndex = 11;
+            dataGridViewTaskStatDetailU.DataError += dataGridViewTaskStatDetailU_DataError;
             // 
             // id_rec
             // 
-            this.id_rec.DataPropertyName = "id_rec";
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.id_rec.DefaultCellStyle = dataGridViewCellStyle13;
-            this.id_rec.HeaderText = "Id записи";
-            this.id_rec.Name = "id_rec";
-            this.id_rec.ReadOnly = true;
-            this.id_rec.Width = 75;
+            id_rec.DataPropertyName = "id_rec";
+            dataGridViewCellStyle13.BackColor = Color.FromArgb(224, 224, 224);
+            id_rec.DefaultCellStyle = dataGridViewCellStyle13;
+            id_rec.HeaderText = "Id записи";
+            id_rec.Name = "id_rec";
+            id_rec.ReadOnly = true;
+            id_rec.Width = 75;
             // 
             // TaskIndex
             // 
-            this.TaskIndex.DataPropertyName = "TaskIndex";
-            this.TaskIndex.HeaderText = "Индекс задачи";
-            this.TaskIndex.Name = "TaskIndex";
-            this.TaskIndex.ReadOnly = true;
-            this.TaskIndex.Width = 50;
+            TaskIndex.DataPropertyName = "TaskIndex";
+            TaskIndex.HeaderText = "Индекс задачи";
+            TaskIndex.Name = "TaskIndex";
+            TaskIndex.ReadOnly = true;
+            TaskIndex.Width = 50;
             // 
             // CicleCount
             // 
-            this.CicleCount.DataPropertyName = "CicleCount";
-            this.CicleCount.HeaderText = "кол-во циклов";
-            this.CicleCount.Name = "CicleCount";
-            this.CicleCount.ReadOnly = true;
-            this.CicleCount.Width = 70;
+            CicleCount.DataPropertyName = "CicleCount";
+            CicleCount.HeaderText = "кол-во циклов";
+            CicleCount.Name = "CicleCount";
+            CicleCount.ReadOnly = true;
+            CicleCount.Width = 70;
             // 
             // ErrCount
             // 
-            this.ErrCount.DataPropertyName = "ErrCount";
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ErrCount.DefaultCellStyle = dataGridViewCellStyle14;
-            this.ErrCount.HeaderText = "Ошибки";
-            this.ErrCount.Name = "ErrCount";
-            this.ErrCount.ReadOnly = true;
-            this.ErrCount.Width = 70;
+            ErrCount.DataPropertyName = "ErrCount";
+            dataGridViewCellStyle14.BackColor = Color.FromArgb(255, 192, 192);
+            ErrCount.DefaultCellStyle = dataGridViewCellStyle14;
+            ErrCount.HeaderText = "Ошибки";
+            ErrCount.Name = "ErrCount";
+            ErrCount.ReadOnly = true;
+            ErrCount.Width = 70;
             // 
             // AvgCicle
             // 
-            this.AvgCicle.DataPropertyName = "AvgCicle";
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.AvgCicle.DefaultCellStyle = dataGridViewCellStyle15;
-            this.AvgCicle.HeaderText = "среднее цикла";
-            this.AvgCicle.Name = "AvgCicle";
-            this.AvgCicle.ReadOnly = true;
-            this.AvgCicle.Width = 70;
+            AvgCicle.DataPropertyName = "AvgCicle";
+            dataGridViewCellStyle15.BackColor = Color.FromArgb(192, 255, 192);
+            AvgCicle.DefaultCellStyle = dataGridViewCellStyle15;
+            AvgCicle.HeaderText = "среднее цикла";
+            AvgCicle.Name = "AvgCicle";
+            AvgCicle.ReadOnly = true;
+            AvgCicle.Width = 70;
             // 
             // MinCicle
             // 
-            this.MinCicle.DataPropertyName = "MinCicle";
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.MinCicle.DefaultCellStyle = dataGridViewCellStyle16;
-            this.MinCicle.HeaderText = "мин.";
-            this.MinCicle.Name = "MinCicle";
-            this.MinCicle.ReadOnly = true;
-            this.MinCicle.ToolTipText = "минимальное цикла";
-            this.MinCicle.Width = 70;
+            MinCicle.DataPropertyName = "MinCicle";
+            dataGridViewCellStyle16.BackColor = Color.FromArgb(192, 255, 192);
+            MinCicle.DefaultCellStyle = dataGridViewCellStyle16;
+            MinCicle.HeaderText = "мин.";
+            MinCicle.Name = "MinCicle";
+            MinCicle.ReadOnly = true;
+            MinCicle.ToolTipText = "минимальное цикла";
+            MinCicle.Width = 70;
             // 
             // MaxCicle
             // 
-            this.MaxCicle.DataPropertyName = "MaxCicle";
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.MaxCicle.DefaultCellStyle = dataGridViewCellStyle17;
-            this.MaxCicle.HeaderText = "макс.";
-            this.MaxCicle.Name = "MaxCicle";
-            this.MaxCicle.ReadOnly = true;
-            this.MaxCicle.ToolTipText = "максимальное цикла";
-            this.MaxCicle.Width = 70;
+            MaxCicle.DataPropertyName = "MaxCicle";
+            dataGridViewCellStyle17.BackColor = Color.FromArgb(192, 255, 192);
+            MaxCicle.DefaultCellStyle = dataGridViewCellStyle17;
+            MaxCicle.HeaderText = "макс.";
+            MaxCicle.Name = "MaxCicle";
+            MaxCicle.ReadOnly = true;
+            MaxCicle.ToolTipText = "максимальное цикла";
+            MaxCicle.Width = 70;
             // 
             // AvgCicleReal
             // 
-            this.AvgCicleReal.DataPropertyName = "AvgCicleReal";
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.AvgCicleReal.DefaultCellStyle = dataGridViewCellStyle18;
-            this.AvgCicleReal.HeaderText = "среднее цикла (факт.)";
-            this.AvgCicleReal.Name = "AvgCicleReal";
-            this.AvgCicleReal.ReadOnly = true;
-            this.AvgCicleReal.ToolTipText = "среднее реального выполнения";
-            this.AvgCicleReal.Width = 70;
+            AvgCicleReal.DataPropertyName = "AvgCicleReal";
+            dataGridViewCellStyle18.BackColor = Color.FromArgb(192, 255, 255);
+            AvgCicleReal.DefaultCellStyle = dataGridViewCellStyle18;
+            AvgCicleReal.HeaderText = "среднее цикла (факт.)";
+            AvgCicleReal.Name = "AvgCicleReal";
+            AvgCicleReal.ReadOnly = true;
+            AvgCicleReal.ToolTipText = "среднее реального выполнения";
+            AvgCicleReal.Width = 70;
             // 
             // MinCicleReal
             // 
-            this.MinCicleReal.DataPropertyName = "MinCicleReal";
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.MinCicleReal.DefaultCellStyle = dataGridViewCellStyle19;
-            this.MinCicleReal.HeaderText = "мин.";
-            this.MinCicleReal.Name = "MinCicleReal";
-            this.MinCicleReal.ReadOnly = true;
-            this.MinCicleReal.ToolTipText = "минимальное фактическое";
-            this.MinCicleReal.Width = 70;
+            MinCicleReal.DataPropertyName = "MinCicleReal";
+            dataGridViewCellStyle19.BackColor = Color.FromArgb(192, 255, 255);
+            MinCicleReal.DefaultCellStyle = dataGridViewCellStyle19;
+            MinCicleReal.HeaderText = "мин.";
+            MinCicleReal.Name = "MinCicleReal";
+            MinCicleReal.ReadOnly = true;
+            MinCicleReal.ToolTipText = "минимальное фактическое";
+            MinCicleReal.Width = 70;
             // 
             // MaxCicleReal
             // 
-            this.MaxCicleReal.DataPropertyName = "MaxCicleReal";
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.MaxCicleReal.DefaultCellStyle = dataGridViewCellStyle20;
-            this.MaxCicleReal.HeaderText = "макс.";
-            this.MaxCicleReal.Name = "MaxCicleReal";
-            this.MaxCicleReal.ReadOnly = true;
-            this.MaxCicleReal.ToolTipText = "максимальное фактическое";
-            this.MaxCicleReal.Width = 70;
+            MaxCicleReal.DataPropertyName = "MaxCicleReal";
+            dataGridViewCellStyle20.BackColor = Color.FromArgb(192, 255, 255);
+            MaxCicleReal.DefaultCellStyle = dataGridViewCellStyle20;
+            MaxCicleReal.HeaderText = "макс.";
+            MaxCicleReal.Name = "MaxCicleReal";
+            MaxCicleReal.ReadOnly = true;
+            MaxCicleReal.ToolTipText = "максимальное фактическое";
+            MaxCicleReal.Width = 70;
             // 
             // TimeRead
             // 
-            this.TimeRead.DataPropertyName = "TimeRead";
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TimeRead.DefaultCellStyle = dataGridViewCellStyle21;
-            this.TimeRead.HeaderText = "время чтения";
-            this.TimeRead.Name = "TimeRead";
-            this.TimeRead.ReadOnly = true;
-            this.TimeRead.ToolTipText = "время чтения входных данных в последнем цикле";
-            this.TimeRead.Width = 70;
+            TimeRead.DataPropertyName = "TimeRead";
+            dataGridViewCellStyle21.BackColor = Color.FromArgb(255, 255, 192);
+            TimeRead.DefaultCellStyle = dataGridViewCellStyle21;
+            TimeRead.HeaderText = "время чтения";
+            TimeRead.Name = "TimeRead";
+            TimeRead.ReadOnly = true;
+            TimeRead.ToolTipText = "время чтения входных данных в последнем цикле";
+            TimeRead.Width = 70;
             // 
             // TimeWork
             // 
-            this.TimeWork.DataPropertyName = "TimeWork";
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TimeWork.DefaultCellStyle = dataGridViewCellStyle22;
-            this.TimeWork.HeaderText = "время вып.";
-            this.TimeWork.Name = "TimeWork";
-            this.TimeWork.ReadOnly = true;
-            this.TimeWork.ToolTipText = "время выполнения задачи в последнем цикле";
-            this.TimeWork.Width = 70;
+            TimeWork.DataPropertyName = "TimeWork";
+            dataGridViewCellStyle22.BackColor = Color.FromArgb(255, 255, 192);
+            TimeWork.DefaultCellStyle = dataGridViewCellStyle22;
+            TimeWork.HeaderText = "время вып.";
+            TimeWork.Name = "TimeWork";
+            TimeWork.ReadOnly = true;
+            TimeWork.ToolTipText = "время выполнения задачи в последнем цикле";
+            TimeWork.Width = 70;
             // 
             // TimeWrite
             // 
-            this.TimeWrite.DataPropertyName = "TimeWrite";
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TimeWrite.DefaultCellStyle = dataGridViewCellStyle23;
-            this.TimeWrite.HeaderText = "время записи";
-            this.TimeWrite.Name = "TimeWrite";
-            this.TimeWrite.ReadOnly = true;
-            this.TimeWrite.ToolTipText = "время записи выходных данных в последнем цикле";
-            this.TimeWrite.Width = 70;
+            TimeWrite.DataPropertyName = "TimeWrite";
+            dataGridViewCellStyle23.BackColor = Color.FromArgb(255, 255, 192);
+            TimeWrite.DefaultCellStyle = dataGridViewCellStyle23;
+            TimeWrite.HeaderText = "время записи";
+            TimeWrite.Name = "TimeWrite";
+            TimeWrite.ReadOnly = true;
+            TimeWrite.ToolTipText = "время записи выходных данных в последнем цикле";
+            TimeWrite.Width = 70;
             // 
             // Mem
             // 
-            this.Mem.DataPropertyName = "Mem";
-            this.Mem.HeaderText = "объём памяти";
-            this.Mem.Name = "Mem";
-            this.Mem.ReadOnly = true;
-            this.Mem.ToolTipText = "объем памяти виртуальной машины Kb - статистика задачи объектов";
-            this.Mem.Width = 70;
+            Mem.DataPropertyName = "Mem";
+            Mem.HeaderText = "объём памяти";
+            Mem.Name = "Mem";
+            Mem.ReadOnly = true;
+            Mem.ToolTipText = "объем памяти виртуальной машины Kb - статистика задачи объектов";
+            Mem.Width = 70;
             // 
             // chart2
             // 
-            this.chart2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.chart2.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.Emboss;
+            chart2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            chart2.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.Emboss;
             chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
+            chart2.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart2.Legends.Add(legend1);
-            this.chart2.Location = new System.Drawing.Point(3, 3);
-            this.chart2.Name = "chart2";
+            chart2.Legends.Add(legend1);
+            chart2.Location = new Point(3, 3);
+            chart2.Name = "chart2";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            series1.Font = new Font("Microsoft Sans Serif", 6F, FontStyle.Regular, GraphicsUnit.Point);
             series1.Legend = "Legend1";
             series1.LegendText = "U0";
             series1.Name = "Series1";
             series1.ToolTip = "#VAL{N0}";
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.chart2.Series.Add(series1);
-            this.chart2.Size = new System.Drawing.Size(763, 186);
-            this.chart2.TabIndex = 6;
-            this.chart2.Text = "chart2";
-            this.chart2.Click += new System.EventHandler(this.chart2_Click);
+            chart2.Series.Add(series1);
+            chart2.Size = new Size(763, 186);
+            chart2.TabIndex = 6;
+            chart2.Text = "chart2";
+            chart2.Click += chart2_Click;
             // 
             // splitContainer2
             // 
-            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer2.Location = new System.Drawing.Point(6, 206);
-            this.splitContainer2.Name = "splitContainer2";
+            splitContainer2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            splitContainer2.BorderStyle = BorderStyle.Fixed3D;
+            splitContainer2.Location = new Point(6, 206);
+            splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.chart1);
-            this.splitContainer2.Panel1.Controls.Add(this.dataGridViewTaskPrimary);
-            this.splitContainer2.Panel1.Controls.Add(this.label13);
+            splitContainer2.Panel1.Controls.Add(chart1);
+            splitContainer2.Panel1.Controls.Add(dataGridViewTaskPrimary);
+            splitContainer2.Panel1.Controls.Add(label13);
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.numericUpDown_ArchStatReturnRecCount);
-            this.splitContainer2.Panel2.Controls.Add(this.label22);
-            this.splitContainer2.Panel2.Controls.Add(this.numericUpDown_IntervalArchStat);
-            this.splitContainer2.Panel2.Controls.Add(this.label16);
-            this.splitContainer2.Panel2.Controls.Add(this.dataGridViewArchStatDetail);
-            this.splitContainer2.Panel2.Controls.Add(this.label15);
-            this.splitContainer2.Panel2.Controls.Add(this.checkBox_AutoRefreshArchStat);
-            this.splitContainer2.Panel2.Controls.Add(this.btnRefreshArchStat);
-            this.splitContainer2.Panel2.Controls.Add(this.dataGridViewArchStat);
-            this.splitContainer2.Panel2.Controls.Add(this.label14);
-            this.splitContainer2.Size = new System.Drawing.Size(1407, 321);
-            this.splitContainer2.SplitterDistance = 704;
-            this.splitContainer2.TabIndex = 16;
+            splitContainer2.Panel2.Controls.Add(numericUpDown_ArchStatReturnRecCount);
+            splitContainer2.Panel2.Controls.Add(label22);
+            splitContainer2.Panel2.Controls.Add(numericUpDown_IntervalArchStat);
+            splitContainer2.Panel2.Controls.Add(label16);
+            splitContainer2.Panel2.Controls.Add(dataGridViewArchStatDetail);
+            splitContainer2.Panel2.Controls.Add(label15);
+            splitContainer2.Panel2.Controls.Add(checkBox_AutoRefreshArchStat);
+            splitContainer2.Panel2.Controls.Add(btnRefreshArchStat);
+            splitContainer2.Panel2.Controls.Add(dataGridViewArchStat);
+            splitContainer2.Panel2.Controls.Add(label14);
+            splitContainer2.Size = new Size(1407, 321);
+            splitContainer2.SplitterDistance = 704;
+            splitContainer2.TabIndex = 16;
             // 
             // chart1
             // 
-            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.chart1.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.Emboss;
+            chart1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            chart1.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.Emboss;
             chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            chart1.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(3, 112);
-            this.chart1.Name = "chart1";
+            chart1.Legends.Add(legend2);
+            chart1.Location = new Point(3, 112);
+            chart1.Name = "chart1";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea;
             series2.Legend = "Legend1";
@@ -1384,637 +1286,592 @@
             series2.ToolTip = "#VAL{N0}";
             series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
             series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(694, 201);
-            this.chart1.TabIndex = 5;
-            this.chart1.Text = "chart1";
+            chart1.Series.Add(series2);
+            chart1.Size = new Size(694, 201);
+            chart1.TabIndex = 5;
+            chart1.Text = "chart1";
             // 
             // dataGridViewTaskPrimary
             // 
-            this.dataGridViewTaskPrimary.AllowUserToAddRows = false;
-            this.dataGridViewTaskPrimary.AllowUserToDeleteRows = false;
-            this.dataGridViewTaskPrimary.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewTaskPrimary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTaskPrimary.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.TaskCicle,
-            this.Date,
-            this.Time,
-            this.N,
-            this.N2,
-            this.ModbusRTUSlave,
-            this.A,
-            this.O,
-            this.HR,
-            this.R,
-            this.MemoryUsing});
-            this.dataGridViewTaskPrimary.Location = new System.Drawing.Point(3, 21);
-            this.dataGridViewTaskPrimary.Name = "dataGridViewTaskPrimary";
-            this.dataGridViewTaskPrimary.ReadOnly = true;
-            this.dataGridViewTaskPrimary.RowTemplate.Height = 25;
-            this.dataGridViewTaskPrimary.Size = new System.Drawing.Size(694, 86);
-            this.dataGridViewTaskPrimary.TabIndex = 15;
-            this.toolTip1.SetToolTip(this.dataGridViewTaskPrimary, "Каждые 10 сек отображается диагностическое сообщение со статистикой по всем задач" +
-        "ам\r\n");
-            this.dataGridViewTaskPrimary.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewTaskPrimary_DataError);
+            dataGridViewTaskPrimary.AllowUserToAddRows = false;
+            dataGridViewTaskPrimary.AllowUserToDeleteRows = false;
+            dataGridViewTaskPrimary.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewTaskPrimary.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewTaskPrimary.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, TaskCicle, Date, Time, N, N2, ModbusRTUSlave, A, O, HR, R, MemoryUsing });
+            dataGridViewTaskPrimary.Location = new Point(3, 21);
+            dataGridViewTaskPrimary.Name = "dataGridViewTaskPrimary";
+            dataGridViewTaskPrimary.ReadOnly = true;
+            dataGridViewTaskPrimary.RowTemplate.Height = 25;
+            dataGridViewTaskPrimary.Size = new Size(694, 86);
+            dataGridViewTaskPrimary.TabIndex = 15;
+            toolTip1.SetToolTip(dataGridViewTaskPrimary, "Каждые 10 сек отображается диагностическое сообщение со статистикой по всем задачам\r\n");
+            dataGridViewTaskPrimary.DataError += dataGridViewTaskPrimary_DataError;
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "id_rec";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Id записи";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 75;
+            dataGridViewTextBoxColumn2.DataPropertyName = "id_rec";
+            dataGridViewTextBoxColumn2.HeaderText = "Id записи";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.Width = 75;
             // 
             // TaskCicle
             // 
-            this.TaskCicle.DataPropertyName = "TaskCicle";
-            this.TaskCicle.HeaderText = "Цикл задачи";
-            this.TaskCicle.Name = "TaskCicle";
-            this.TaskCicle.ReadOnly = true;
-            this.TaskCicle.ToolTipText = "Начинается с M если Master и S если Slave ";
-            this.TaskCicle.Width = 75;
+            TaskCicle.DataPropertyName = "TaskCicle";
+            TaskCicle.HeaderText = "Цикл задачи";
+            TaskCicle.Name = "TaskCicle";
+            TaskCicle.ReadOnly = true;
+            TaskCicle.ToolTipText = "Начинается с M если Master и S если Slave ";
+            TaskCicle.Width = 75;
             // 
             // Date
             // 
-            this.Date.DataPropertyName = "Date";
-            this.Date.HeaderText = "Дата";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            this.Date.Width = 50;
+            Date.DataPropertyName = "Date";
+            Date.HeaderText = "Дата";
+            Date.Name = "Date";
+            Date.ReadOnly = true;
+            Date.Width = 50;
             // 
             // Time
             // 
-            this.Time.DataPropertyName = "Time";
-            this.Time.HeaderText = "Время";
-            this.Time.Name = "Time";
-            this.Time.ReadOnly = true;
-            this.Time.Width = 90;
+            Time.DataPropertyName = "Time";
+            Time.HeaderText = "Время";
+            Time.Name = "Time";
+            Time.ReadOnly = true;
+            Time.Width = 90;
             // 
             // N
             // 
-            this.N.DataPropertyName = "N";
-            this.N.HeaderText = "запр. UDP";
-            this.N.Name = "N";
-            this.N.ReadOnly = true;
-            this.N.ToolTipText = resources.GetString("N.ToolTipText");
-            this.N.Width = 90;
+            N.DataPropertyName = "N";
+            N.HeaderText = "запр. UDP";
+            N.Name = "N";
+            N.ReadOnly = true;
+            N.ToolTipText = resources.GetString("N.ToolTipText");
+            N.Width = 90;
             // 
             // N2
             // 
-            this.N2.DataPropertyName = "N2";
-            this.N2.HeaderText = "запр. UDP2";
-            this.N2.Name = "N2";
-            this.N2.ReadOnly = true;
-            this.N2.ToolTipText = resources.GetString("N2.ToolTipText");
-            this.N2.Width = 50;
+            N2.DataPropertyName = "N2";
+            N2.HeaderText = "запр. UDP2";
+            N2.Name = "N2";
+            N2.ReadOnly = true;
+            N2.ToolTipText = resources.GetString("N2.ToolTipText");
+            N2.Width = 50;
             // 
             // ModbusRTUSlave
             // 
-            this.ModbusRTUSlave.DataPropertyName = "ModbusRTUSlave";
-            this.ModbusRTUSlave.HeaderText = "Modbus RTU";
-            this.ModbusRTUSlave.Name = "ModbusRTUSlave";
-            this.ModbusRTUSlave.ReadOnly = true;
-            this.ModbusRTUSlave.ToolTipText = "M =<кол-во обработанных запросов> - в случае Modbus RTU Slave задачи";
-            this.ModbusRTUSlave.Width = 75;
+            ModbusRTUSlave.DataPropertyName = "ModbusRTUSlave";
+            ModbusRTUSlave.HeaderText = "Modbus RTU";
+            ModbusRTUSlave.Name = "ModbusRTUSlave";
+            ModbusRTUSlave.ReadOnly = true;
+            ModbusRTUSlave.ToolTipText = "M =<кол-во обработанных запросов> - в случае Modbus RTU Slave задачи";
+            ModbusRTUSlave.Width = 75;
             // 
             // A
             // 
-            this.A.DataPropertyName = "A";
-            this.A.HeaderText = "запр. HMI";
-            this.A.Name = "A";
-            this.A.ReadOnly = true;
-            this.A.ToolTipText = "A =<количество обработанных запросов от HMI клиентов>";
-            this.A.Width = 50;
+            A.DataPropertyName = "A";
+            A.HeaderText = "запр. HMI";
+            A.Name = "A";
+            A.ReadOnly = true;
+            A.ToolTipText = "A =<количество обработанных запросов от HMI клиентов>";
+            A.Width = 50;
             // 
             // O
             // 
-            this.O.DataPropertyName = "O";
-            this.O.HeaderText = "контроллер";
-            this.O.Name = "O";
-            this.O.ReadOnly = true;
-            this.O.ToolTipText = "O<индекс контроллера>=<кол-во циклов>(<время последнего цикла опроса>,<общее кол-" +
-    "во ошибок>) - статистика задачи межузловой связи (для связи с каждым контроллеро" +
-    "м отдельная задача).";
-            this.O.Width = 50;
+            O.DataPropertyName = "O";
+            O.HeaderText = "контроллер";
+            O.Name = "O";
+            O.ReadOnly = true;
+            O.ToolTipText = "O<индекс контроллера>=<кол-во циклов>(<время последнего цикла опроса>,<общее кол-во ошибок>) - статистика задачи межузловой связи (для связи с каждым контроллером отдельная задача).";
+            O.Width = 50;
             // 
             // HR
             // 
-            this.HR.DataPropertyName = "HR";
-            this.HR.HeaderText = "гор. рестарт";
-            this.HR.Name = "HR";
-            this.HR.ReadOnly = true;
-            this.HR.ToolTipText = "HR=<кол-во сохранений горячего рестарта>(<время, затраченное на последнее сохране" +
-    "ние>)";
-            this.HR.Width = 70;
+            HR.DataPropertyName = "HR";
+            HR.HeaderText = "гор. рестарт";
+            HR.Name = "HR";
+            HR.ReadOnly = true;
+            HR.ToolTipText = "HR=<кол-во сохранений горячего рестарта>(<время, затраченное на последнее сохранение>)";
+            HR.Width = 70;
             // 
             // R
             // 
-            this.R.DataPropertyName = "R";
-            this.R.HeaderText = "резервирование";
-            this.R.Name = "R";
-            this.R.ReadOnly = true;
-            this.R.ToolTipText = resources.GetString("R.ToolTipText");
+            R.DataPropertyName = "R";
+            R.HeaderText = "резервирование";
+            R.Name = "R";
+            R.ReadOnly = true;
+            R.ToolTipText = resources.GetString("R.ToolTipText");
             // 
             // MemoryUsing
             // 
-            this.MemoryUsing.DataPropertyName = "MemoryUsing";
-            this.MemoryUsing.HeaderText = "Память";
-            this.MemoryUsing.Name = "MemoryUsing";
-            this.MemoryUsing.ReadOnly = true;
-            this.MemoryUsing.ToolTipText = "M=<используемый объем памяти процессом>Kb";
+            MemoryUsing.DataPropertyName = "MemoryUsing";
+            MemoryUsing.HeaderText = "Память";
+            MemoryUsing.Name = "MemoryUsing";
+            MemoryUsing.ReadOnly = true;
+            MemoryUsing.ToolTipText = "M=<используемый объем памяти процессом>Kb";
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(1, 3);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(108, 15);
-            this.label13.TabIndex = 14;
-            this.label13.Text = "Статистика задачи";
+            label13.AutoSize = true;
+            label13.Location = new Point(1, 3);
+            label13.Name = "label13";
+            label13.Size = new Size(108, 15);
+            label13.TabIndex = 14;
+            label13.Text = "Статистика задачи";
             // 
             // numericUpDown_ArchStatReturnRecCount
             // 
-            this.numericUpDown_ArchStatReturnRecCount.Location = new System.Drawing.Point(477, 28);
-            this.numericUpDown_ArchStatReturnRecCount.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numericUpDown_ArchStatReturnRecCount.Name = "numericUpDown_ArchStatReturnRecCount";
-            this.numericUpDown_ArchStatReturnRecCount.Size = new System.Drawing.Size(82, 23);
-            this.numericUpDown_ArchStatReturnRecCount.TabIndex = 25;
-            this.numericUpDown_ArchStatReturnRecCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            numericUpDown_ArchStatReturnRecCount.Location = new Point(477, 28);
+            numericUpDown_ArchStatReturnRecCount.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            numericUpDown_ArchStatReturnRecCount.Name = "numericUpDown_ArchStatReturnRecCount";
+            numericUpDown_ArchStatReturnRecCount.Size = new Size(82, 23);
+            numericUpDown_ArchStatReturnRecCount.TabIndex = 25;
+            numericUpDown_ArchStatReturnRecCount.TextAlign = HorizontalAlignment.Center;
             // 
             // label22
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(431, 31);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(40, 15);
-            this.label22.TabIndex = 24;
-            this.label22.Text = "Строк";
+            label22.AutoSize = true;
+            label22.Location = new Point(431, 31);
+            label22.Name = "label22";
+            label22.Size = new Size(40, 15);
+            label22.TabIndex = 24;
+            label22.Text = "Строк";
             // 
             // numericUpDown_IntervalArchStat
             // 
-            this.numericUpDown_IntervalArchStat.Location = new System.Drawing.Point(332, 28);
-            this.numericUpDown_IntervalArchStat.Maximum = new decimal(new int[] {
-            600000,
-            0,
-            0,
-            0});
-            this.numericUpDown_IntervalArchStat.Minimum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numericUpDown_IntervalArchStat.Name = "numericUpDown_IntervalArchStat";
-            this.numericUpDown_IntervalArchStat.Size = new System.Drawing.Size(82, 23);
-            this.numericUpDown_IntervalArchStat.TabIndex = 23;
-            this.numericUpDown_IntervalArchStat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDown_IntervalArchStat.Value = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
+            numericUpDown_IntervalArchStat.Location = new Point(332, 28);
+            numericUpDown_IntervalArchStat.Maximum = new decimal(new int[] { 600000, 0, 0, 0 });
+            numericUpDown_IntervalArchStat.Minimum = new decimal(new int[] { 10000, 0, 0, 0 });
+            numericUpDown_IntervalArchStat.Name = "numericUpDown_IntervalArchStat";
+            numericUpDown_IntervalArchStat.Size = new Size(82, 23);
+            numericUpDown_IntervalArchStat.TabIndex = 23;
+            numericUpDown_IntervalArchStat.TextAlign = HorizontalAlignment.Center;
+            numericUpDown_IntervalArchStat.Value = new decimal(new int[] { 10000, 0, 0, 0 });
             // 
             // label16
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(4, 224);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(156, 15);
-            this.label16.TabIndex = 22;
-            this.label16.Text = "Статистика архивирования";
+            label16.AutoSize = true;
+            label16.Location = new Point(4, 224);
+            label16.Name = "label16";
+            label16.Size = new Size(156, 15);
+            label16.TabIndex = 22;
+            label16.Text = "Статистика архивирования";
             // 
             // dataGridViewArchStatDetail
             // 
-            this.dataGridViewArchStatDetail.AllowUserToAddRows = false;
-            this.dataGridViewArchStatDetail.AllowUserToDeleteRows = false;
-            this.dataGridViewArchStatDetail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewArchStatDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
-            this.dataGridViewArchStatDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewArchStatDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn6});
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewArchStatDetail.DefaultCellStyle = dataGridViewCellStyle27;
-            this.dataGridViewArchStatDetail.Location = new System.Drawing.Point(4, 242);
-            this.dataGridViewArchStatDetail.Name = "dataGridViewArchStatDetail";
-            this.dataGridViewArchStatDetail.ReadOnly = true;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewArchStatDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
-            this.dataGridViewArchStatDetail.RowTemplate.Height = 25;
-            this.dataGridViewArchStatDetail.Size = new System.Drawing.Size(688, 71);
-            this.dataGridViewArchStatDetail.TabIndex = 21;
-            this.dataGridViewArchStatDetail.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewArchStatDetail_DataError);
+            dataGridViewArchStatDetail.AllowUserToAddRows = false;
+            dataGridViewArchStatDetail.AllowUserToDeleteRows = false;
+            dataGridViewArchStatDetail.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewCellStyle26.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = SystemColors.Control;
+            dataGridViewCellStyle26.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle26.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = DataGridViewTriState.True;
+            dataGridViewArchStatDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewArchStatDetail.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewArchStatDetail.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn6 });
+            dataGridViewCellStyle27.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = SystemColors.Window;
+            dataGridViewCellStyle27.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle27.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle27.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = DataGridViewTriState.False;
+            dataGridViewArchStatDetail.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewArchStatDetail.Location = new Point(4, 242);
+            dataGridViewArchStatDetail.Name = "dataGridViewArchStatDetail";
+            dataGridViewArchStatDetail.ReadOnly = true;
+            dataGridViewCellStyle28.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = SystemColors.Control;
+            dataGridViewCellStyle28.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle28.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle28.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = DataGridViewTriState.True;
+            dataGridViewArchStatDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewArchStatDetail.RowTemplate.Height = 25;
+            dataGridViewArchStatDetail.Size = new Size(688, 71);
+            dataGridViewArchStatDetail.TabIndex = 21;
+            dataGridViewArchStatDetail.DataError += dataGridViewArchStatDetail_DataError;
             // 
             // dataGridViewTextBoxColumn6
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "id_rec";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Id записи";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            dataGridViewTextBoxColumn6.DataPropertyName = "id_rec";
+            dataGridViewTextBoxColumn6.HeaderText = "Id записи";
+            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // label15
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(240, 30);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(86, 15);
-            this.label15.TabIndex = 20;
-            this.label15.Text = "Интервал (мс)";
+            label15.AutoSize = true;
+            label15.Location = new Point(240, 30);
+            label15.Name = "label15";
+            label15.Size = new Size(86, 15);
+            label15.TabIndex = 20;
+            label15.Text = "Интервал (мс)";
             // 
             // checkBox_AutoRefreshArchStat
             // 
-            this.checkBox_AutoRefreshArchStat.AutoSize = true;
-            this.checkBox_AutoRefreshArchStat.Location = new System.Drawing.Point(100, 29);
-            this.checkBox_AutoRefreshArchStat.Name = "checkBox_AutoRefreshArchStat";
-            this.checkBox_AutoRefreshArchStat.Size = new System.Drawing.Size(119, 19);
-            this.checkBox_AutoRefreshArchStat.TabIndex = 18;
-            this.checkBox_AutoRefreshArchStat.Text = "Автообновление";
-            this.checkBox_AutoRefreshArchStat.UseVisualStyleBackColor = true;
+            checkBox_AutoRefreshArchStat.AutoSize = true;
+            checkBox_AutoRefreshArchStat.Location = new Point(100, 29);
+            checkBox_AutoRefreshArchStat.Name = "checkBox_AutoRefreshArchStat";
+            checkBox_AutoRefreshArchStat.Size = new Size(119, 19);
+            checkBox_AutoRefreshArchStat.TabIndex = 18;
+            checkBox_AutoRefreshArchStat.Text = "Автообновление";
+            checkBox_AutoRefreshArchStat.UseVisualStyleBackColor = true;
             // 
             // btnRefreshArchStat
             // 
-            this.btnRefreshArchStat.Location = new System.Drawing.Point(4, 28);
-            this.btnRefreshArchStat.Name = "btnRefreshArchStat";
-            this.btnRefreshArchStat.Size = new System.Drawing.Size(75, 23);
-            this.btnRefreshArchStat.TabIndex = 17;
-            this.btnRefreshArchStat.Text = "Обновить";
-            this.btnRefreshArchStat.UseVisualStyleBackColor = true;
-            this.btnRefreshArchStat.Click += new System.EventHandler(this.btnRefreshArchStat_Click);
+            btnRefreshArchStat.Location = new Point(4, 28);
+            btnRefreshArchStat.Name = "btnRefreshArchStat";
+            btnRefreshArchStat.Size = new Size(75, 23);
+            btnRefreshArchStat.TabIndex = 17;
+            btnRefreshArchStat.Text = "Обновить";
+            btnRefreshArchStat.UseVisualStyleBackColor = true;
+            btnRefreshArchStat.Click += btnRefreshArchStat_Click;
             // 
             // dataGridViewArchStat
             // 
-            this.dataGridViewArchStat.AllowUserToAddRows = false;
-            this.dataGridViewArchStat.AllowUserToDeleteRows = false;
-            this.dataGridViewArchStat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewArchStat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
-            this.dataGridViewArchStat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewArchStat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewArchStat.DefaultCellStyle = dataGridViewCellStyle30;
-            this.dataGridViewArchStat.Location = new System.Drawing.Point(4, 58);
-            this.dataGridViewArchStat.Name = "dataGridViewArchStat";
-            this.dataGridViewArchStat.ReadOnly = true;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewArchStat.RowHeadersDefaultCellStyle = dataGridViewCellStyle31;
-            this.dataGridViewArchStat.RowTemplate.Height = 25;
-            this.dataGridViewArchStat.Size = new System.Drawing.Size(688, 163);
-            this.dataGridViewArchStat.TabIndex = 16;
-            this.dataGridViewArchStat.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewArchStat_DataError);
+            dataGridViewArchStat.AllowUserToAddRows = false;
+            dataGridViewArchStat.AllowUserToDeleteRows = false;
+            dataGridViewArchStat.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewCellStyle29.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = SystemColors.Control;
+            dataGridViewCellStyle29.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle29.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle29.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = DataGridViewTriState.True;
+            dataGridViewArchStat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewArchStat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewArchStat.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5 });
+            dataGridViewCellStyle30.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = SystemColors.Window;
+            dataGridViewCellStyle30.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle30.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle30.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = DataGridViewTriState.False;
+            dataGridViewArchStat.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewArchStat.Location = new Point(4, 58);
+            dataGridViewArchStat.Name = "dataGridViewArchStat";
+            dataGridViewArchStat.ReadOnly = true;
+            dataGridViewCellStyle31.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = SystemColors.Control;
+            dataGridViewCellStyle31.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle31.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle31.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle31.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle31.WrapMode = DataGridViewTriState.True;
+            dataGridViewArchStat.RowHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewArchStat.RowTemplate.Height = 25;
+            dataGridViewArchStat.Size = new Size(688, 163);
+            dataGridViewArchStat.TabIndex = 16;
+            dataGridViewArchStat.DataError += dataGridViewArchStat_DataError;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "id_rec";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Id записи";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            dataGridViewTextBoxColumn3.DataPropertyName = "id_rec";
+            dataGridViewTextBoxColumn3.HeaderText = "Id записи";
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "RegDT";
-            this.dataGridViewTextBoxColumn4.HeaderText = "время регистрации";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            dataGridViewTextBoxColumn4.DataPropertyName = "RegDT";
+            dataGridViewTextBoxColumn4.HeaderText = "время регистрации";
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "LogString";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Строка информации";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            dataGridViewTextBoxColumn5.DataPropertyName = "LogString";
+            dataGridViewTextBoxColumn5.HeaderText = "Строка информации";
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(4, 3);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(94, 15);
-            this.label14.TabIndex = 15;
-            this.label14.Text = "Архивирование";
+            label14.AutoSize = true;
+            label14.Location = new Point(4, 3);
+            label14.Name = "label14";
+            label14.Size = new Size(94, 15);
+            label14.TabIndex = 15;
+            label14.Text = "Архивирование";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(242, 11);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 15);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Интервал (мс)";
+            label7.AutoSize = true;
+            label7.Location = new Point(242, 11);
+            label7.Name = "label7";
+            label7.Size = new Size(86, 15);
+            label7.TabIndex = 10;
+            label7.Text = "Интервал (мс)";
             // 
             // checkBox_AutoRefreshTaskStat
             // 
-            this.checkBox_AutoRefreshTaskStat.AutoSize = true;
-            this.checkBox_AutoRefreshTaskStat.Location = new System.Drawing.Point(102, 11);
-            this.checkBox_AutoRefreshTaskStat.Name = "checkBox_AutoRefreshTaskStat";
-            this.checkBox_AutoRefreshTaskStat.Size = new System.Drawing.Size(119, 19);
-            this.checkBox_AutoRefreshTaskStat.TabIndex = 8;
-            this.checkBox_AutoRefreshTaskStat.Text = "Автообновление";
-            this.checkBox_AutoRefreshTaskStat.UseVisualStyleBackColor = true;
+            checkBox_AutoRefreshTaskStat.AutoSize = true;
+            checkBox_AutoRefreshTaskStat.Location = new Point(102, 11);
+            checkBox_AutoRefreshTaskStat.Name = "checkBox_AutoRefreshTaskStat";
+            checkBox_AutoRefreshTaskStat.Size = new Size(119, 19);
+            checkBox_AutoRefreshTaskStat.TabIndex = 8;
+            checkBox_AutoRefreshTaskStat.Text = "Автообновление";
+            checkBox_AutoRefreshTaskStat.UseVisualStyleBackColor = true;
             // 
             // btnRefreshTaskStat
             // 
-            this.btnRefreshTaskStat.Location = new System.Drawing.Point(6, 6);
-            this.btnRefreshTaskStat.Name = "btnRefreshTaskStat";
-            this.btnRefreshTaskStat.Size = new System.Drawing.Size(75, 23);
-            this.btnRefreshTaskStat.TabIndex = 4;
-            this.btnRefreshTaskStat.Text = "Обновить";
-            this.btnRefreshTaskStat.UseVisualStyleBackColor = true;
-            this.btnRefreshTaskStat.Click += new System.EventHandler(this.btnRefreshTaskStat_Click);
+            btnRefreshTaskStat.Location = new Point(6, 6);
+            btnRefreshTaskStat.Name = "btnRefreshTaskStat";
+            btnRefreshTaskStat.Size = new Size(75, 23);
+            btnRefreshTaskStat.TabIndex = 4;
+            btnRefreshTaskStat.Text = "Обновить";
+            btnRefreshTaskStat.UseVisualStyleBackColor = true;
+            btnRefreshTaskStat.Click += btnRefreshTaskStat_Click;
             // 
             // dataGridViewTaskStat
             // 
-            this.dataGridViewTaskStat.AllowUserToAddRows = false;
-            this.dataGridViewTaskStat.AllowUserToDeleteRows = false;
-            this.dataGridViewTaskStat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTaskStat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
-            this.dataGridViewTaskStat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTaskStat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.RegDT,
-            this.LogString});
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTaskStat.DefaultCellStyle = dataGridViewCellStyle33;
-            this.dataGridViewTaskStat.Location = new System.Drawing.Point(6, 36);
-            this.dataGridViewTaskStat.Name = "dataGridViewTaskStat";
-            this.dataGridViewTaskStat.ReadOnly = true;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTaskStat.RowHeadersDefaultCellStyle = dataGridViewCellStyle34;
-            this.dataGridViewTaskStat.RowTemplate.Height = 25;
-            this.dataGridViewTaskStat.Size = new System.Drawing.Size(1407, 164);
-            this.dataGridViewTaskStat.TabIndex = 0;
-            this.dataGridViewTaskStat.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewTaskStat_DataError);
+            dataGridViewTaskStat.AllowUserToAddRows = false;
+            dataGridViewTaskStat.AllowUserToDeleteRows = false;
+            dataGridViewTaskStat.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewCellStyle32.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = SystemColors.Control;
+            dataGridViewCellStyle32.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle32.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle32.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle32.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = DataGridViewTriState.True;
+            dataGridViewTaskStat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewTaskStat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewTaskStat.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, RegDT, LogString });
+            dataGridViewCellStyle33.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = SystemColors.Window;
+            dataGridViewCellStyle33.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle33.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle33.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle33.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle33.WrapMode = DataGridViewTriState.False;
+            dataGridViewTaskStat.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewTaskStat.Location = new Point(6, 36);
+            dataGridViewTaskStat.Name = "dataGridViewTaskStat";
+            dataGridViewTaskStat.ReadOnly = true;
+            dataGridViewCellStyle34.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = SystemColors.Control;
+            dataGridViewCellStyle34.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle34.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle34.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = DataGridViewTriState.True;
+            dataGridViewTaskStat.RowHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewTaskStat.RowTemplate.Height = 25;
+            dataGridViewTaskStat.Size = new Size(1407, 164);
+            dataGridViewTaskStat.TabIndex = 0;
+            dataGridViewTaskStat.DataError += dataGridViewTaskStat_DataError;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_rec";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id записи";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.DataPropertyName = "id_rec";
+            dataGridViewTextBoxColumn1.HeaderText = "Id записи";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // RegDT
             // 
-            this.RegDT.DataPropertyName = "RegDT";
-            this.RegDT.HeaderText = "время регистрации";
-            this.RegDT.Name = "RegDT";
-            this.RegDT.ReadOnly = true;
+            RegDT.DataPropertyName = "RegDT";
+            RegDT.HeaderText = "время регистрации";
+            RegDT.Name = "RegDT";
+            RegDT.ReadOnly = true;
             // 
             // LogString
             // 
-            this.LogString.DataPropertyName = "LogString";
-            this.LogString.HeaderText = "Строка информации";
-            this.LogString.Name = "LogString";
-            this.LogString.ReadOnly = true;
+            LogString.DataPropertyName = "LogString";
+            LogString.HeaderText = "Строка информации";
+            LogString.Name = "LogString";
+            LogString.ReadOnly = true;
             // 
             // button_ImportLogFile
             // 
-            this.button_ImportLogFile.Location = new System.Drawing.Point(410, 25);
-            this.button_ImportLogFile.Name = "button_ImportLogFile";
-            this.button_ImportLogFile.Size = new System.Drawing.Size(136, 23);
-            this.button_ImportLogFile.TabIndex = 13;
-            this.button_ImportLogFile.Text = "Импорт из файла";
-            this.button_ImportLogFile.UseVisualStyleBackColor = true;
-            this.button_ImportLogFile.Click += new System.EventHandler(this.button_ImportLogFile_Click);
+            button_ImportLogFile.Location = new Point(410, 25);
+            button_ImportLogFile.Name = "button_ImportLogFile";
+            button_ImportLogFile.Size = new Size(136, 23);
+            button_ImportLogFile.TabIndex = 13;
+            button_ImportLogFile.Text = "Импорт из файла";
+            button_ImportLogFile.UseVisualStyleBackColor = true;
+            button_ImportLogFile.Click += button_ImportLogFile_Click;
             // 
             // checkBox_Pause
             // 
-            this.checkBox_Pause.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox_Pause.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkBox_Pause.AutoSize = true;
-            this.checkBox_Pause.Location = new System.Drawing.Point(1253, 26);
-            this.checkBox_Pause.Name = "checkBox_Pause";
-            this.checkBox_Pause.Size = new System.Drawing.Size(174, 25);
-            this.checkBox_Pause.TabIndex = 40;
-            this.checkBox_Pause.Text = "Приостановить выполнение";
-            this.checkBox_Pause.UseVisualStyleBackColor = true;
-            this.checkBox_Pause.CheckedChanged += new System.EventHandler(this.checkBox_Pause_CheckedChanged);
+            checkBox_Pause.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            checkBox_Pause.Appearance = Appearance.Button;
+            checkBox_Pause.AutoSize = true;
+            checkBox_Pause.Location = new Point(1253, 26);
+            checkBox_Pause.Name = "checkBox_Pause";
+            checkBox_Pause.Size = new Size(174, 25);
+            checkBox_Pause.TabIndex = 40;
+            checkBox_Pause.Text = "Приостановить выполнение";
+            checkBox_Pause.UseVisualStyleBackColor = true;
+            checkBox_Pause.CheckedChanged += checkBox_Pause_CheckedChanged;
             // 
             // timer1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            timer1.Tick += timer1_Tick;
             // 
             // timer2
             // 
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            timer2.Tick += timer2_Tick;
             // 
             // toolTip1
             // 
-            this.toolTip1.AutoPopDelay = 15000;
-            this.toolTip1.InitialDelay = 500;
-            this.toolTip1.ReshowDelay = 100;
+            toolTip1.AutoPopDelay = 15000;
+            toolTip1.InitialDelay = 500;
+            toolTip1.ReshowDelay = 100;
             // 
             // timer3
             // 
-            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            timer3.Tick += timer3_Tick;
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label10.Location = new System.Drawing.Point(5, 9);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(385, 41);
-            this.label10.TabIndex = 36;
-            this.label10.Text = "Мониторинг исполнения";
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.Font = new Font("Segoe UI", 22F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.ForeColor = SystemColors.ControlDark;
+            label10.Location = new Point(5, 9);
+            label10.Name = "label10";
+            label10.Size = new Size(385, 41);
+            label10.TabIndex = 36;
+            label10.Text = "Мониторинг исполнения";
             // 
             // timer4
             // 
-            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
+            timer4.Tick += timer4_Tick;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(716, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Location = new Point(818, 25);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 41;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(797, 25);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 42;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.Location = new Point(899, 25);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 42;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(980, 25);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 43;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            button3.Location = new Point(980, 25);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 23);
+            button3.TabIndex = 43;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // contextMenuStrip1
             // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
             // 
             // timer5
             // 
-            this.timer5.Interval = 1000;
-            this.timer5.Tick += new System.EventHandler(this.timer5_Tick);
+            timer5.Interval = 1000;
+            timer5.Tick += timer5_Tick;
             // 
             // imageList1
             // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "ProgressSkip.ico");
-            this.imageList1.Images.SetKeyName(1, "sync.ico");
-            this.imageList1.Images.SetKeyName(2, "pencil_106685.png");
+            imageList1.ColorDepth = ColorDepth.Depth8Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "ProgressSkip.ico");
+            imageList1.Images.SetKeyName(1, "sync.ico");
+            imageList1.Images.SetKeyName(2, "pencil_106685.png");
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1437, 823);
-            this.Controls.Add(this.button_ImportLogFile);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.checkBox_Pause);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MainForm";
-            this.Text = "Разбор лога";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Port)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.splitContainer4.Panel1.ResumeLayout(false);
-            this.splitContainer4.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
-            this.splitContainer4.ResumeLayout(false);
-            this.splitContainerSettings.Panel1.ResumeLayout(false);
-            this.splitContainerSettings.Panel2.ResumeLayout(false);
-            this.splitContainerSettings.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerSettings)).EndInit();
-            this.splitContainerSettings.ResumeLayout(false);
-            this.splitContainer5.Panel1.ResumeLayout(false);
-            this.splitContainer5.Panel1.PerformLayout();
-            this.splitContainer5.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
-            this.splitContainer5.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFilters)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LogRecReturnRecCount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LogRecInterval)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLogRecords)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FiltredRecReturnRecCount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FiltredRecInterval)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFiltredRecords)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_TaskStatReturnRecCount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_IntervalTaskStat)).EndInit();
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel1.PerformLayout();
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTaskStatDetailU)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel1.PerformLayout();
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            this.splitContainer2.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTaskPrimary)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ArchStatReturnRecCount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_IntervalArchStat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArchStatDetail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArchStat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTaskStat)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1437, 823);
+            Controls.Add(button_ImportLogFile);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(label10);
+            Controls.Add(tabControl1);
+            Controls.Add(checkBox_Pause);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "MainForm";
+            Text = "Разбор лога";
+            FormClosing += MainForm_FormClosing;
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_Port).EndInit();
+            tabPage2.ResumeLayout(false);
+            splitContainer4.Panel1.ResumeLayout(false);
+            splitContainer4.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer4).EndInit();
+            splitContainer4.ResumeLayout(false);
+            splitContainerSettings.Panel1.ResumeLayout(false);
+            splitContainerSettings.Panel2.ResumeLayout(false);
+            splitContainerSettings.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainerSettings).EndInit();
+            splitContainerSettings.ResumeLayout(false);
+            splitContainer5.Panel1.ResumeLayout(false);
+            splitContainer5.Panel1.PerformLayout();
+            splitContainer5.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer5).EndInit();
+            splitContainer5.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewFilters).EndInit();
+            tabPage3.ResumeLayout(false);
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel1.PerformLayout();
+            splitContainer1.Panel2.ResumeLayout(false);
+            splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_LogRecReturnRecCount).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_LogRecInterval).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewLogRecords).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_FiltredRecReturnRecCount).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_FiltredRecInterval).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewFiltredRecords).EndInit();
+            tabPage4.ResumeLayout(false);
+            tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_TaskStatReturnRecCount).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_IntervalTaskStat).EndInit();
+            splitContainer3.Panel1.ResumeLayout(false);
+            splitContainer3.Panel1.PerformLayout();
+            splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer3).EndInit();
+            splitContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTaskStatDetailU).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chart2).EndInit();
+            splitContainer2.Panel1.ResumeLayout(false);
+            splitContainer2.Panel1.PerformLayout();
+            splitContainer2.Panel2.ResumeLayout(false);
+            splitContainer2.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
+            splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTaskPrimary).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_ArchStatReturnRecCount).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_IntervalArchStat).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewArchStatDetail).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewArchStat).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTaskStat).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

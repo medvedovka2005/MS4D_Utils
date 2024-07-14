@@ -44,10 +44,10 @@ namespace CheckRT
 
 
         //Список подключений к Базе данных
-        List<SqlConnection> sqlConnections = new ();
+        List<SqlConnection> sqlConnections = new();
 
         //Объект для настройки подключения к сокету
-        SocketConnectionProperty socketConnectionProperty = new ();
+        SocketConnectionProperty socketConnectionProperty = new();
         //SqlConnectionStringBuilder sqlConnectionStringBuilder;
 
         //Объекты настройки задач
@@ -70,20 +70,20 @@ namespace CheckRT
 
         #region Элементы для обработки статистики задач
         SqlConnection sqlConnectionTaskStat = new();
-        SqlDataAdapter adTaskStatistic = new ();
+        SqlDataAdapter adTaskStatistic = new();
 
         //Схема (DataSet) под статистику задачи
-        DataSet dsTaskStatistic = new ("dsTaskStatistic");
+        DataSet dsTaskStatistic = new("dsTaskStatistic");
         //статистика задачи главной
-        DataTable tbTaskPrimary = new ("tbTaskPrimary");
+        DataTable tbTaskPrimary = new("tbTaskPrimary");
         //статистика задач объектов и протоколов
-        DataTable tbTaskStat = new ("tbTaskStat");
+        DataTable tbTaskStat = new("tbTaskStat");
         //статистика задач объектов
-        DataTable tbTaskStatDetailU = new ("tbTaskStatDetailU");
-        DataTable tbTaskMemory = new ("tbTaskMemory");
-        
+        DataTable tbTaskStatDetailU = new("tbTaskStatDetailU");
+        DataTable tbTaskMemory = new("tbTaskMemory");
+
         //статистика использования памяти задачами и протоколами
-        DataTable tbMemoryStat = new ("tbMemoryStat");
+        DataTable tbMemoryStat = new("tbMemoryStat");
 
 
         //Источник данных для элементов управления (DataGridView)
@@ -95,15 +95,15 @@ namespace CheckRT
 
         #region Элементы для обработки статистики архивирования 
         SqlConnection sqlConnectionArchiveStat = new();
-        SqlDataAdapter adArchiveStatistic = new ();
+        SqlDataAdapter adArchiveStatistic = new();
 
         //Таблица статистики архивирования
-        DataTable tbArchiveStatistic = new ("tbArchiveStatistic");
+        DataTable tbArchiveStatistic = new("tbArchiveStatistic");
         //Таблица с преобразованными данными статистики архивирования, т.е. строка лога разбита на колонки
-        DataTable tbArchiveStatisticParce = new ("tbArchiveStatisticParce");
+        DataTable tbArchiveStatisticParce = new("tbArchiveStatisticParce");
 
         //Схема (DataSet) под статистику архивирования 
-        DataSet dsArchiveStatistic = new ("dsArchiveStatistic");
+        DataSet dsArchiveStatistic = new("dsArchiveStatistic");
 
         //Источник данных для элементов управления (DataGridView)
         BindingSource bsArchiveStatistic;
@@ -148,8 +148,8 @@ namespace CheckRT
                 Debug.WriteLine($"Наименование кнопки {b.Name}");
             }
 
-            RefreshConnectionDB();            
-            GetData();          
+            RefreshConnectionDB();
+            GetData();
             ReadNodeSettings(); // Чтение настроек по дереву настроек для отображения в propertyGrid1
 
             //Строка подключения
@@ -232,9 +232,9 @@ namespace CheckRT
             try
             {
                 masterBindingSource.EndEdit();
-                detailsBindingSource.EndEdit();                
+                detailsBindingSource.EndEdit();
                 //
-                
+
 
                 adFilters.Update(dsFilters.Tables["tbFilters"]);
                 adFilterSettings.Update(dsFilters.Tables["tbFilterSettings"]);
@@ -297,7 +297,7 @@ namespace CheckRT
                     masterBindingSource.EndEdit();
                     detailsBindingSource.EndEdit();
                     adFilters.Update(dsFilters.Tables["tbFilters"]);
-                    adFilterSettings.Update(dsFilters.Tables["tbFilterSettings"]);                    
+                    adFilterSettings.Update(dsFilters.Tables["tbFilterSettings"]);
                     dsFilters.AcceptChanges();
 
                 }
@@ -387,7 +387,7 @@ namespace CheckRT
                 this.timer2.Stop();
             else
                 this.timer2.Start();
-            
+
             //формируем строку json 
             string jsonString = JsonSerializer.Serialize(taskProperty_LogRecords);
             //сохраняем настройку
@@ -408,7 +408,7 @@ namespace CheckRT
 
         private void RefreshConnectionDB()
         {
-            
+
             buttonRefreshConnection.Image = imageListSqlServerConnection.Images[2];
             toolTip1.SetToolTip(this.buttonRefreshConnection, "Подключение к базе данных не установлено");
 
@@ -423,9 +423,9 @@ namespace CheckRT
             ConnectionStringsSection csSection = config.ConnectionStrings;
             if (csSection.ConnectionStrings["cnnPrimary"] != null)
             {
-                sqlServerConnectionProperty.ConnectionString = csSection.ConnectionStrings["cnnPrimary"].ConnectionString;                
-                
-            }            
+                sqlServerConnectionProperty.ConnectionString = csSection.ConnectionStrings["cnnPrimary"].ConnectionString;
+
+            }
             //соединение с БД
             try
             {
@@ -482,7 +482,7 @@ namespace CheckRT
 
         }
 
-        private void RunQuerySocket() 
+        private void RunQuerySocket()
         {
             if (cnnPrimary.State != ConnectionState.Open) return;
 
@@ -491,7 +491,7 @@ namespace CheckRT
                 rt = new CheckRT.ThredClasses.RTThreadWork(socketConnectionProperty.IPAddress, socketConnectionProperty.Port);
                 rt.Changed += Rt_Changed;
                 rt.BreakConnection += Rt_BreakConnection;
-                
+
                 SqlConnectionStringBuilder sqlConnectionStringBuilder = new SqlConnectionStringBuilder();
                 sqlConnectionStringBuilder.ConnectionString = cnnPrimary.ConnectionString;
                 sqlConnectionStringBuilder.ApplicationName = "CheckRT_QuerySocket";
@@ -502,7 +502,7 @@ namespace CheckRT
                 {
                     sqlConnection.Open();
                     rt.sqlConnection = sqlConnection;
-                    sqlConnections.Add(sqlConnection);  
+                    sqlConnections.Add(sqlConnection);
                 }
                 catch (SqlException ex)
                 {
@@ -533,7 +533,7 @@ namespace CheckRT
             }
             //запускаем обновление текстового поля для вывода строк, принимаемых из сокета
             timer5.Start();
-            
+
             RefreshConnectionDB();
             RunQuerySocket();
             ClearDataLogRecords();
@@ -549,7 +549,8 @@ namespace CheckRT
         /// </summary>
         private void Rt_BreakConnection(object? sender, EventArgs e)
         {
-            if (rt != null && RetryCount < 100 && rt.readText == true) {
+            if (rt != null && RetryCount < 100 && rt.readText == true)
+            {
                 Thread.Sleep(10);
                 RetryCount++;
                 this.tbStatus.BeginInvoke((MethodInvoker)(() => this.tbStatus.AppendText($"Попытка установить подключение к сокету RT: {RetryCount}" + Environment.NewLine)));
@@ -557,7 +558,7 @@ namespace CheckRT
             }
         }
 
- 
+
 
         private void buttonRefreshConnection_Click(object sender, EventArgs e)
         {
@@ -672,7 +673,7 @@ namespace CheckRT
             insertCommand1.Parameters.Add(new SqlParameter("@FilterString", SqlDbType.VarChar, 2000, "FilterString"));
             insertCommand1.Parameters.Add(new SqlParameter("@Active", SqlDbType.Bit, 1, "Active"));
             insertCommand1.Parameters.Add(new SqlParameter("@UsingFreeText", SqlDbType.TinyInt, 1, "UsingFreeText"));
-            
+
             SqlParameter id_recParameter = new();
             id_recParameter.Direction = ParameterDirection.Output;
             id_recParameter.ParameterName = "@id_rec";
@@ -723,12 +724,12 @@ namespace CheckRT
 
             //установка отношений между таблицами
             dsFilters.Relations.Add("Relation_tbFilterSettings_tbFilters", dsFilters.Tables["tbFilters"].Columns["id_filter"], dsFilters.Tables["tbFilterSettings"].Columns["id_filter"], false);
-            
+
             ForeignKeyConstraint foreignKey = new ForeignKeyConstraint(dsFilters.Tables["tbFilters"].Columns["id_filter"], dsFilters.Tables["tbFilterSettings"].Columns["id_filter"])
             {
                 ConstraintName = "FilterSettingsForeignKey",
                 DeleteRule = Rule.Cascade,
-                UpdateRule = Rule.Cascade                
+                UpdateRule = Rule.Cascade
             };
             foreignKey.AcceptRejectRule = AcceptRejectRule.Cascade;
 
@@ -763,7 +764,7 @@ namespace CheckRT
             dataGridViewFilters.Columns[3].HeaderText = "Активность";
             #endregion
 
-                       
+
 
         }
 
@@ -847,7 +848,7 @@ namespace CheckRT
 
                     this.dataGridViewLogRecords.BeginInvoke((MethodInvoker)(() => this.dataGridViewLogRecords.DataSource = logBindingSource));
                     this.dataGridViewLogRecords.BeginInvoke((MethodInvoker)(() => this.dataGridViewLogRecords.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells));
-                    
+
                     ReadyThred_RefreshLogRecs(this, new EventArgs());
                 }
             }
@@ -922,7 +923,7 @@ namespace CheckRT
             {
                 this.btnRefreshFiltredRecords.BeginInvoke((MethodInvoker)(() => this.btnRefreshFiltredRecords.Enabled = true));
                 RefreshFiltredRecsIsFree = true; //если ошибка, то разрешаем новый запуск, в надежде, что фильтры будут исправлдены
-                if (sqlConnection.State == ConnectionState.Open) sqlConnection.Close();                
+                if (sqlConnection.State == ConnectionState.Open) sqlConnection.Close();
             }
         }
 
@@ -932,12 +933,12 @@ namespace CheckRT
 
             dsTaskStatistic = new("dsTaskStatistic");
             //статистика задачи главной
-            tbTaskPrimary = new ("tbTaskPrimary");
+            tbTaskPrimary = new("tbTaskPrimary");
             //статистика задач объектов и протоколов
-            tbTaskStat = new ("tbTaskStat");
+            tbTaskStat = new("tbTaskStat");
             //статистика задач объектов
-            tbTaskStatDetailU = new ("tbTaskStatDetailU");
-            tbTaskMemory = new ("tbTaskMemory");
+            tbTaskStatDetailU = new("tbTaskStatDetailU");
+            tbTaskMemory = new("tbTaskMemory");
             tbMemoryStat = new("tbMemoryStat");
 
             SqlConnectionStringBuilder sqlConnectionStringBuilder = new SqlConnectionStringBuilder();
@@ -962,107 +963,107 @@ namespace CheckRT
             #region Создаём структуру таблиц/ Формирование структуры под информацию о статистике задач
 
             //статистика задачи главной tbTaskPrimary
-            DataColumn pcl0 = new ("id_rec", typeof(Int32));
+            DataColumn pcl0 = new("id_rec", typeof(Int32));
             tbTaskPrimary.Columns.Add(pcl0);
 
-            DataColumn pcl1 = new ("TaskCicle", typeof(string)); //M - мастер, S - слэйв 
+            DataColumn pcl1 = new("TaskCicle", typeof(string)); //M - мастер, S - слэйв 
             tbTaskPrimary.Columns.Add(pcl1);
 
-            DataColumn pcl2 = new ("Date", typeof(string));
+            DataColumn pcl2 = new("Date", typeof(string));
             tbTaskPrimary.Columns.Add(pcl2);
 
-            DataColumn pcl3 = new ("Time", typeof(string));
+            DataColumn pcl3 = new("Time", typeof(string));
             tbTaskPrimary.Columns.Add(pcl3);
 
-            DataColumn pcl4 = new ("N", typeof(string));//N - количество обработанных запросов UDP (за исключением отдельных типов, которые считаются в N2). В скобках указывается - <максимальное время обработки запроса, N функции протокола по которой была самая долгая обработка>
+            DataColumn pcl4 = new("N", typeof(string));//N - количество обработанных запросов UDP (за исключением отдельных типов, которые считаются в N2). В скобках указывается - <максимальное время обработки запроса, N функции протокола по которой была самая долгая обработка>
             tbTaskPrimary.Columns.Add(pcl4);
 
-            DataColumn pcl5 = new ("N2",typeof(string)); //N2 - количество обработанных запросов UDP, которые используются для взаимодействия со средой разработки при отладки программ при указанной опции /udp2, а также при синхронизации архивов (данные запросы обрабатываются в отдельном потоке)
+            DataColumn pcl5 = new("N2", typeof(string)); //N2 - количество обработанных запросов UDP, которые используются для взаимодействия со средой разработки при отладки программ при указанной опции /udp2, а также при синхронизации архивов (данные запросы обрабатываются в отдельном потоке)
             tbTaskPrimary.Columns.Add(pcl5);
 
             DataColumn pcl6 = new DataColumn("ModbusRTUSlave", typeof(string)); //M =< кол - во обработанных запросов> -в случае Modbus RTU Slave задачи
             tbTaskPrimary.Columns.Add(pcl6);
 
-            DataColumn pcl7 = new ("A", typeof(string)); //A =< количество обработанных запросов от HMI клиентов >
+            DataColumn pcl7 = new("A", typeof(string)); //A =< количество обработанных запросов от HMI клиентов >
             tbTaskPrimary.Columns.Add(pcl7);
 
-            DataColumn pcl8 = new ("O", typeof(string)); //O<индекс контроллера>=<кол-во циклов>(<время последнего цикла опроса>,<общее кол-во ошибок>) - статистика задачи межузловой связи (для связи с каждым контроллером отдельная задача).
+            DataColumn pcl8 = new("O", typeof(string)); //O<индекс контроллера>=<кол-во циклов>(<время последнего цикла опроса>,<общее кол-во ошибок>) - статистика задачи межузловой связи (для связи с каждым контроллером отдельная задача).
             tbTaskPrimary.Columns.Add(pcl8);
 
-            DataColumn pcl9 = new ("HR", typeof(string)); //HR=<кол-во сохранений горячего рестарта>(<время, затраченное на последнее сохранение>)
+            DataColumn pcl9 = new("HR", typeof(string)); //HR=<кол-во сохранений горячего рестарта>(<время, затраченное на последнее сохранение>)
             tbTaskPrimary.Columns.Add(pcl9);
 
-            DataColumn pcl10 = new ("R", typeof(string)); //R =<кол-во циклов задачи резервирования>(<время последнего цикла>,<время последней синхронизации данных>,<макс время ответа от другого контроллера>,<кол-во ошибочных ответов>). В режиме SLAVE на каждом цикле выполняется проверка состояния второго контроллера, а также получение данных, если с прошлого получения прошел заданный период задачи. В конце каждого цикла дополнительно пауза 20мс
+            DataColumn pcl10 = new("R", typeof(string)); //R =<кол-во циклов задачи резервирования>(<время последнего цикла>,<время последней синхронизации данных>,<макс время ответа от другого контроллера>,<кол-во ошибочных ответов>). В режиме SLAVE на каждом цикле выполняется проверка состояния второго контроллера, а также получение данных, если с прошлого получения прошел заданный период задачи. В конце каждого цикла дополнительно пауза 20мс
             tbTaskPrimary.Columns.Add(pcl10);
 
-            DataColumn pcl11 = new ("MemoryUsing", typeof(string)); //M=<используемый объем памяти процессом>Kb
+            DataColumn pcl11 = new("MemoryUsing", typeof(string)); //M=<используемый объем памяти процессом>Kb
             tbTaskPrimary.Columns.Add(pcl11);
 
             dsTaskStatistic.Tables.Add(tbTaskPrimary);
 
             //статистика задач объектов и протоколов tbTaskStatDetailU
-            DataColumn scl0 = new ("id_rec", typeof(Int32));
+            DataColumn scl0 = new("id_rec", typeof(Int32));
             tbTaskStat.Columns.Add(scl0);
 
-            DataColumn scl1 = new ("RegDT", typeof(DateTime));
+            DataColumn scl1 = new("RegDT", typeof(DateTime));
             tbTaskStat.Columns.Add(scl1);
 
-            DataColumn scl2 = new ("LogString", typeof(string));
+            DataColumn scl2 = new("LogString", typeof(string));
             tbTaskStat.Columns.Add(scl2);
 
             dsTaskStatistic.Tables.Add(tbTaskStat);
 
             #region статистика задач объектов tbTaskStatDetailU
-            DataColumn ucl0 = new ("id_rec", typeof(Int32));
+            DataColumn ucl0 = new("id_rec", typeof(Int32));
             tbTaskStatDetailU.Columns.Add(ucl0);
 
-            DataColumn ucl1 = new ("TaskIndex", typeof(string));
+            DataColumn ucl1 = new("TaskIndex", typeof(string));
             tbTaskStatDetailU.Columns.Add(ucl1);
 
-            DataColumn ucl2 = new ("CicleCount", typeof(string));
+            DataColumn ucl2 = new("CicleCount", typeof(string));
             tbTaskStatDetailU.Columns.Add(ucl2);
 
-            DataColumn ucl3 = new ("ErrCount", typeof(string));
+            DataColumn ucl3 = new("ErrCount", typeof(string));
             tbTaskStatDetailU.Columns.Add(ucl3);
 
-            DataColumn ucl4 = new ("AvgCicle", typeof(string));
+            DataColumn ucl4 = new("AvgCicle", typeof(string));
             tbTaskStatDetailU.Columns.Add(ucl4);
 
-            DataColumn ucl5 = new ("MinCicle", typeof(string));
+            DataColumn ucl5 = new("MinCicle", typeof(string));
             tbTaskStatDetailU.Columns.Add(ucl5);
 
-            DataColumn ucl6 = new ("MaxCicle", typeof(string));
+            DataColumn ucl6 = new("MaxCicle", typeof(string));
             tbTaskStatDetailU.Columns.Add(ucl6);
 
-            DataColumn ucl7 = new ("AvgCicleReal", typeof(string));
+            DataColumn ucl7 = new("AvgCicleReal", typeof(string));
             tbTaskStatDetailU.Columns.Add(ucl7);
 
-            DataColumn ucl8 = new ("MinCicleReal", typeof(string));
+            DataColumn ucl8 = new("MinCicleReal", typeof(string));
             tbTaskStatDetailU.Columns.Add(ucl8);
 
-            DataColumn ucl9 = new ("MaxCicleReal", typeof(string));
+            DataColumn ucl9 = new("MaxCicleReal", typeof(string));
             tbTaskStatDetailU.Columns.Add(ucl9);
 
-            DataColumn ucl10 = new ("TimeRead", typeof(string));
+            DataColumn ucl10 = new("TimeRead", typeof(string));
             tbTaskStatDetailU.Columns.Add(ucl10);
 
-            DataColumn ucl11 = new ("TimeWork", typeof(string));
+            DataColumn ucl11 = new("TimeWork", typeof(string));
             tbTaskStatDetailU.Columns.Add(ucl11);
 
-            DataColumn ucl12 = new ("TimeWrite", typeof(string));
+            DataColumn ucl12 = new("TimeWrite", typeof(string));
             tbTaskStatDetailU.Columns.Add(ucl12);
 
-            DataColumn ucl13 = new ("Mem", typeof(string));
+            DataColumn ucl13 = new("Mem", typeof(string));
             tbTaskStatDetailU.Columns.Add(ucl13);
 
             dsTaskStatistic.Tables.Add(tbTaskStatDetailU);
             #endregion
 
 
-            DataColumn mcl0 = new ("dateTime", typeof(DateTime));
+            DataColumn mcl0 = new("dateTime", typeof(DateTime));
             tbTaskMemory.Columns.Add(mcl0);
 
-            DataColumn mcl1 = new ("mem", typeof(double));
+            DataColumn mcl1 = new("mem", typeof(double));
             tbTaskMemory.Columns.Add(mcl1);
 
             dsTaskStatistic.Tables.Add(tbTaskMemory);
@@ -1246,7 +1247,7 @@ namespace CheckRT
             bool oldFormat = false;
 
             if (words.Length > 0) //проверяем формат по первому полю
-            {                 
+            {
                 if ((words[0].Substring(0, 1) == "M" || words[0].Substring(0, 1) == "S")
                     && words[0].Length == 6 && words[0].Substring(3, 1) == "/") //мастер или слэйв, 4-ый символ "/" 
                 {
@@ -1450,10 +1451,11 @@ namespace CheckRT
                 }
                 tbMemoryStat.Rows.Add(rwmem);
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 rwtp[1] = $"Ошибка разбора строки: {sInfo}";
             }
-            tbTaskPrimary.Rows.Add(rwtp);            
+            tbTaskPrimary.Rows.Add(rwtp);
         }
 
 
@@ -1465,7 +1467,7 @@ namespace CheckRT
         {
             if (cnnPrimary.State != ConnectionState.Open) return;
 
-            dsArchiveStatistic = new DataSet("dsArchiveStatistic");            
+            dsArchiveStatistic = new DataSet("dsArchiveStatistic");
             tbArchiveStatistic = new DataTable("tbArchiveStatistic");
             tbArchiveStatisticParce = new DataTable("tbArchiveStatisticParce");
 
@@ -1520,54 +1522,54 @@ namespace CheckRT
             Rc: - Количество выполненных запросов чтения
             Rq: - Количество запросов чтения в очереди            
             */
-            DataColumn adcl0 = new ("id_rec", typeof(Int32));
+            DataColumn adcl0 = new("id_rec", typeof(Int32));
             tbArchiveStatisticParce.Columns.Add(adcl0);
 
             #region Чтение
-            DataColumn adcl1 = new ("RTm", typeof(string));
+            DataColumn adcl1 = new("RTm", typeof(string));
             tbArchiveStatisticParce.Columns.Add(adcl1);
 
-            DataColumn adcl2 = new ("RСt", typeof(string));
+            DataColumn adcl2 = new("RСt", typeof(string));
             tbArchiveStatisticParce.Columns.Add(adcl2);
 
-            DataColumn adcl3 = new ("RAv", typeof(string));
+            DataColumn adcl3 = new("RAv", typeof(string));
             tbArchiveStatisticParce.Columns.Add(adcl3);
 
-            DataColumn adcl4 = new ("RRc", typeof(string));
+            DataColumn adcl4 = new("RRc", typeof(string));
             tbArchiveStatisticParce.Columns.Add(adcl4);
 
-            DataColumn adcl5 = new ("RRq", typeof(string));
+            DataColumn adcl5 = new("RRq", typeof(string));
             tbArchiveStatisticParce.Columns.Add(adcl5);
             #endregion
 
             #region Запись
-            DataColumn adcl6 = new ("WTm", typeof(string));
+            DataColumn adcl6 = new("WTm", typeof(string));
             tbArchiveStatisticParce.Columns.Add(adcl6);
 
-            DataColumn adcl7 = new ("WСt", typeof(string));
+            DataColumn adcl7 = new("WСt", typeof(string));
             tbArchiveStatisticParce.Columns.Add(adcl7);
 
-            DataColumn adcl8 = new ("WAv", typeof(string));
+            DataColumn adcl8 = new("WAv", typeof(string));
             tbArchiveStatisticParce.Columns.Add(adcl8);
 
-            DataColumn adcl9 = new ("WWt", typeof(string));
+            DataColumn adcl9 = new("WWt", typeof(string));
             tbArchiveStatisticParce.Columns.Add(adcl9);
 
-            DataColumn adcl10 = new ("WPs", typeof(string));
+            DataColumn adcl10 = new("WPs", typeof(string));
             tbArchiveStatisticParce.Columns.Add(adcl10);
 
-            DataColumn adcl11 = new ("WLs", typeof(string));
+            DataColumn adcl11 = new("WLs", typeof(string));
             tbArchiveStatisticParce.Columns.Add(adcl11);
             #endregion
 
             #region Удаление
-            DataColumn adcl12 = new ("DTm", typeof(string));
+            DataColumn adcl12 = new("DTm", typeof(string));
             tbArchiveStatisticParce.Columns.Add(adcl12);
 
-            DataColumn adcl13 = new ("DСt", typeof(string));
+            DataColumn adcl13 = new("DСt", typeof(string));
             tbArchiveStatisticParce.Columns.Add(adcl13);
 
-            DataColumn adcl14 = new ("DAv", typeof(string));
+            DataColumn adcl14 = new("DAv", typeof(string));
             tbArchiveStatisticParce.Columns.Add(adcl14);
             #endregion
 
@@ -1718,7 +1720,7 @@ namespace CheckRT
 
             chart2.ChartAreas[0].AxisY.Title = "Kb";
             chart2.ChartAreas[0].AxisY.LabelStyle.Format = "#,##0";
-            chart2.ChartAreas["ChartArea1"].AxisX.LabelStyle.Format = "dd.MM.yy HH:mm:ss";            
+            chart2.ChartAreas["ChartArea1"].AxisX.LabelStyle.Format = "dd.MM.yy HH:mm:ss";
             chart2.ChartAreas["ChartArea1"].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
             chart2.DataBind();
         }
@@ -1818,7 +1820,8 @@ namespace CheckRT
             if (rw.Cells[0].Value != DBNull.Value)
                 id_rec = Convert.ToInt32(rw.Cells[0].Value);
 
-            if (id_rec > 0) {
+            if (id_rec > 0)
+            {
                 BindingSource bs = (BindingSource)dataGridViewLogRecords.DataSource;
                 bs.Position = bs.Find("id_rec", id_rec);
             }
@@ -2081,9 +2084,9 @@ namespace CheckRT
         {
             PropertyGrid pg = (PropertyGrid)s;
             if (pg == null) { return; }
-                    
+
             if (propertyGrid1.SelectedObject.GetType() == typeof(SqlConnectionStringBuilder)) //Изменена настройка подключения к БД
-            {                        
+            {
                 SqlConnectionStringBuilder sqlConnectionStringBuilder = (SqlConnectionStringBuilder)propertyGrid1.SelectedObject;
                 sqlServerConnectionProperty.ConnectionString = sqlConnectionStringBuilder.ConnectionString;
             }
@@ -2091,7 +2094,7 @@ namespace CheckRT
 
         private void textBoxSqlServerConnectionString_Enter(object sender, EventArgs e)
         {
-            SqlConnectionStringBuilder sqlConnectionStringBuilder = 
+            SqlConnectionStringBuilder sqlConnectionStringBuilder =
                 new SqlConnectionStringBuilder(sqlServerConnectionProperty.ConnectionString);
 
             propertyGrid1.SelectedObject = sqlConnectionStringBuilder;
@@ -2109,13 +2112,13 @@ namespace CheckRT
                 RecurceNodeSettings(nd);
             }
         }
-        private void RecurceNodeSettings(TreeNode  currentTreeNode)
+        private void RecurceNodeSettings(TreeNode currentTreeNode)
         {
-           
-            if (currentTreeNode.Tag !=null && currentTreeNode.Tag.ToString() == "SocketConnectionProperty") 
+
+            if (currentTreeNode.Tag != null && currentTreeNode.Tag.ToString() == "SocketConnectionProperty")
             {
                 //Настройки подключения
-                string? jsonString = (string?) ReadAppSetting("SocketConnectionProperty");
+                string? jsonString = (string?)ReadAppSetting("SocketConnectionProperty");
                 if (jsonString != null)
                 {
                     socketConnectionProperty = JsonSerializer.Deserialize<SocketConnectionProperty>(jsonString);
@@ -2125,21 +2128,22 @@ namespace CheckRT
                     socketConnectionProperty.IPAddress = "127.0.0.1";
                     socketConnectionProperty.Port = 31550;
                 }
-                currentTreeNode.Tag = socketConnectionProperty;               
+                currentTreeNode.Tag = socketConnectionProperty;
             }
             if (currentTreeNode.Tag != null && currentTreeNode.Tag.ToString() == "TaskProperty")
             {
                 TaskProperty taskProperty = new TaskProperty();
 
-                string? jsonString = (string?) ReadAppSetting(currentTreeNode.Name);
-                if (jsonString != null) {
+                string? jsonString = (string?)ReadAppSetting(currentTreeNode.Name);
+                if (jsonString != null)
+                {
                     taskProperty = JsonSerializer.Deserialize<TaskProperty>(jsonString);
                 }
                 else
                 {
                     //Значения по умолчанию для задачи если настройки не найдены (определены в классе). Здесь просто выводим имя узла, для которого не найдена стройка в файле конфигурации
                     taskProperty.Name = currentTreeNode.Name;
-                }              
+                }
                 if (currentTreeNode.Name == "LogRecords")
                 {
                     taskProperty_LogRecords = taskProperty;
@@ -2218,26 +2222,26 @@ namespace CheckRT
             sqlServerConnectionProperty.PropertyChanged += SqlServerConnectionProperty_PropertyChanged;
         }
         private void button3_Click(object sender, EventArgs e)
-        {            
+        {
             string s = Environment.NewLine;
             foreach (char h in s)
             {
-                Debug.WriteLine(h); 
+                Debug.WriteLine(h);
             }
         }
         private void button_ImportLogFile_Click(object sender, EventArgs e)
-        {           
+        {
             var filePath = string.Empty;
             taskProperty_LogRecords.AvtoUpdate = false;
             taskProperty_FiltredRecs.AvtoUpdate = false;
 
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                string? initialDirectory = (string?) ReadAppSetting("LogDir");
+                string? initialDirectory = (string?)ReadAppSetting("LogDir");
 
-                if (initialDirectory != null) 
+                if (initialDirectory != null)
                     openFileDialog.InitialDirectory = initialDirectory;
-                
+
                 openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
                 openFileDialog.FilterIndex = 1;
                 openFileDialog.RestoreDirectory = true;
@@ -2268,7 +2272,7 @@ namespace CheckRT
                         return;
                     }
                 }
-            }            
+            }
         }
 
         private void dataGridViewTaskStat_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -2301,7 +2305,7 @@ namespace CheckRT
         }
 
         private void button_FilterLogRecords_Click(object sender, EventArgs e)
-        {            
+        {
             checkBox_AutoRefreshLog.Checked = false;
             BindingSource bs = (BindingSource)this.dataGridViewLogRecords.DataSource;
             try
@@ -2311,7 +2315,7 @@ namespace CheckRT
             catch (Exception ex)
             {
                 MessageBox.Show("Фильтр строк", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }            
+            }
         }
 
         private void button_FilterFiltredRecs_Click(object sender, EventArgs e)
