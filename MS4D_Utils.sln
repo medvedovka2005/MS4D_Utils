@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckRT", "CheckRT.csproj", "{3B3EDE1F-DC77-4DEE-9F8F-6F9CD974C774}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Snifer", "Snifer\Snifer.csproj", "{52CD6484-0577-40B7-A5B0-3CB60B061232}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Snifer", "..\Snifer\Snifer.csproj", "{2E0BA199-1C1E-4A62-803F-3B5731BDEAFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{3B3EDE1F-DC77-4DEE-9F8F-6F9CD974C774}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B3EDE1F-DC77-4DEE-9F8F-6F9CD974C774}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B3EDE1F-DC77-4DEE-9F8F-6F9CD974C774}.Release|Any CPU.Build.0 = Release|Any CPU
-		{52CD6484-0577-40B7-A5B0-3CB60B061232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{52CD6484-0577-40B7-A5B0-3CB60B061232}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{52CD6484-0577-40B7-A5B0-3CB60B061232}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{52CD6484-0577-40B7-A5B0-3CB60B061232}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E0BA199-1C1E-4A62-803F-3B5731BDEAFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E0BA199-1C1E-4A62-803F-3B5731BDEAFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E0BA199-1C1E-4A62-803F-3B5731BDEAFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E0BA199-1C1E-4A62-803F-3B5731BDEAFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
