@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace CheckRT
 {
-
+    
     public partial class MainForm : Form
     {
 
@@ -260,6 +260,7 @@ namespace CheckRT
             FilterDetail form = new FilterDetail();
             //masterBindingSource.AddNew();
             form.EditDetail(masterBindingSource, detailsBindingSource);
+            form.Icon = this.Icon;
             DialogResult res = form.ShowDialog();
 
             if (res == DialogResult.OK)
@@ -288,6 +289,8 @@ namespace CheckRT
         {
             FilterDetail form = new FilterDetail();
             form.EditDetail(masterBindingSource, detailsBindingSource);
+            form.Icon = this.Icon;
+            form.Text = "Настройка фильтра";
             DialogResult res = form.ShowDialog();
 
             if (res == DialogResult.OK)
@@ -406,6 +409,9 @@ namespace CheckRT
         }
         #endregion События объектов настроек
 
+        /// <summary>
+        /// Подключение к БД
+        /// </summary>
         private void RefreshConnectionDB()
         {
 
@@ -2079,7 +2085,9 @@ namespace CheckRT
             e.Cancel = true;
         }
 
-
+        /// <summary>
+        /// Настройки. Изменение
+        /// </summary>
         private void propertyGrid1_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
         {
             PropertyGrid pg = (PropertyGrid)s;
@@ -2092,13 +2100,23 @@ namespace CheckRT
             }
         }
 
-        private void textBoxSqlServerConnectionString_Enter(object sender, EventArgs e)
+        private void button_OpenConnectionProperty_Click(object sender, EventArgs e)
         {
             SqlConnectionStringBuilder sqlConnectionStringBuilder =
                 new SqlConnectionStringBuilder(sqlServerConnectionProperty.ConnectionString);
 
             propertyGrid1.SelectedObject = sqlConnectionStringBuilder;
             propertyGrid1.Tag = "cnnPrimary"; //Имя подключения
+        }
+
+
+        private void textBoxSqlServerConnectionString_Enter(object sender, EventArgs e)
+        {
+            //SqlConnectionStringBuilder sqlConnectionStringBuilder =
+            //    new SqlConnectionStringBuilder(sqlServerConnectionProperty.ConnectionString);
+
+            //propertyGrid1.SelectedObject = sqlConnectionStringBuilder;
+            //propertyGrid1.Tag = "cnnPrimary"; //Имя подключения
         }
 
 
@@ -2335,6 +2353,13 @@ namespace CheckRT
         private void buttonAddFilter_Click(object sender, EventArgs e)
         {
         }
+
+        private void textBoxSqlServerConnectionString_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 
 

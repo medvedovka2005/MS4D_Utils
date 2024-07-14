@@ -20,41 +20,38 @@ namespace CheckRT
         BindingSource m_masterBindingSource;
         BindingSource m_detailsBindingSource;
         BindingNavigator detailsNavigator = new();
+        
+
+        DataTable tbFilterTypes = new DataTable("FilterTypes");
 
         public FilterDetail()
         {
             InitializeComponent();
+            SetFilterTypesSource();
         }
 
-
-        private void SetElementsSource()
+        private void SetFilterTypesSource()
         {
 
-            DataTable tb = new DataTable("FilterTypes");
-            DataColumn clm1 = new("UsingType", typeof(int));
-            tb.Columns.Add(clm1);
+            DataColumn clm1 = new("UsingType", typeof(byte));
+            tbFilterTypes.Columns.Add(clm1);
             DataColumn clm2 = new("TypeName", typeof(string));
-            tb.Columns.Add(clm2);
+            tbFilterTypes.Columns.Add(clm2);
 
-            DataRow rw1 = tb.NewRow();
+            DataRow rw1 = tbFilterTypes.NewRow();
             rw1[0] = 0;
-            rw1[1] = "CONTAIN";
-            tb.Rows.Add(rw1);
+            rw1[1] = "CONTAIN - Поиск точных или нечетких (менее точных) совпадений с отдельными словами и фразами";
+            tbFilterTypes.Rows.Add(rw1);
 
-            DataRow rw2 = tb.NewRow();
+            DataRow rw2 = tbFilterTypes.NewRow();
             rw2[0] = 1;
-            rw2[1] = "FREETEXT";
-            tb.Rows.Add(rw2);
+            rw2[1] = "FREETEXT - Поиск значений, которые соответствуют значению, а не просто точной формулировке слов в условии поиска";
+            tbFilterTypes.Rows.Add(rw2);
 
-            DataRow rw3 = tb.NewRow();
+            DataRow rw3 = tbFilterTypes.NewRow();
             rw3[0] = 2;
-            rw3[1] = "LIKE";
-            tb.Rows.Add(rw3);
-
-            DataGridViewComboBoxColumn comboBox_UsingFreeText = (DataGridViewComboBoxColumn)dataGridViewFilterSettings.Columns["UsingFreeText"];
-            comboBox_UsingFreeText.DataSource = tb;
-            comboBox_UsingFreeText.ValueMember = "UsingType";
-            comboBox_UsingFreeText.DisplayMember = "TypeName";
+            rw3[1] = "LIKE - Поиск по соответствию символьной строки указанному шаблону";
+            tbFilterTypes.Rows.Add(rw3);
         }
 
 
@@ -62,39 +59,19 @@ namespace CheckRT
         {
             m_masterBindingSource = masterBindingSource;
             m_detailsBindingSource = detailsBindingSource;
-            
+
             detailsNavigator = new BindingNavigator(detailsBindingSource);
-            
-            
+
+
             textBox_id_filter.DataBindings.Add(new Binding("Text", this.m_masterBindingSource, "id_filter", true));
             textBox_FilterName.DataBindings.Add(new Binding("Text", this.m_masterBindingSource, "FilterName", true));
             textBox_Descr.DataBindings.Add(new Binding("Text", this.m_masterBindingSource, "Descr", true));
             checkBox_Active.DataBindings.Add(new Binding("Checked", this.m_masterBindingSource, "Active", true));
             textBox_FilterAssembly.DataBindings.Add(new Binding("Text", this.m_masterBindingSource, "FilterAssembly", true));
 
-            DataTable tb = new DataTable("FilterTypes");
-            DataColumn clm1 = new("UsingType", typeof(byte));
-            tb.Columns.Add(clm1);
-            DataColumn clm2 = new("TypeName", typeof(string));
-            tb.Columns.Add(clm2);
-
-            DataRow rw1 = tb.NewRow();
-            rw1[0] = 0;
-            rw1[1] = "CONTAIN";
-            tb.Rows.Add(rw1);
-
-            DataRow rw2 = tb.NewRow();
-            rw2[0] = 1;
-            rw2[1] = "FREETEXT";
-            tb.Rows.Add(rw2);
-
-            DataRow rw3 = tb.NewRow();
-            rw3[0] = 2;
-            rw3[1] = "LIKE";
-            tb.Rows.Add(rw3);
 
             DataGridViewComboBoxColumn comboBox_UsingFreeText = new();
-            comboBox_UsingFreeText.DataSource = tb;
+            comboBox_UsingFreeText.DataSource = tbFilterTypes;
             comboBox_UsingFreeText.ValueMember = "UsingType";
             comboBox_UsingFreeText.DisplayMember = "TypeName";
             comboBox_UsingFreeText.DataPropertyName = "UsingFreeText";
@@ -105,13 +82,13 @@ namespace CheckRT
             dataGridViewFilterSettings.Columns[1].Width = 75;
             dataGridViewFilterSettings.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewFilterSettings.Columns[3].Width = 75;
-            dataGridViewFilterSettings.Columns[4].Width = 250;
-            
+            dataGridViewFilterSettings.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
             //Заголовки
-            dataGridViewFilterSettings.Columns[0].HeaderText = "Id записи";
-            dataGridViewFilterSettings.Columns[1].HeaderText = "Id фильтра";
-            dataGridViewFilterSettings.Columns[2].HeaderText = "Настройка фильтра";
-            dataGridViewFilterSettings.Columns[3].HeaderText = "Активность";
+            //dataGridViewFilterSettings.Columns[0].HeaderText = "Id записи";
+            //dataGridViewFilterSettings.Columns[1].HeaderText = "Id фильтра";
+            //dataGridViewFilterSettings.Columns[2].HeaderText = "Настройка фильтра";
+            //dataGridViewFilterSettings.Columns[3].HeaderText = "Активность";
             dataGridViewFilterSettings.Columns[4].HeaderText = "Тип фильтра";
 
             dataGridViewFilterSettings.AutoGenerateColumns = false;
@@ -152,7 +129,9 @@ namespace CheckRT
         {
 
             FilterSettingDetail form = new FilterSettingDetail();
-            form.EditDetail(m_detailsBindingSource);
+            form.EditDetail(m_detailsBindingSource, tbFilterTypes);
+            form.Icon = this.Icon;
+            form.Text = "Добавление фильтра";
             DialogResult res = form.ShowDialog();
 
             if (res == DialogResult.OK)
@@ -166,7 +145,7 @@ namespace CheckRT
             }
 
         }
-        
+
         /// <summary>
         /// кнопка сохранить
         /// </summary>
@@ -188,7 +167,9 @@ namespace CheckRT
         private void bindingNavigatorEditItem_Click(object? sender, EventArgs e)
         {
             FilterSettingDetail form = new FilterSettingDetail();
-            form.EditDetail(m_detailsBindingSource);
+            form.EditDetail(m_detailsBindingSource, tbFilterTypes);
+            form.Icon = this.Icon;
+            form.Text = "Редактирование фильтра";
             DialogResult res = form.ShowDialog();
 
             if (res == DialogResult.OK)
