@@ -49,64 +49,63 @@ namespace CheckRT
         {
             textBox_CheckResult.Text = "";
 
+            //Настройки подключения к БД
+            SqlServerConnectionProperty sqlServerConnectionProperty = new();
+
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             ConnectionStringsSection csSection = config.ConnectionStrings;
+            if (csSection.ConnectionStrings["cnnPrimary"] != null)
+            {
+                sqlServerConnectionProperty.ConnectionString = csSection.ConnectionStrings["cnnPrimary"].ConnectionString;
+            }
 
-            //Настройки подключения
+            //Настройки подключения к сокету
             SocketConnectionProperty socketConnectionProperty = new();
             AppSettingsSection csSectionApp = config.AppSettings;
 
-            string? jsonString = csSectionApp.Settings["SocketConnectionProperty"].Value;
-            if (jsonString != null)
+            if (csSectionApp.Settings["SocketConnectionProperty"] != null)             
             {
+                string? jsonString = csSectionApp.Settings["SocketConnectionProperty"].Value;
                 socketConnectionProperty = JsonSerializer.Deserialize<SocketConnectionProperty>(jsonString);
-            }
-            else
-            {
-                socketConnectionProperty.IPAddress = "127.0.0.1";
-                socketConnectionProperty.Port = 31550;
             }
 
             textBox_CheckResult.AppendText($"Запрос данных по сокету IP: {socketConnectionProperty.IPAddress}, Port: {socketConnectionProperty.Port}" + Environment.NewLine);
 
             using (SqlConnection sqlConnection = new())
             {                
-                if (csSection.ConnectionStrings["cnnPrimary"] != null)
+                sqlConnection.ConnectionString = sqlServerConnectionProperty.ConnectionString;
+
+                try
                 {
-                    sqlConnection.ConnectionString = csSection.ConnectionStrings["cnnPrimary"].ConnectionString;
+                    sqlConnection.Open();
+                    textBox_CheckResult.AppendText($"Установлено подключение к БД: {sqlConnection.ConnectionString}" + Environment.NewLine);
 
-                    try
+                    SqlCommand selectCommand = new SqlCommand();
+                    selectCommand.Connection = sqlConnection;
+                    selectCommand.CommandType = CommandType.StoredProcedure;
+                    selectCommand.CommandText = "[dbo].[get_filtred_CheckResult]";
+
+                    selectCommand.Parameters.AddWithValue("@rec_count", 1000);
+                    selectCommand.Parameters.AddWithValue("@port", socketConnectionProperty.Port);
+                    selectCommand.Parameters.AddWithValue("@ip_address", socketConnectionProperty.IPAddress);
+                    selectCommand.Parameters.AddWithValue("@FilterString", textBox_FilterString.Text);
+                    selectCommand.Parameters.AddWithValue("@UsingFreeText", comboBox_UsingFreeText.SelectedValue);
+
+                    SqlDataReader reader = selectCommand.ExecuteReader();
+                    textBox_CheckResult.AppendText("Отфильтрованы строки:" + Environment.NewLine);
+                    int i = 0;
+                    while (reader.Read())
                     {
-                        sqlConnection.Open();
-                        textBox_CheckResult.AppendText($"Установлено подключение к БД: {sqlConnection.ConnectionString}" + Environment.NewLine);
-
-                        SqlCommand selectCommand = new SqlCommand();
-                        selectCommand.Connection = sqlConnection;
-                        selectCommand.CommandType = CommandType.StoredProcedure;
-                        selectCommand.CommandText = "[dbo].[get_filtred_CheckResult]";
-
-                        selectCommand.Parameters.AddWithValue("@rec_count", 1000);
-                        selectCommand.Parameters.AddWithValue("@port", socketConnectionProperty.Port);
-                        selectCommand.Parameters.AddWithValue("@ip_address", socketConnectionProperty.IPAddress);
-                        selectCommand.Parameters.AddWithValue("@FilterString", textBox_FilterString.Text);
-                        selectCommand.Parameters.AddWithValue("@UsingFreeText", comboBox_UsingFreeText.SelectedValue);
-
-                        SqlDataReader reader = selectCommand.ExecuteReader();
-                        textBox_CheckResult.AppendText("Отфильтрованы строки:" + Environment.NewLine);
-                        int i = 0;
-                        while (reader.Read())
-                        {
-                            textBox_CheckResult.AppendText(reader[2].ToString() + Environment.NewLine);
-                            i++;
-                        }
-                        textBox_CheckResult.AppendText($"Итого строк: {i}. Ошибок нет." + Environment.NewLine);
+                        textBox_CheckResult.AppendText(reader[2].ToString() + Environment.NewLine);
+                        i++;
                     }
-                    catch (Exception ex)
-                    {
-                        textBox_CheckResult.Text = ex.Message;
-                    }
-                    finally { sqlConnection.Close(); }
+                    textBox_CheckResult.AppendText($"Итого строк: {i}. Ошибок нет." + Environment.NewLine);
                 }
+                catch (Exception ex)
+                {
+                    textBox_CheckResult.Text = ex.Message;
+                }
+                finally { sqlConnection.Close(); }                
             }
 
         }
