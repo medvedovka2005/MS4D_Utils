@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace CheckRT
 {
-    
+
     public partial class MainForm : Form
     {
 
@@ -1959,6 +1959,8 @@ namespace CheckRT
                 timer4.Stop();
                 timer5.Stop();
                 GC.Collect();
+
+                checkBox_Pause.BackColor = Color.Yellow; //checkBox_Pause.ForeColor = Color.                
             }
             else
             {
@@ -1975,6 +1977,8 @@ namespace CheckRT
                     timer4.Start();
 
                 timer5.Start();
+
+                checkBox_Pause.BackColor = SystemColors.Control;
             }
         }
 
@@ -2201,52 +2205,6 @@ namespace CheckRT
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            TaskProperty taskProperty = new TaskProperty();
-            taskProperty.Name = "ArchiveStat";
-            taskProperty.Interval = 30000;
-            taskProperty.AvtoUpdate = true;
-            taskProperty.ReturnRecCount = 150;
-            propertyGrid1.SelectedObject = taskProperty;
-
-            Configuration configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-
-            string jsonString = JsonSerializer.Serialize(taskProperty);
-
-            var settings = configFile.AppSettings.Settings;
-            if (settings["ArchiveStat"] == null)
-            {
-                settings.Add("ArchiveStat", jsonString);
-            }
-            else
-            {
-                settings["ArchiveStat"].Value = jsonString;
-            }
-            configFile.Save(ConfigurationSaveMode.Modified);
-            ConfigurationManager.RefreshSection(configFile.AppSettings.SectionInformation.Name);
-
-            TaskProperty? weatherForecast =
-                JsonSerializer.Deserialize<TaskProperty>(jsonString);
-
-            Debug.WriteLine($"Name: {weatherForecast?.Name}");
-            Debug.WriteLine($"Interval: {weatherForecast?.Interval}");
-            Debug.WriteLine($"AvtoUpdate: {weatherForecast?.AvtoUpdate}");
-            Debug.WriteLine($"ReturnRecCount: {weatherForecast?.ReturnRecCount}");
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.textBoxSqlServerConnectionString.DataBindings.Add(new Binding("Text", sqlServerConnectionProperty, "m_SqlConnectionStringBuilder.ConnectionString", false, DataSourceUpdateMode.OnPropertyChanged));
-            sqlServerConnectionProperty.PropertyChanged += SqlServerConnectionProperty_PropertyChanged;
-        }
-        private void button3_Click(object sender, EventArgs e)
-        {
-            string s = Environment.NewLine;
-            foreach (char h in s)
-            {
-                Debug.WriteLine(h);
-            }
-        }
         private void button_ImportLogFile_Click(object sender, EventArgs e)
         {
             var filePath = string.Empty;

@@ -54,7 +54,7 @@ namespace CheckRT
 
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             ConnectionStringsSection csSection = config.ConnectionStrings;
-            if (csSection.ConnectionStrings["cnnPrimary"] != null)
+            if (csSection.ConnectionStrings["cnnPrimary"] != null) //иначе будут использованы настройки по умолчанию из класса SqlServerConnectionProperty
             {
                 sqlServerConnectionProperty.ConnectionString = csSection.ConnectionStrings["cnnPrimary"].ConnectionString;
             }
@@ -63,7 +63,7 @@ namespace CheckRT
             SocketConnectionProperty socketConnectionProperty = new();
             AppSettingsSection csSectionApp = config.AppSettings;
 
-            if (csSectionApp.Settings["SocketConnectionProperty"] != null)             
+            if (csSectionApp.Settings["SocketConnectionProperty"] != null) //иначе будут использованы настройки по умолчанию из класса SocketConnectionProperty           
             {
                 string? jsonString = csSectionApp.Settings["SocketConnectionProperty"].Value;
                 socketConnectionProperty = JsonSerializer.Deserialize<SocketConnectionProperty>(jsonString);

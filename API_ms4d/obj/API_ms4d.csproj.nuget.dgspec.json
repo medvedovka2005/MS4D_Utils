@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lysenkorf\\Source\\Repos\\medvedovka2005\\MS4D_Utils\\API_ms4d\\API_ms4d.csproj": {}
+    "C:\\Users\\rfl\\source\\repos\\medvedovka2005\\MS4D_Utils\\API_ms4d\\API_ms4d.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lysenkorf\\Source\\Repos\\medvedovka2005\\MS4D_Utils\\API_ms4d\\API_ms4d.csproj": {
+    "C:\\Users\\rfl\\source\\repos\\medvedovka2005\\MS4D_Utils\\API_ms4d\\API_ms4d.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lysenkorf\\Source\\Repos\\medvedovka2005\\MS4D_Utils\\API_ms4d\\API_ms4d.csproj",
+        "projectUniqueName": "C:\\Users\\rfl\\source\\repos\\medvedovka2005\\MS4D_Utils\\API_ms4d\\API_ms4d.csproj",
         "projectName": "API_ms4d",
-        "projectPath": "C:\\Users\\lysenkorf\\Source\\Repos\\medvedovka2005\\MS4D_Utils\\API_ms4d\\API_ms4d.csproj",
-        "packagesPath": "C:\\Users\\lysenkorf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lysenkorf\\Source\\Repos\\medvedovka2005\\MS4D_Utils\\API_ms4d\\obj\\",
+        "projectPath": "C:\\Users\\rfl\\source\\repos\\medvedovka2005\\MS4D_Utils\\API_ms4d\\API_ms4d.csproj",
+        "packagesPath": "C:\\Users\\rfl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rfl\\source\\repos\\medvedovka2005\\MS4D_Utils\\API_ms4d\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\lysenkorf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rfl\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,8 +26,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://www.myget.org/F/xbim-develop/api/v3/index.json": {}
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0-windows7.0": {
@@ -63,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.417\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
