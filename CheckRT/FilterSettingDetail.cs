@@ -49,12 +49,28 @@ namespace CheckRT
         {
             textBox_CheckResult.Text = "";
 
-            using (SqlConnection sqlConnection = new())
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            ConnectionStringsSection csSection = config.ConnectionStrings;
+
+            //Настройки подключения
+            SocketConnectionProperty socketConnectionProperty = new();
+            AppSettingsSection csSectionApp = config.AppSettings;
+
+            string? jsonString = csSectionApp.Settings["SocketConnectionProperty"].Value;
+            if (jsonString != null)
             {
-                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                ConnectionStringsSection csSection = config.ConnectionStrings;
+                socketConnectionProperty = JsonSerializer.Deserialize<SocketConnectionProperty>(jsonString);
+            }
+            else
+            {
+                socketConnectionProperty.IPAddress = "127.0.0.1";
+                socketConnectionProperty.Port = 31550;
+            }
 
+            textBox_CheckResult.AppendText($"Запрос данных по сокету IP: {socketConnectionProperty.IPAddress}, Port: {socketConnectionProperty.Port}" + Environment.NewLine);
 
+            using (SqlConnection sqlConnection = new())
+            {                
                 if (csSection.ConnectionStrings["cnnPrimary"] != null)
                 {
                     sqlConnection.ConnectionString = csSection.ConnectionStrings["cnnPrimary"].ConnectionString;
@@ -62,28 +78,13 @@ namespace CheckRT
                     try
                     {
                         sqlConnection.Open();
-                        textBox_CheckResult.Text = $"Установлено подключение к БД: {sqlConnection.ConnectionString}" + Environment.NewLine;
+                        textBox_CheckResult.AppendText($"Установлено подключение к БД: {sqlConnection.ConnectionString}" + Environment.NewLine);
 
                         SqlCommand selectCommand = new SqlCommand();
                         selectCommand.Connection = sqlConnection;
                         selectCommand.CommandType = CommandType.StoredProcedure;
                         selectCommand.CommandText = "[dbo].[get_filtred_CheckResult]";
 
-                        //Настройки подключения
-                        SocketConnectionProperty socketConnectionProperty = new();
-                        AppSettingsSection csSectionApp = config.AppSettings;
-
-
-                        string? jsonString = csSectionApp.Settings["SocketConnectionProperty"].Value;
-                        if (jsonString != null)
-                        {
-                            socketConnectionProperty = JsonSerializer.Deserialize<SocketConnectionProperty>(jsonString);
-                        }
-                        else
-                        {
-                            socketConnectionProperty.IPAddress = "127.0.0.1";
-                            socketConnectionProperty.Port = 31550;
-                        }
                         selectCommand.Parameters.AddWithValue("@rec_count", 1000);
                         selectCommand.Parameters.AddWithValue("@port", socketConnectionProperty.Port);
                         selectCommand.Parameters.AddWithValue("@ip_address", socketConnectionProperty.IPAddress);
