@@ -2281,11 +2281,17 @@ namespace CheckRT
         }
 
         private void button_FilterLogRecords_Click(object sender, EventArgs e)
-        {
+        {            
             checkBox_AutoRefreshLog.Checked = false;
             BindingSource bs = (BindingSource)this.dataGridViewLogRecords.DataSource;
             try
             {
+                if (textBoxFilterForLogRecords.Text.Length == 0)
+                {
+                    bs.Filter = null;
+                    return;
+                }
+
                 bs.Filter = $"LogString like '%{textBoxFilterForLogRecords.Text}%'";
             }
             catch (Exception ex)
@@ -2300,6 +2306,10 @@ namespace CheckRT
             BindingSource bs = (BindingSource)this.dataGridViewFiltredRecords.DataSource;
             try
             {
+                if (textBoxFilterForFiltredRecords.Text.Length == 0) {
+                    bs.Filter = null;
+                    return; 
+                }
                 bs.Filter = $"LogString like '%{textBoxFilterForFiltredRecords.Text}%'";
             }
             catch (Exception ex)
