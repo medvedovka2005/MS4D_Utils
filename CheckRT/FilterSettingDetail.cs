@@ -52,20 +52,18 @@ namespace CheckRT
             //Настройки подключения к БД
             SqlServerConnectionProperty sqlServerConnectionProperty = new();
 
-            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            ConnectionStringsSection csSection = config.ConnectionStrings;
-            if (csSection.ConnectionStrings["cnnPrimary"] != null) //иначе будут использованы настройки по умолчанию из класса SqlServerConnectionProperty
+            string? ConnectionString = (string?)AppSettingsOper.ReadConnectionString();
+            if (ConnectionString != null)
             {
-                sqlServerConnectionProperty.ConnectionString = csSection.ConnectionStrings["cnnPrimary"].ConnectionString;
+                sqlServerConnectionProperty.ConnectionString = ConnectionString;
+
             }
 
             //Настройки подключения к сокету
-            SocketConnectionProperty socketConnectionProperty = new();
-            AppSettingsSection csSectionApp = config.AppSettings;
-
-            if (csSectionApp.Settings["SocketConnectionProperty"] != null) //иначе будут использованы настройки по умолчанию из класса SocketConnectionProperty           
+            SocketConnectionProperty socketConnectionProperty = new();            
+            string? jsonString = (string?)AppSettingsOper.ReadAppSetting("SocketConnectionProperty");
+            if (jsonString != null)
             {
-                string? jsonString = csSectionApp.Settings["SocketConnectionProperty"].Value;
                 socketConnectionProperty = JsonSerializer.Deserialize<SocketConnectionProperty>(jsonString);
             }
 

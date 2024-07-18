@@ -352,7 +352,7 @@ namespace CheckRT
             //формируем строку json 
             string jsonString = JsonSerializer.Serialize(taskProperty_ArchiveStat);
             //сохраняем настройку
-            AddOrUpdateAppSettings("ArchiveStat", jsonString);
+            AppSettingsOper.AddOrUpdateAppSettings("ArchiveStat", jsonString);
         }
 
         private void TaskProperty_TaskRecords_PropertyChange(object? sender, EventArgs e)
@@ -366,7 +366,7 @@ namespace CheckRT
             //формируем строку json 
             string jsonString = JsonSerializer.Serialize(taskProperty_TaskRecords);
             //сохраняем настройку
-            AddOrUpdateAppSettings("TaskRecords", jsonString);
+            AppSettingsOper.AddOrUpdateAppSettings("TaskRecords", jsonString);
         }
 
         private void TaskProperty_FiltredRecs_PropertyChange(object? sender, EventArgs e)
@@ -380,7 +380,7 @@ namespace CheckRT
             //формируем строку json 
             string jsonString = JsonSerializer.Serialize(taskProperty_FiltredRecs);
             //сохраняем настройку
-            AddOrUpdateAppSettings("FiltredRecs", jsonString);
+            AppSettingsOper.AddOrUpdateAppSettings("FiltredRecs", jsonString);
         }
 
         private void TaskProperty_LogRecords_PropertyChange(object? sender, EventArgs e)
@@ -394,7 +394,7 @@ namespace CheckRT
             //формируем строку json 
             string jsonString = JsonSerializer.Serialize(taskProperty_LogRecords);
             //сохраняем настройку
-            AddOrUpdateAppSettings("LogRecords", jsonString);
+            AppSettingsOper.AddOrUpdateAppSettings("LogRecords", jsonString);
         }
 
         /// <summary>
@@ -405,7 +405,7 @@ namespace CheckRT
             //формируем строку json 
             string jsonString = JsonSerializer.Serialize(socketConnectionProperty);
             //сохраняем настройку
-            AddOrUpdateAppSettings("SocketConnectionProperty", jsonString);
+            AppSettingsOper.AddOrUpdateAppSettings("SocketConnectionProperty", jsonString);
         }
         #endregion События объектов настроек
 
@@ -424,12 +424,10 @@ namespace CheckRT
                     cnnPrimary.Close();
             }
 
-
-            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            ConnectionStringsSection csSection = config.ConnectionStrings;
-            if (csSection.ConnectionStrings["cnnPrimary"] != null)
+            string? ConnectionString = (string?)AppSettingsOper.ReadConnectionString();
+            if (ConnectionString != null)
             {
-                sqlServerConnectionProperty.ConnectionString = csSection.ConnectionStrings["cnnPrimary"].ConnectionString;
+                sqlServerConnectionProperty.ConnectionString = ConnectionString;
 
             }
             //соединение с БД
@@ -460,7 +458,7 @@ namespace CheckRT
 
         private void SqlServerConnectionProperty_PropertyChanged(object? sender, PropertyChangedEventArgs e)
         {
-            AddOrUpdateConnectionString("cnnPrimary", sqlServerConnectionProperty.ConnectionString);
+            AppSettingsOper.AddOrUpdateConnectionString("cnnPrimary", sqlServerConnectionProperty.ConnectionString);
             buttonRefreshConnection.Image = imageListSqlServerConnection.Images[0];
             toolTip1.SetToolTip(this.buttonRefreshConnection, "Необходимо выполнить проверку подключения");
         }
@@ -1989,95 +1987,6 @@ namespace CheckRT
         }
 
 
-        #region Настройки (чтение/запись)
-        /// <summary>
-        /// Сохранение настроек в файл конфигурации
-        /// </summary>
-        /// <param name="key">настройка</param>
-        /// <param name="value">значение</param>
-        public static void AddOrUpdateAppSettings(string key, string value)
-        {
-            try
-            {
-                Configuration configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-
-                var settings = configFile.AppSettings.Settings;
-                if (settings[key] == null)
-                {
-                    settings.Add(key, value);
-                }
-                else
-                {
-                    settings[key].Value = value;
-                }
-                configFile.Save(ConfigurationSaveMode.Modified);
-                ConfigurationManager.RefreshSection(configFile.AppSettings.SectionInformation.Name);
-
-            }
-            catch (ConfigurationErrorsException)
-            {
-                Console.WriteLine("Error writing app settings");
-            }
-        }
-
-        /// <summary>
-        /// Чтение настройки из файла конфигурации
-        /// </summary>
-        /// <param name="key">ключ</param>
-        /// <returns>значение настройки</returns>
-        private static object ReadAppSetting(string key)
-        {
-            object ret = null;
-
-            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            AppSettingsSection csSection = config.AppSettings;
-
-            if (csSection.Settings[key] != null)
-            {
-                ret = csSection.Settings[key].Value;
-            }
-            return ret;
-        }
-
-        /// <summary>
-        /// Сохранении настройки подключения к БД. Может храниться несколько настроек, т.к. может потребоваться подключение к различным БД из объектов приложения
-        /// </summary>
-        /// <param name="key">Наименование подключения</param>
-        /// <param name="sqlConnectionString">строка подключения</param>
-        public static void AddOrUpdateConnectionString(string key, string sqlConnectionString)
-        {
-            try
-            {
-                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                // Get the connection strings section.
-
-                ConnectionStringsSection csSection =
-                    config.ConnectionStrings;
-
-                if (ConfigurationManager.ConnectionStrings[key] == null)
-                {
-                    ConnectionStringSettings csSettings = new ConnectionStringSettings(key, sqlConnectionString);
-                    csSection.ConnectionStrings.Add(csSettings);
-                }
-                else
-                {
-                    ConnectionStringSettings csSettings = new ConnectionStringSettings();
-                    csSettings = csSection.ConnectionStrings[key];
-                    csSettings.ConnectionString = sqlConnectionString;
-                }
-
-                // Save the configuration file.
-                config.Save(ConfigurationSaveMode.Modified);
-
-            }
-            catch (ConfigurationErrorsException ex)
-            {
-                MessageBox.Show("Ошибка сохранения конфигурации: " + ex.Message, "Настройка конфигурации", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Debug.WriteLine("Error writing app settings: " + ex.Message);
-            }
-        }
-        #endregion Настройки (чтение/запись)
-
 
         private void dataGridViewArchStat_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
@@ -2140,15 +2049,10 @@ namespace CheckRT
             if (currentTreeNode.Tag != null && currentTreeNode.Tag.ToString() == "SocketConnectionProperty")
             {
                 //Настройки подключения
-                string? jsonString = (string?)ReadAppSetting("SocketConnectionProperty");
+                string? jsonString = (string?)AppSettingsOper.ReadAppSetting("SocketConnectionProperty");
                 if (jsonString != null)
                 {
                     socketConnectionProperty = JsonSerializer.Deserialize<SocketConnectionProperty>(jsonString);
-                }
-                else
-                {
-                    socketConnectionProperty.IPAddress = "127.0.0.1";
-                    socketConnectionProperty.Port = 31550;
                 }
                 currentTreeNode.Tag = socketConnectionProperty;
             }
@@ -2156,7 +2060,7 @@ namespace CheckRT
             {
                 TaskProperty taskProperty = new TaskProperty();
 
-                string? jsonString = (string?)ReadAppSetting(currentTreeNode.Name);
+                string? jsonString = (string?)AppSettingsOper.ReadAppSetting(currentTreeNode.Name);
                 if (jsonString != null)
                 {
                     taskProperty = JsonSerializer.Deserialize<TaskProperty>(jsonString);
@@ -2213,7 +2117,7 @@ namespace CheckRT
 
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                string? initialDirectory = (string?)ReadAppSetting("LogDir");
+                string? initialDirectory = (string?)AppSettingsOper.ReadAppSetting("LogDir");
 
                 if (initialDirectory != null)
                     openFileDialog.InitialDirectory = initialDirectory;
@@ -2228,7 +2132,7 @@ namespace CheckRT
                     filePath = openFileDialog.FileName;
 
                     FileInfo fi1 = new FileInfo(filePath);
-                    AddOrUpdateAppSettings("LogDir", fi1.DirectoryName);
+                    AppSettingsOper.AddOrUpdateAppSettings("LogDir", fi1.DirectoryName);
 
                     SqlCommand selectCommand = new()
                     {
