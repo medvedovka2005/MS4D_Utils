@@ -10,6 +10,10 @@ using Microsoft.Identity.Client.NativeInterop;
 using CheckRT;
 using System.Diagnostics.Metrics;
 using System.Windows.Forms;
+using System.Transactions;
+using System.Security.Policy;
+using Microsoft.Win32;
+using System.Net;
 
 namespace CheckRT
 {
@@ -2185,7 +2189,7 @@ namespace CheckRT
         }
 
         private void button_FilterLogRecords_Click(object sender, EventArgs e)
-        {            
+        {
             checkBox_AutoRefreshLog.Checked = false;
             BindingSource bs = (BindingSource)this.dataGridViewLogRecords.DataSource;
             try
@@ -2210,9 +2214,10 @@ namespace CheckRT
             BindingSource bs = (BindingSource)this.dataGridViewFiltredRecords.DataSource;
             try
             {
-                if (textBoxFilterForFiltredRecords.Text.Length == 0) {
+                if (textBoxFilterForFiltredRecords.Text.Length == 0)
+                {
                     bs.Filter = null;
-                    return; 
+                    return;
                 }
                 bs.Filter = $"LogString like '%{textBoxFilterForFiltredRecords.Text}%'";
             }
@@ -2231,7 +2236,230 @@ namespace CheckRT
 
         }
 
+        private void button_Parce_Click(object sender, EventArgs e)
+        {
 
+            textBox_ParceTRG.Text = "";
+
+            string? sInfo = textBox_ParceSRC.Text;
+
+            if (sInfo.Length == 0) return;
+
+            string[] words = sInfo.Split(' ');
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                string sCurrent = words[i];
+
+                if (i == 0 && sCurrent.Length >= 5 && (sCurrent[..5] == "[TRA]"))
+                {
+                    textBox_ParceTRG.AppendText($"Обмен данными с устройством" + Environment.NewLine);
+                    textBox_ParceTRG.AppendText(Modbus_Parce_TRA(words) + Environment.NewLine);
+                }
+            }
+        }
+
+        enum RequestType : ushort
+        {
+            None = 0,
+            TX = 1,
+            RX = 2
+        }
+
+        private string Modbus_Parce_TRA(string[] words)
+        {
+            string ret = "";
+            RequestType TrnType = RequestType.None;
+
+            //Transaction identifier
+            string hexTransactionIdentifier = "";
+            //Length
+            string hexLengthValue = "";
+            //Protocol identifier
+            string hexProtocolIdentifier = "";
+            //Starting address
+            string hexStartingAddress = "";
+
+            string hexQuantity = "";
+
+
+            for (int i = 1; i < words.Length; i++)
+            {
+                string sCurrent = words[i];
+
+                if (i == 1 && sCurrent.Length >= 2)
+                {
+                    ret += $"подключение {sCurrent.Replace("(", "").Replace(")", "")}" + Environment.NewLine;
+                }
+                if (i == 2 && sCurrent.Length >= 3 && (sCurrent.Substring(0, 3) == "Tx:"))
+                {
+                    ret += $"Запрос (TX)" + Environment.NewLine;
+                    TrnType = RequestType.TX;
+                }
+                if (i == 2 && sCurrent.Length >= 3 && (sCurrent.Substring(0, 3) == "Rx:"))
+                {
+                    ret += $"Ответ (RX)" + Environment.NewLine;
+                    TrnType = RequestType.RX;
+                }
+
+                if (i == 3 && sCurrent.Length >= 2)
+                {
+                    ret += $"номер записи: {sCurrent}" + Environment.NewLine;
+                }
+
+                //Transaction identifier
+                if (i == 4 && sCurrent.Length == 2)
+                {
+                    hexTransactionIdentifier = sCurrent;
+                    ret += $"Transaction identifier: ";
+                }
+
+                if (i == 5 && sCurrent.Length == 2)
+                {
+                    hexTransactionIdentifier += sCurrent;
+                    int decValue = int.Parse(hexTransactionIdentifier, System.Globalization.NumberStyles.HexNumber);
+                    ret += $"{hexTransactionIdentifier} ({decValue})" + Environment.NewLine;
+                }
+
+                //Protocol identifier	0 = MODBUS protocol
+                if (i == 6 && sCurrent.Length == 2)
+                {
+                    hexProtocolIdentifier = sCurrent;
+                    ret += $"Protocol identifier: ";
+                }
+                if (i == 7 && sCurrent.Length == 2)
+                {
+                    hexProtocolIdentifier += sCurrent;
+                    int decValue = int.Parse(hexProtocolIdentifier, System.Globalization.NumberStyles.HexNumber);
+                    ret += $"{hexProtocolIdentifier} ({decValue})";
+                    if (decValue == 0)
+                    {
+                        ret = ret + " - MODBUS protocol" + Environment.NewLine;
+                    }
+                }
+
+                //Length
+                if (i == 8 && sCurrent.Length == 2)
+                {
+                    ret += $"Length: ";
+                    hexLengthValue = sCurrent;
+                }
+
+                if (i == 9 && sCurrent.Length == 2)
+                {
+                    hexLengthValue += sCurrent;
+                    int decValue = int.Parse(hexLengthValue, System.Globalization.NumberStyles.HexNumber);
+                    ret += $"{hexLengthValue} ({decValue})" + Environment.NewLine;
+                }
+                //Unit identifier
+                if (i == 10 && sCurrent.Length == 2)
+                {
+                    string hexUnitIdentifierValue = sCurrent;
+                    int decValue = int.Parse(hexUnitIdentifierValue, System.Globalization.NumberStyles.HexNumber);
+                    ret += $"Unit identifier {hexUnitIdentifierValue} ({decValue})" + Environment.NewLine;
+                }
+                //Function code
+                if (i == 11 && sCurrent.Length == 2)
+                {
+                    string hexFunctionCode = sCurrent;
+                    int decValue = int.Parse(hexFunctionCode, System.Globalization.NumberStyles.HexNumber);
+                    ret += $"Function code {hexFunctionCode} ({decValue})";
+
+                    switch (decValue)
+                    {
+                        case 1:
+                            ret += "- Read Coils";
+                            break;
+                        case 2:
+                            ret += "- Read Discrete Inputs";
+                            break;
+                        case 5:
+                            ret += "- Write Single Coil";
+                            break;
+                        case 15:
+                            ret += "- Write Multiple Coils";
+                            break;
+                        case 4:
+                            ret += "- Read Input Registers";
+                            break;
+                        case 3:
+                            ret += "- Read Holding Registers";
+                            break;
+                        case 6:
+                            ret += "- Write Single Register";
+                            break;
+                        case 16:
+                            ret += "- Write Multiple Registers";
+                            break;
+                        case 23:
+                            ret += "- Read / Write Multiple Registers";
+                            break;
+                        case 22:
+                            ret += "- Mask Write Register";
+                            break;
+                        case 24:
+                            ret += "- Read FIFO queue";
+                            break;
+                    }
+                    ret += Environment.NewLine;
+                }
+
+                //Starting address
+                if (i == 12 && sCurrent.Length == 2)
+                {
+                    hexStartingAddress = sCurrent;
+                    ret += $"Starting address: ";
+                }
+
+                if (i == 13 && sCurrent.Length == 2)
+                {
+                    hexStartingAddress += sCurrent;
+                    int decValue = int.Parse(hexStartingAddress, System.Globalization.NumberStyles.HexNumber);
+                    ret += $"{hexStartingAddress} ({decValue})" + Environment.NewLine;
+                }
+
+                //Quantity
+                if (i == 14 && sCurrent.Length == 2)
+                {
+                    hexQuantity = sCurrent;
+                    ret += $"Quantity: ";
+                }
+
+                if (i == 15 && sCurrent.Length == 2)
+                {
+                    hexQuantity += sCurrent;
+                    int decValue = int.Parse(hexQuantity, System.Globalization.NumberStyles.HexNumber);
+                    ret += $"{hexQuantity} ({decValue})" + Environment.NewLine;
+                }
+
+                //Byte count
+                if (i == 16 && sCurrent.Length == 2)
+                {
+                    string hexByteCount = sCurrent;
+                    int decValue = int.Parse(hexByteCount, System.Globalization.NumberStyles.HexNumber);
+                    ret += $"Byte count {hexByteCount} ({decValue})" + Environment.NewLine;
+                }
+
+                if (i == 17 && sCurrent.Length == 2)
+                {
+                    string hexByte = sCurrent;
+                    int decValue = int.Parse(hexByte, System.Globalization.NumberStyles.HexNumber);
+                    byte[] bytes = Convert.FromHexString(hexByte);
+                    string s = "";
+
+                    for (int b = 0; b < bytes.Length; b++)
+                    {
+                        s = bytes[b].ToString();
+                    }
+                    s = s.PadRight(8, '0');
+                    ret += $"Outputs value {s} ({decValue})" + Environment.NewLine;
+                }
+
+                
+
+            }
+            return ret;
+        }
     }
 
 

@@ -190,6 +190,10 @@
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             RegDT = new DataGridViewTextBoxColumn();
             LogString = new DataGridViewTextBoxColumn();
+            tabPage5 = new TabPage();
+            button_Parce = new Button();
+            textBox_ParceTRG = new TextBox();
+            textBox_ParceSRC = new TextBox();
             button_ImportLogFile = new Button();
             checkBox_Pause = new CheckBox();
             timer1 = new System.Windows.Forms.Timer(components);
@@ -249,11 +253,14 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewArchStatDetail).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewArchStat).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTaskStat).BeginInit();
+            tabPage5.SuspendLayout();
             SuspendLayout();
             // 
             // textBox_IPAdr
             // 
+            textBox_IPAdr.BackColor = Color.Black;
             textBox_IPAdr.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox_IPAdr.ForeColor = Color.Chartreuse;
             textBox_IPAdr.Location = new Point(63, 34);
             textBox_IPAdr.Name = "textBox_IPAdr";
             textBox_IPAdr.Size = new Size(169, 32);
@@ -276,15 +283,19 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.DarkGreen;
             label4.Location = new Point(904, 45);
             label4.Name = "label4";
-            label4.Size = new Size(55, 15);
+            label4.Size = new Size(57, 15);
             label4.TabIndex = 15;
             label4.Text = "Команда";
             // 
             // textBox_Command
             // 
+            textBox_Command.BackColor = Color.Black;
             textBox_Command.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox_Command.ForeColor = Color.Chartreuse;
             textBox_Command.Location = new Point(965, 34);
             textBox_Command.Name = "textBox_Command";
             textBox_Command.Size = new Size(79, 32);
@@ -312,6 +323,7 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
+            tabControl1.Controls.Add(tabPage5);
             tabControl1.Location = new Point(5, 57);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -340,7 +352,9 @@
             // 
             // numericUpDown_Port
             // 
+            numericUpDown_Port.BackColor = Color.Black;
             numericUpDown_Port.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDown_Port.ForeColor = Color.Chartreuse;
             numericUpDown_Port.Location = new Point(269, 35);
             numericUpDown_Port.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
             numericUpDown_Port.Name = "numericUpDown_Port";
@@ -351,6 +365,8 @@
             // label9
             // 
             label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = Color.DarkGreen;
             label9.Location = new Point(238, 45);
             label9.Name = "label9";
             label9.Size = new Size(33, 15);
@@ -360,9 +376,11 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = Color.DarkGreen;
             label8.Location = new Point(6, 45);
             label8.Name = "label8";
-            label8.Size = new Size(51, 15);
+            label8.Size = new Size(54, 15);
             label8.TabIndex = 41;
             label8.Text = "IP адрес";
             // 
@@ -493,15 +511,19 @@
             // label23
             // 
             label23.AutoSize = true;
+            label23.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label23.ForeColor = Color.DarkGreen;
             label23.Location = new Point(14, 141);
             label23.Name = "label23";
-            label23.Size = new Size(96, 15);
+            label23.Size = new Size(98, 15);
             label23.TabIndex = 43;
             label23.Text = "Список ошибок";
             // 
             // textBoxSqlServerError
             // 
             textBoxSqlServerError.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxSqlServerError.BackColor = SystemColors.Window;
+            textBoxSqlServerError.ForeColor = Color.DarkGreen;
             textBoxSqlServerError.Location = new Point(14, 159);
             textBoxSqlServerError.Multiline = true;
             textBoxSqlServerError.Name = "textBoxSqlServerError";
@@ -513,6 +535,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.DarkGreen;
             label1.Location = new Point(14, 14);
             label1.Name = "label1";
             label1.Size = new Size(390, 19);
@@ -522,15 +545,19 @@
             // label20
             // 
             label20.AutoSize = true;
+            label20.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label20.ForeColor = Color.DarkGreen;
             label20.Location = new Point(14, 50);
             label20.Name = "label20";
-            label20.Size = new Size(125, 15);
+            label20.Size = new Size(131, 15);
             label20.TabIndex = 40;
             label20.Text = "Строка подключения";
             // 
             // textBoxSqlServerConnectionString
             // 
             textBoxSqlServerConnectionString.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxSqlServerConnectionString.BackColor = SystemColors.Window;
+            textBoxSqlServerConnectionString.ForeColor = Color.DarkGreen;
             textBoxSqlServerConnectionString.Location = new Point(14, 68);
             textBoxSqlServerConnectionString.Multiline = true;
             textBoxSqlServerConnectionString.Name = "textBoxSqlServerConnectionString";
@@ -545,9 +572,11 @@
             // 
             label19.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label19.ForeColor = Color.DarkGreen;
             label19.Location = new Point(463, 132);
             label19.Name = "label19";
-            label19.Size = new Size(145, 15);
+            label19.Size = new Size(153, 15);
             label19.TabIndex = 29;
             label19.Text = "Состояние подключения";
             // 
@@ -574,7 +603,9 @@
             // 
             // treeViewSettings
             // 
+            treeViewSettings.BackColor = SystemColors.Window;
             treeViewSettings.Dock = DockStyle.Fill;
+            treeViewSettings.ForeColor = Color.DarkGreen;
             treeViewSettings.Location = new Point(0, 0);
             treeViewSettings.Name = "treeViewSettings";
             treeNode1.Name = "Socket0";
@@ -657,6 +688,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.DarkGreen;
             label3.Location = new Point(3, 9);
             label3.Name = "label3";
             label3.RightToLeft = RightToLeft.Yes;
@@ -742,6 +774,8 @@
             // textBoxFilterForLogRecords
             // 
             textBoxFilterForLogRecords.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxFilterForLogRecords.BackColor = Color.Black;
+            textBoxFilterForLogRecords.ForeColor = Color.Chartreuse;
             textBoxFilterForLogRecords.Location = new Point(686, 23);
             textBoxFilterForLogRecords.Name = "textBoxFilterForLogRecords";
             textBoxFilterForLogRecords.Size = new Size(632, 23);
@@ -750,14 +784,18 @@
             // label25
             // 
             label25.AutoSize = true;
+            label25.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label25.ForeColor = Color.DarkGreen;
             label25.Location = new Point(598, 25);
             label25.Name = "label25";
-            label25.Size = new Size(82, 15);
+            label25.Size = new Size(86, 15);
             label25.TabIndex = 18;
             label25.Text = "Фильтр строк";
             // 
             // numericUpDown_LogRecReturnRecCount
             // 
+            numericUpDown_LogRecReturnRecCount.BackColor = Color.Black;
+            numericUpDown_LogRecReturnRecCount.ForeColor = Color.Chartreuse;
             numericUpDown_LogRecReturnRecCount.Location = new Point(499, 23);
             numericUpDown_LogRecReturnRecCount.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             numericUpDown_LogRecReturnRecCount.Name = "numericUpDown_LogRecReturnRecCount";
@@ -768,6 +806,8 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.DarkGreen;
             label2.Location = new Point(453, 26);
             label2.Name = "label2";
             label2.Size = new Size(40, 15);
@@ -776,6 +816,8 @@
             // 
             // numericUpDown_LogRecInterval
             // 
+            numericUpDown_LogRecInterval.BackColor = Color.Black;
+            numericUpDown_LogRecInterval.ForeColor = Color.Chartreuse;
             numericUpDown_LogRecInterval.Location = new Point(354, 23);
             numericUpDown_LogRecInterval.Maximum = new decimal(new int[] { 600000, 0, 0, 0 });
             numericUpDown_LogRecInterval.Name = "numericUpDown_LogRecInterval";
@@ -787,27 +829,33 @@
             // label18
             // 
             label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label18.ForeColor = Color.DarkGreen;
             label18.Location = new Point(-2, 0);
             label18.Name = "label18";
-            label18.Size = new Size(277, 15);
+            label18.Size = new Size(293, 15);
             label18.TabIndex = 9;
             label18.Text = "Записи логирования, зарегистрированные в БД  ";
             // 
             // label6
             // 
             label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = Color.DarkGreen;
             label6.Location = new Point(262, 27);
             label6.Name = "label6";
-            label6.Size = new Size(86, 15);
+            label6.Size = new Size(88, 15);
             label6.TabIndex = 8;
             label6.Text = "Интервал (мс)";
             // 
             // checkBox_AutoRefreshLog
             // 
             checkBox_AutoRefreshLog.AutoSize = true;
+            checkBox_AutoRefreshLog.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            checkBox_AutoRefreshLog.ForeColor = Color.DarkGreen;
             checkBox_AutoRefreshLog.Location = new Point(122, 25);
             checkBox_AutoRefreshLog.Name = "checkBox_AutoRefreshLog";
-            checkBox_AutoRefreshLog.Size = new Size(119, 19);
+            checkBox_AutoRefreshLog.Size = new Size(124, 19);
             checkBox_AutoRefreshLog.TabIndex = 5;
             checkBox_AutoRefreshLog.Text = "Автообновление";
             checkBox_AutoRefreshLog.UseVisualStyleBackColor = true;
@@ -883,6 +931,8 @@
             // textBoxFilterForFiltredRecords
             // 
             textBoxFilterForFiltredRecords.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxFilterForFiltredRecords.BackColor = Color.Black;
+            textBoxFilterForFiltredRecords.ForeColor = Color.Chartreuse;
             textBoxFilterForFiltredRecords.Location = new Point(686, 34);
             textBoxFilterForFiltredRecords.Name = "textBoxFilterForFiltredRecords";
             textBoxFilterForFiltredRecords.Size = new Size(632, 23);
@@ -892,14 +942,18 @@
             // 
             label24.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label24.AutoSize = true;
+            label24.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label24.ForeColor = Color.DarkGreen;
             label24.Location = new Point(598, 36);
             label24.Name = "label24";
-            label24.Size = new Size(82, 15);
+            label24.Size = new Size(86, 15);
             label24.TabIndex = 16;
             label24.Text = "Фильтр строк";
             // 
             // numericUpDown_FiltredRecReturnRecCount
             // 
+            numericUpDown_FiltredRecReturnRecCount.BackColor = Color.Black;
+            numericUpDown_FiltredRecReturnRecCount.ForeColor = Color.Chartreuse;
             numericUpDown_FiltredRecReturnRecCount.Location = new Point(499, 35);
             numericUpDown_FiltredRecReturnRecCount.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             numericUpDown_FiltredRecReturnRecCount.Name = "numericUpDown_FiltredRecReturnRecCount";
@@ -910,6 +964,8 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.DarkGreen;
             label5.Location = new Point(453, 37);
             label5.Name = "label5";
             label5.Size = new Size(40, 15);
@@ -918,6 +974,8 @@
             // 
             // numericUpDown_FiltredRecInterval
             // 
+            numericUpDown_FiltredRecInterval.BackColor = Color.Black;
+            numericUpDown_FiltredRecInterval.ForeColor = Color.Chartreuse;
             numericUpDown_FiltredRecInterval.Location = new Point(354, 35);
             numericUpDown_FiltredRecInterval.Maximum = new decimal(new int[] { 600000, 0, 0, 0 });
             numericUpDown_FiltredRecInterval.Name = "numericUpDown_FiltredRecInterval";
@@ -929,9 +987,11 @@
             // label17
             // 
             label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label17.ForeColor = Color.DarkGreen;
             label17.Location = new Point(6, 0);
             label17.Name = "label17";
-            label17.Size = new Size(154, 15);
+            label17.Size = new Size(162, 15);
             label17.TabIndex = 7;
             label17.Text = "Отфильтрованные данные";
             // 
@@ -977,9 +1037,11 @@
             // label_FiltredRecInterval
             // 
             label_FiltredRecInterval.AutoSize = true;
+            label_FiltredRecInterval.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label_FiltredRecInterval.ForeColor = Color.DarkGreen;
             label_FiltredRecInterval.Location = new Point(262, 36);
             label_FiltredRecInterval.Name = "label_FiltredRecInterval";
-            label_FiltredRecInterval.Size = new Size(86, 15);
+            label_FiltredRecInterval.Size = new Size(88, 15);
             label_FiltredRecInterval.TabIndex = 6;
             label_FiltredRecInterval.Text = "Интервал (мс)";
             // 
@@ -999,9 +1061,11 @@
             // checkBox_AutoRefreshFilter
             // 
             checkBox_AutoRefreshFilter.AutoSize = true;
+            checkBox_AutoRefreshFilter.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            checkBox_AutoRefreshFilter.ForeColor = Color.DarkGreen;
             checkBox_AutoRefreshFilter.Location = new Point(122, 35);
             checkBox_AutoRefreshFilter.Name = "checkBox_AutoRefreshFilter";
-            checkBox_AutoRefreshFilter.Size = new Size(119, 19);
+            checkBox_AutoRefreshFilter.Size = new Size(124, 19);
             checkBox_AutoRefreshFilter.TabIndex = 4;
             checkBox_AutoRefreshFilter.Text = "Автообновление";
             checkBox_AutoRefreshFilter.UseVisualStyleBackColor = true;
@@ -1027,6 +1091,8 @@
             // 
             // numericUpDown_TaskStatReturnRecCount
             // 
+            numericUpDown_TaskStatReturnRecCount.BackColor = Color.Black;
+            numericUpDown_TaskStatReturnRecCount.ForeColor = Color.Chartreuse;
             numericUpDown_TaskStatReturnRecCount.Location = new Point(479, 7);
             numericUpDown_TaskStatReturnRecCount.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numericUpDown_TaskStatReturnRecCount.Name = "numericUpDown_TaskStatReturnRecCount";
@@ -1037,14 +1103,18 @@
             // label21
             // 
             label21.AutoSize = true;
+            label21.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label21.ForeColor = Color.DarkGreen;
             label21.Location = new Point(433, 9);
             label21.Name = "label21";
-            label21.Size = new Size(40, 15);
+            label21.Size = new Size(42, 13);
             label21.TabIndex = 21;
             label21.Text = "Строк";
             // 
             // numericUpDown_IntervalTaskStat
             // 
+            numericUpDown_IntervalTaskStat.BackColor = Color.Black;
+            numericUpDown_IntervalTaskStat.ForeColor = Color.Chartreuse;
             numericUpDown_IntervalTaskStat.Location = new Point(334, 7);
             numericUpDown_IntervalTaskStat.Maximum = new decimal(new int[] { 600000, 0, 0, 0 });
             numericUpDown_IntervalTaskStat.Minimum = new decimal(new int[] { 10000, 0, 0, 0 });
@@ -1076,9 +1146,11 @@
             // label11
             // 
             label11.AutoSize = true;
+            label11.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.ForeColor = Color.DarkGreen;
             label11.Location = new Point(3, 0);
             label11.Name = "label11";
-            label11.Size = new Size(303, 15);
+            label11.Size = new Size(336, 13);
             label11.TabIndex = 13;
             label11.Text = "Статистика задач объектов (U) и задач протоколов (S)";
             // 
@@ -1464,14 +1536,18 @@
             // label13
             // 
             label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.ForeColor = Color.DarkGreen;
             label13.Location = new Point(1, 3);
             label13.Name = "label13";
-            label13.Size = new Size(108, 15);
+            label13.Size = new Size(113, 15);
             label13.TabIndex = 14;
             label13.Text = "Статистика задачи";
             // 
             // numericUpDown_ArchStatReturnRecCount
             // 
+            numericUpDown_ArchStatReturnRecCount.BackColor = Color.Black;
+            numericUpDown_ArchStatReturnRecCount.ForeColor = Color.Chartreuse;
             numericUpDown_ArchStatReturnRecCount.Location = new Point(477, 28);
             numericUpDown_ArchStatReturnRecCount.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numericUpDown_ArchStatReturnRecCount.Name = "numericUpDown_ArchStatReturnRecCount";
@@ -1490,6 +1566,8 @@
             // 
             // numericUpDown_IntervalArchStat
             // 
+            numericUpDown_IntervalArchStat.BackColor = Color.Black;
+            numericUpDown_IntervalArchStat.ForeColor = Color.Chartreuse;
             numericUpDown_IntervalArchStat.Location = new Point(332, 28);
             numericUpDown_IntervalArchStat.Maximum = new decimal(new int[] { 600000, 0, 0, 0 });
             numericUpDown_IntervalArchStat.Minimum = new decimal(new int[] { 10000, 0, 0, 0 });
@@ -1502,9 +1580,11 @@
             // label16
             // 
             label16.AutoSize = true;
+            label16.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label16.ForeColor = Color.DarkGreen;
             label16.Location = new Point(4, 224);
             label16.Name = "label16";
-            label16.Size = new Size(156, 15);
+            label16.Size = new Size(169, 13);
             label16.TabIndex = 22;
             label16.Text = "Статистика архивирования";
             // 
@@ -1557,18 +1637,22 @@
             // label15
             // 
             label15.AutoSize = true;
+            label15.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.ForeColor = Color.DarkGreen;
             label15.Location = new Point(240, 30);
             label15.Name = "label15";
-            label15.Size = new Size(86, 15);
+            label15.Size = new Size(92, 13);
             label15.TabIndex = 20;
             label15.Text = "Интервал (мс)";
             // 
             // checkBox_AutoRefreshArchStat
             // 
             checkBox_AutoRefreshArchStat.AutoSize = true;
+            checkBox_AutoRefreshArchStat.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            checkBox_AutoRefreshArchStat.ForeColor = Color.DarkGreen;
             checkBox_AutoRefreshArchStat.Location = new Point(100, 29);
             checkBox_AutoRefreshArchStat.Name = "checkBox_AutoRefreshArchStat";
-            checkBox_AutoRefreshArchStat.Size = new Size(119, 19);
+            checkBox_AutoRefreshArchStat.Size = new Size(124, 17);
             checkBox_AutoRefreshArchStat.TabIndex = 18;
             checkBox_AutoRefreshArchStat.Text = "Автообновление";
             checkBox_AutoRefreshArchStat.UseVisualStyleBackColor = true;
@@ -1649,27 +1733,33 @@
             // label14
             // 
             label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.ForeColor = Color.DarkGreen;
             label14.Location = new Point(4, 3);
             label14.Name = "label14";
-            label14.Size = new Size(94, 15);
+            label14.Size = new Size(101, 15);
             label14.TabIndex = 15;
             label14.Text = "Архивирование";
             // 
             // label7
             // 
             label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = Color.DarkGreen;
             label7.Location = new Point(242, 11);
             label7.Name = "label7";
-            label7.Size = new Size(86, 15);
+            label7.Size = new Size(92, 13);
             label7.TabIndex = 10;
             label7.Text = "Интервал (мс)";
             // 
             // checkBox_AutoRefreshTaskStat
             // 
             checkBox_AutoRefreshTaskStat.AutoSize = true;
+            checkBox_AutoRefreshTaskStat.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            checkBox_AutoRefreshTaskStat.ForeColor = Color.DarkGreen;
             checkBox_AutoRefreshTaskStat.Location = new Point(102, 11);
             checkBox_AutoRefreshTaskStat.Name = "checkBox_AutoRefreshTaskStat";
-            checkBox_AutoRefreshTaskStat.Size = new Size(119, 19);
+            checkBox_AutoRefreshTaskStat.Size = new Size(124, 17);
             checkBox_AutoRefreshTaskStat.TabIndex = 8;
             checkBox_AutoRefreshTaskStat.Text = "Автообновление";
             checkBox_AutoRefreshTaskStat.UseVisualStyleBackColor = true;
@@ -1746,6 +1836,46 @@
             LogString.HeaderText = "Строка информации";
             LogString.Name = "LogString";
             LogString.ReadOnly = true;
+            // 
+            // tabPage5
+            // 
+            tabPage5.Controls.Add(button_Parce);
+            tabPage5.Controls.Add(textBox_ParceTRG);
+            tabPage5.Controls.Add(textBox_ParceSRC);
+            tabPage5.Location = new Point(4, 24);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Padding = new Padding(3);
+            tabPage5.Size = new Size(1421, 735);
+            tabPage5.TabIndex = 4;
+            tabPage5.Text = "tabPage5";
+            tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // button_Parce
+            // 
+            button_Parce.Location = new Point(1289, 205);
+            button_Parce.Name = "button_Parce";
+            button_Parce.Size = new Size(111, 23);
+            button_Parce.TabIndex = 2;
+            button_Parce.Text = "Разобрать";
+            button_Parce.UseVisualStyleBackColor = true;
+            button_Parce.Click += button_Parce_Click;
+            // 
+            // textBox_ParceTRG
+            // 
+            textBox_ParceTRG.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox_ParceTRG.Location = new Point(22, 234);
+            textBox_ParceTRG.Multiline = true;
+            textBox_ParceTRG.Name = "textBox_ParceTRG";
+            textBox_ParceTRG.Size = new Size(1378, 484);
+            textBox_ParceTRG.TabIndex = 1;
+            // 
+            // textBox_ParceSRC
+            // 
+            textBox_ParceSRC.Location = new Point(22, 30);
+            textBox_ParceSRC.Multiline = true;
+            textBox_ParceSRC.Name = "textBox_ParceSRC";
+            textBox_ParceSRC.Size = new Size(1378, 139);
+            textBox_ParceSRC.TabIndex = 0;
             // 
             // button_ImportLogFile
             // 
@@ -1893,6 +2023,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewArchStatDetail).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewArchStat).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTaskStat).EndInit();
+            tabPage5.ResumeLayout(false);
+            tabPage5.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -2031,5 +2163,11 @@
         private TableLayoutPanel tableLayoutPanel1;
         private ImageList imageList1;
         private Button button_OpenConnectionProperty;
+        private TabPage tabPage5;
+        private Button button_Parce;
+        private TextBox textBox2;
+        private TextBox textBox1;
+        private TextBox textBox_ParceTRG;
+        private TextBox textBox_ParceSRC;
     }
 }

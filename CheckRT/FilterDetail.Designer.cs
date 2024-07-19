@@ -243,6 +243,7 @@
             // 
             // button_Ok
             // 
+            button_Ok.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             button_Ok.DialogResult = DialogResult.OK;
             button_Ok.Location = new Point(2, 514);
             button_Ok.Name = "button_Ok";
@@ -254,6 +255,7 @@
             // 
             // button_Cancel
             // 
+            button_Cancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             button_Cancel.DialogResult = DialogResult.Cancel;
             button_Cancel.Location = new Point(110, 514);
             button_Cancel.Name = "button_Cancel";

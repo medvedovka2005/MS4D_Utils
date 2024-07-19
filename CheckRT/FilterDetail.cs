@@ -20,7 +20,7 @@ namespace CheckRT
         BindingSource m_masterBindingSource;
         BindingSource m_detailsBindingSource;
         BindingNavigator detailsNavigator = new();
-        
+
 
         DataTable tbFilterTypes = new DataTable("FilterTypes");
 
