@@ -9,6 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API_ms4d", "API_ms4d\API_ms
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckTCP", "CheckTCP\CheckTCP.csproj", "{78E7BD85-DBF6-45F9-B209-D8384586CE75}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{33D4C7F3-7F88-4979-92FB-C9BE5246556E}"
+	ProjectSection(SolutionItems) = preProject
+		MS4D_Utils.7z = MS4D_Utils.7z
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

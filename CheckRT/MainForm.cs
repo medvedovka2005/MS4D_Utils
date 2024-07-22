@@ -2432,6 +2432,8 @@ namespace CheckRT
                     ret += $"{hexQuantity} ({decValue})" + Environment.NewLine;
                 }
 
+                
+
                 //Byte count
                 if (i == 16 && sCurrent.Length == 2)
                 {
@@ -2452,6 +2454,10 @@ namespace CheckRT
                         s = bytes[b].ToString();
                     }
                     s = s.PadRight(8, '0');
+
+                    string binValue = Convert.ToString(decValue, 2);
+                    s = binValue.PadRight(8, '0');
+
                     ret += $"Outputs value {s} ({decValue})" + Environment.NewLine;
                 }
 
